@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "transpile": "rimraf dist && babel --extensions .ts --out-dir dist src",
-    "cucumber": "yarn transpile && cucumber-js"
+    "cucumber-compile": "yarn transpile && cucumber-js",
+    "cucumber": "cross-env COMMON_CONFIG_FILE=./env/common.env yarn cucumber-compile"
   },
   "author": "",
   "license": "ISC",
@@ -16,6 +17,8 @@
     "@cucumber/cucumber": "^9.0.1",
     "chai": "^4.3.7",
     "chromedriver": "^111.0.0",
+    "cross-env": "^7.0.3",
+    "dotenv": "^16.0.3",
     "geckodriver": "^3.2.0",
     "selenium-webdriver": "^4.8.1",
     "ts-node": "^10.9.1",
