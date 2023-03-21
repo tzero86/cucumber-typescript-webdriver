@@ -14,6 +14,9 @@
         "statussBar.prominentBackground": "#7C21D7"
     },
     "cSpell.words": [
-        "chromedriver"
+        "chromedriver",
+        "geckodriver",
+        "postcucumber",
+        "precucumber"
     ]
 }
