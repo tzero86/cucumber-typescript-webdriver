@@ -14,7 +14,7 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 660337300
+              "duration": 659293300
             }
           },
           {
@@ -27,20 +27,21 @@
             },
             "result": {
               "status": "passed",
-              "duration": 647908400
+              "duration": 658365900
             }
           },
           {
             "arguments": [],
             "keyword": "And ",
             "line": 8,
-            "name": "the \"contacts header\" should contain the text \"Contacts\"",
+            "name": "the \"contacts header\" should contain the text \"Contactss\"",
             "match": {
-              "location": "src\\step-definitions\\assertions\\verify-element-visibility.ts:11"
+              "location": "src\\step-definitions\\assertions\\verify-element-value.ts:10"
             },
             "result": {
-              "status": "passed",
-              "duration": 22788499
+              "status": "failed",
+              "duration": 16162450500,
+              "error_message": "Error: ⌚ Wait time of 15000ms exceeded.\n    at waitFor (C:\\Users\\medin\\OneDrive\\Documentos\\coding\\testing-talk-hub\\react-app\\e2e\\src\\step-definitions\\setup\\wait-for-behavior.ts:19:11)\n    at async ScenarioWorld.<anonymous> (C:\\Users\\medin\\OneDrive\\Documentos\\coding\\testing-talk-hub\\react-app\\e2e\\src\\step-definitions\\assertions\\verify-element-value.ts:22:9)"
             }
           },
           {
@@ -49,12 +50,11 @@
             "line": 9,
             "name": "the \"header logo\" should be displayed",
             "match": {
-              "location": "src\\step-definitions\\assertions\\verify-element-visibility.ts:29"
+              "location": "src\\step-definitions\\assertions\\verify-element-visibility.ts:9"
             },
             "result": {
-              "status": "failed",
-              "duration": 16133557699,
-              "error_message": "Error: ⌚ Wait time of 15000ms exceeded.\n    at waitFor (C:\\Users\\medin\\OneDrive\\Documentos\\coding\\testing-talk-hub\\react-app\\e2e\\src\\step-definitions\\setup\\wait-for-behavior.ts:19:11)\n    at async ScenarioWorld.<anonymous> (C:\\Users\\medin\\OneDrive\\Documentos\\coding\\testing-talk-hub\\react-app\\e2e\\src\\step-definitions\\assertions\\verify-element-visibility.ts:40:9)"
+              "status": "skipped",
+              "duration": 0
             }
           },
           {
@@ -62,7 +62,7 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 436669800
+              "duration": 407497899
             },
             "embeddings": [
               {
