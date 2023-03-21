@@ -10,3 +10,7 @@ export const env = (key: string): string => {
     }
     return value
 }
+
+export const envNumber = (key: string): number => {
+    return Number(env(key))
+}

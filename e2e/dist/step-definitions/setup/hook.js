@@ -20,6 +20,7 @@ require("chromedriver");
 
 require("geckodriver");
 
+(0, _cucumber.setDefaultTimeout)((0, _parseEnv.envNumber)("SCRIPT_TIMEOUT"));
 (0, _cucumber.Before)( /*#__PURE__*/function () {
   var _ref = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee(scenario) {
     var ready;

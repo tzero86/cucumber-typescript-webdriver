@@ -1,6 +1,7 @@
 import dotenv from 'dotenv'
 import { env, getJsonFromFile } from './env/parseEnv'
-import { GlobalConfig, HostsConfig, PagesConfig } from './env/global'
+import { GlobalConfig, HostsConfig, PagesConfig, PageElementMappings } from './env/global'
+import * as fs from 'fs'
 
 
 dotenv.config({path: env('COMMON_CONFIG_FILE')})
@@ -9,9 +10,22 @@ console.log('HostsConfig: ', hostsConfig)
 const pagesConfig: PagesConfig = getJsonFromFile(env('PAGES_URLS_PATH'))
 console.log('PagesConfig: ', pagesConfig)
 
+const mappingFiles = fs.readdirSync(`${process.cwd()}${env('PAGE_ELEMENTS_PATH')}`)
+
+const pageElementMappings: PageElementMappings = mappingFiles.reduce((pageElementConfigAcc: {}, file: string) => {
+    const key = file.replace('.json', '')
+    const elementMappings = getJsonFromFile(`${env('PAGE_ELEMENTS_PATH')}${file}`)
+    return {...pageElementConfigAcc, [key]: elementMappings}
+    }, 
+    {}
+)
+
+console.log('PageElementMappings: ', pageElementMappings)
+
 const worldParameters: GlobalConfig = {
     hostsConfig,
-    pagesConfig
+    pagesConfig,
+    pageElementMappings
 }
 
 

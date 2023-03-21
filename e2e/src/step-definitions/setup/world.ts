@@ -3,7 +3,7 @@ import { World, IWorldOptions, setWorldConstructor } from "@cucumber/cucumber";
 import firefox from "selenium-webdriver/firefox";
 import { Options } from "selenium-webdriver/chrome";
 import { env } from "../../env/parseEnv";
-import { GlobalConfig } from "../../env/global";
+import { GlobalConfig, GlobalVariables } from "../../env/global";
 import { stringIsOfOptions } from "../../support/options-helper";
 
 
@@ -16,9 +16,11 @@ export class ScenarioWorld extends World {
     constructor(options: IWorldOptions) {
         super(options)
         this.globalConfig = options.parameters as GlobalConfig
+        this.globalVariables = {currentScreen: ''}
     }
 
     globalConfig: GlobalConfig;
+    globalVariables: GlobalVariables;
     screen!: Screen;
 
     async init(): Promise<Screen> {

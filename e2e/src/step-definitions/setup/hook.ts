@@ -1,9 +1,11 @@
-import { Before, After } from "@cucumber/cucumber";
+import { Before, After, setDefaultTimeout } from "@cucumber/cucumber";
 import * as fs from "fs";
 import { ScenarioWorld } from "./world";
-import { env } from "../../env/parseEnv";
+import { env, envNumber } from "../../env/parseEnv";
 require("chromedriver");
 require("geckodriver");
+
+setDefaultTimeout(envNumber("SCRIPT_TIMEOUT"))
 
 Before(async function (scenario) {
     console.log(`🥒 Running Cucumber Scenario: ${scenario.pickle.name}`);
