@@ -30,16 +30,13 @@ _dotenv.default.config({
 });
 
 var hostsConfig = (0, _parseEnv.getJsonFromFile)((0, _parseEnv.env)('HOSTS_URLS_PATH'));
-console.log('HostsConfig: ', hostsConfig);
 var pagesConfig = (0, _parseEnv.getJsonFromFile)((0, _parseEnv.env)('PAGES_URLS_PATH'));
-console.log('PagesConfig: ', pagesConfig);
 var mappingFiles = fs.readdirSync("".concat(process.cwd()).concat((0, _parseEnv.env)('PAGE_ELEMENTS_PATH')));
 var pageElementMappings = mappingFiles.reduce(function (pageElementConfigAcc, file) {
   var key = file.replace('.json', '');
   var elementMappings = (0, _parseEnv.getJsonFromFile)("".concat((0, _parseEnv.env)('PAGE_ELEMENTS_PATH')).concat(file));
   return _objectSpread(_objectSpread({}, pageElementConfigAcc), {}, _defineProperty({}, key, elementMappings));
 }, {});
-console.log('PageElementMappings: ', pageElementMappings);
 var worldParameters = {
   hostsConfig: hostsConfig,
   pagesConfig: pagesConfig,
@@ -52,4 +49,4 @@ var smoke = "".concat(common, " --tags '@smoke'");
 exports.smoke = smoke;
 var regression = "".concat(common, " --tags '@regression'");
 exports.regression = regression;
-console.log("\u2728\u2728\u2728MAGIC IS STARTING\u2728\u2728\u2728");
+console.log("\uD83E\uDDEA\uD83E\uDDEA\uD83E\uDDEATesting Starting\uD83E\uDDEA\uD83E\uDDEA\uD83E\uDDEA");

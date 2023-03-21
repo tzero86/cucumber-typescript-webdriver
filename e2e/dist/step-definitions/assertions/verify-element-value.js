@@ -14,14 +14,14 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 
 (0, _cucumber.Then)(/^the "([^"]*)" should contain the text "(.*)"$/, /*#__PURE__*/function () {
   var _ref = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee2(elementKey, expectedElementText) {
-    var driver, globalVariables, globalConfig, elementIdentifier;
+    var driver, globalConfig, elementIdentifier;
     return regeneratorRuntime.wrap(function _callee2$(_context2) {
       while (1) switch (_context2.prev = _context2.next) {
         case 0:
-          driver = this.screen.driver, globalVariables = this.globalVariables, globalConfig = this.globalConfig;
+          driver = this.screen.driver, globalConfig = this.globalConfig;
           console.log("the ".concat(elementKey, " header should contain the text ").concat(expectedElementText));
           _context2.next = 4;
-          return (0, _webElementHelper.getElementLocator)(driver, elementKey, globalVariables, globalConfig);
+          return (0, _webElementHelper.getElementLocator)(driver, elementKey, globalConfig);
 
         case 4:
           elementIdentifier = _context2.sent;

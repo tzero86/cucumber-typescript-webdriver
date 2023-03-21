@@ -61,8 +61,6 @@ var ScenarioWorld = /*#__PURE__*/function (_World) {
 
     _defineProperty(_assertThisInitialized(_this), "globalConfig", void 0);
 
-    _defineProperty(_assertThisInitialized(_this), "globalVariables", void 0);
-
     _defineProperty(_assertThisInitialized(_this), "screen", void 0);
 
     _defineProperty(_assertThisInitialized(_this), "newBrowser", /*#__PURE__*/_asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee() {
@@ -70,13 +68,12 @@ var ScenarioWorld = /*#__PURE__*/function (_World) {
       return regeneratorRuntime.wrap(function _callee$(_context) {
         while (1) switch (_context.prev = _context.next) {
           case 0:
-            console.log("UI_AUTOMATION_BROWSER Value: ".concat(process.env.UI_AUTOMATION_BROWSER));
             automationBrowser = (0, _parseEnv.env)("UI_AUTOMATION_BROWSER");
             automationBrowsers = ["chrome", "firefox", "safari"];
             validAutomationBrowser = (0, _optionsHelper.stringIsOfOptions)(automationBrowser, automationBrowsers);
             return _context.abrupt("return", validAutomationBrowser);
 
-          case 5:
+          case 4:
           case "end":
             return _context.stop();
         }
@@ -89,7 +86,7 @@ var ScenarioWorld = /*#__PURE__*/function (_World) {
         return regeneratorRuntime.wrap(function _callee2$(_context2) {
           while (1) switch (_context2.prev = _context2.next) {
             case 0:
-              console.log("\uD83D\uDDA5\uFE0F Executing on: ".concat(browser, " browser."));
+              console.log("\uD83D\uDDA5\uFE0F  Executing on: ".concat(browser, " browser."));
               builder = new _seleniumWebdriver.Builder();
               _context2.t0 = browser;
               _context2.next = _context2.t0 === "chrome" ? 5 : _context2.t0 === "firefox" ? 9 : 14;
@@ -122,9 +119,6 @@ var ScenarioWorld = /*#__PURE__*/function (_World) {
     }());
 
     _this.globalConfig = options.parameters;
-    _this.globalVariables = {
-      currentScreen: ''
-    };
     return _this;
   }
 

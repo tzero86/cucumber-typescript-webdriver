@@ -3,7 +3,9 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.waitFor = void 0;
+exports.waitForSelector = exports.waitFor = void 0;
+
+var _seleniumWebdriver = require("selenium-webdriver");
 
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
 
@@ -70,3 +72,38 @@ var waitFor = /*#__PURE__*/function () {
 }();
 
 exports.waitFor = waitFor;
+
+var waitForSelector = /*#__PURE__*/function () {
+  var _ref3 = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee2(driver, elementIdentifier) {
+    return regeneratorRuntime.wrap(function _callee2$(_context2) {
+      while (1) switch (_context2.prev = _context2.next) {
+        case 0:
+          _context2.prev = 0;
+          _context2.next = 3;
+          return driver.switchTo().defaultContent();
+
+        case 3:
+          _context2.next = 5;
+          return driver.findElement(_seleniumWebdriver.By.css(elementIdentifier));
+
+        case 5:
+          return _context2.abrupt("return", true);
+
+        case 8:
+          _context2.prev = 8;
+          _context2.t0 = _context2["catch"](0);
+          return _context2.abrupt("return", false);
+
+        case 11:
+        case "end":
+          return _context2.stop();
+      }
+    }, _callee2, null, [[0, 8]]);
+  }));
+
+  return function waitForSelector(_x3, _x4) {
+    return _ref3.apply(this, arguments);
+  };
+}();
+
+exports.waitForSelector = waitForSelector;

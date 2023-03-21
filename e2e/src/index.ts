@@ -6,10 +6,7 @@ import * as fs from 'fs'
 
 dotenv.config({path: env('COMMON_CONFIG_FILE')})
 const hostsConfig: HostsConfig = getJsonFromFile(env('HOSTS_URLS_PATH'))
-console.log('HostsConfig: ', hostsConfig)
 const pagesConfig: PagesConfig = getJsonFromFile(env('PAGES_URLS_PATH'))
-console.log('PagesConfig: ', pagesConfig)
-
 const mappingFiles = fs.readdirSync(`${process.cwd()}${env('PAGE_ELEMENTS_PATH')}`)
 
 const pageElementMappings: PageElementMappings = mappingFiles.reduce((pageElementConfigAcc: {}, file: string) => {
@@ -20,7 +17,6 @@ const pageElementMappings: PageElementMappings = mappingFiles.reduce((pageElemen
     {}
 )
 
-console.log('PageElementMappings: ', pageElementMappings)
 
 const worldParameters: GlobalConfig = {
     hostsConfig,
@@ -41,6 +37,6 @@ const dev = `${common} --tags '@dev'`
 const smoke = `${common} --tags '@smoke'`
 const regression = `${common} --tags '@regression'`
 
-console.log(`✨✨✨MAGIC IS STARTING✨✨✨`)
+console.log(`🧪🧪🧪Testing Starting🧪🧪🧪`)
 
 export { dev, smoke, regression}

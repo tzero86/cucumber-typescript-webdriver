@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.getElementText = exports.getElement = exports.elementDisplayed = void 0;
+exports.getElementText = exports.getElement = exports.elementDisplayed = exports.clickElement = void 0;
 
 var _seleniumWebdriver = require("selenium-webdriver");
 
@@ -100,3 +100,31 @@ var getElementText = /*#__PURE__*/function () {
 }();
 
 exports.getElementText = getElementText;
+
+var clickElement = /*#__PURE__*/function () {
+  var _ref4 = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee4(driver, elementIdentifier) {
+    var element;
+    return regeneratorRuntime.wrap(function _callee4$(_context4) {
+      while (1) switch (_context4.prev = _context4.next) {
+        case 0:
+          _context4.next = 2;
+          return getElement(driver, elementIdentifier);
+
+        case 2:
+          element = _context4.sent;
+          _context4.next = 5;
+          return element.click();
+
+        case 5:
+        case "end":
+          return _context4.stop();
+      }
+    }, _callee4);
+  }));
+
+  return function clickElement(_x7, _x8) {
+    return _ref4.apply(this, arguments);
+  };
+}();
+
+exports.clickElement = clickElement;

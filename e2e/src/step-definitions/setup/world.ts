@@ -3,7 +3,7 @@ import { World, IWorldOptions, setWorldConstructor } from "@cucumber/cucumber";
 import firefox from "selenium-webdriver/firefox";
 import { Options } from "selenium-webdriver/chrome";
 import { env } from "../../env/parseEnv";
-import { GlobalConfig, GlobalVariables } from "../../env/global";
+import { GlobalConfig } from "../../env/global";
 import { stringIsOfOptions } from "../../support/options-helper";
 
 
@@ -16,11 +16,10 @@ export class ScenarioWorld extends World {
     constructor(options: IWorldOptions) {
         super(options)
         this.globalConfig = options.parameters as GlobalConfig
-        this.globalVariables = {currentScreen: ''}
+        
     }
 
     globalConfig: GlobalConfig;
-    globalVariables: GlobalVariables;
     screen!: Screen;
 
     async init(): Promise<Screen> {
@@ -35,7 +34,6 @@ export class ScenarioWorld extends World {
     }
 
     private newBrowser = async (): Promise<string> => {
-        console.log(`UI_AUTOMATION_BROWSER Value: ${process.env.UI_AUTOMATION_BROWSER}`)
         const automationBrowser = env("UI_AUTOMATION_BROWSER");
         const automationBrowsers = ["chrome", "firefox", "safari"];
         const validAutomationBrowser = stringIsOfOptions(
@@ -46,7 +44,7 @@ export class ScenarioWorld extends World {
     };
 
     private browserBuilder = async (browser: string): Promise<Builder> => {
-        console.log(`🖥️ Executing on: ${browser} browser.`);
+        console.log(`🖥️  Executing on: ${browser} browser.`);
         const builder = new Builder();
         switch (browser) {
             case "chrome": {

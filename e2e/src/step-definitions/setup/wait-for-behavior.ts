@@ -1,3 +1,5 @@
+import { By, WebDriver, ElementLocator } from 'selenium-webdriver'
+
 export const waitFor = async<T>(
     predicate: () => T | Promise<T>,
     options?: { timeout?: number; wait?: number }
@@ -17,4 +19,19 @@ export const waitFor = async<T>(
         console.log(`⏱️ Waiting for ${wait}ms...`)
     }
     throw new Error(`⌚ Wait time of ${timeout}ms exceeded.`)
+}
+
+
+export const waitForSelector = async(
+    driver: WebDriver,
+    elementIdentifier: ElementLocator
+): Promise<boolean> => {
+    try {
+        await driver.switchTo().defaultContent()
+        await driver.findElement(By.css(elementIdentifier))
+        return true
+    } catch (e) {
+        return false
+    }
+
 }
