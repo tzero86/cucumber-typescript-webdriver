@@ -1,5 +1,5 @@
 import { By, WebDriver, WebElement } from "selenium-webdriver"
-import { ElementLocator } from "../env/global"
+import { ElementLocator, InputValue } from "../env/global"
 
 
 export const getElement = async (
@@ -9,6 +9,18 @@ export const getElement = async (
     const element = await driver.findElement(By.css(elementIdentifier))
     return element
 }
+
+
+export const getElementWithOption = async (
+    driver: WebDriver,
+    elementIdentifier: ElementLocator,
+    option: string
+): Promise<WebElement> => {
+    const element = await driver.findElement(By.css(`${elementIdentifier} > option[value="${option}"]`))
+    return element
+}
+
+
 
 export const elementDisplayed = async (
     driver: WebDriver,
@@ -38,5 +50,26 @@ export const clickElement = async (
     elementIdentifier: ElementLocator
 ): Promise<void> => {
     const element = await getElement(driver, elementIdentifier)
+    await element.click()
+}
+
+
+export const inputElementValue = async (
+    driver: WebDriver,
+    elementIdentifier: ElementLocator,
+    inputValue: InputValue
+): Promise<void> => {
+    const element = await getElement(driver, elementIdentifier)
+    await element.clear()
+    await element.sendKeys(inputValue)
+}
+
+
+export const selectElementValue = async (
+    driver: WebDriver,
+    elementIdentifier: ElementLocator,
+    option: string
+): Promise<void> => {
+    const element = await getElementWithOption(driver, elementIdentifier, option)
     await element.click()
 }
