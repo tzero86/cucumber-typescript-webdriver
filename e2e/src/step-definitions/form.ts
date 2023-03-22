@@ -1,16 +1,16 @@
-import { Then } from '@cucumber/cucumber'
-import { waitFor, waitForSelector } from './setup/wait-for-behavior'
-import { getElementLocator } from '../support/web-element-helper'
-import { ScenarioWorld } from './setup/world'
-import { ElementKey, InputValue } from '../env/global'
-import { inputElementValue, selectElementValue } from '../support/html-behavior'
+import {Then} from '@cucumber/cucumber'
+import {waitFor, waitForSelector} from './setup/wait-for-behavior'
+import {getElementLocator} from '../support/web-element-helper'
+import {ScenarioWorld} from './setup/world'
+import {ElementKey, InputValue} from '../env/global'
+import {inputElementValue, selectElementValue} from '../support/html-behavior'
 
 Then(
     /^I fill in the "([^"]*)" input with "([^"]*)"$/i,
     async function (this: ScenarioWorld, elementKey: ElementKey, inputValue: InputValue) {
 
         const {
-            screen: { driver },
+            screen: {driver},
             globalConfig
         } = this
 
@@ -30,11 +30,11 @@ Then(
     }
 )
 
-Then (
+Then(
     /^I select the "([^"]*)" option from the "([^"]*)"$/,
     async function (this: ScenarioWorld, option: string, elementKey: ElementKey) {
         const {
-            screen: { driver },
+            screen: {driver},
             globalConfig
         } = this
 

@@ -14,7 +14,7 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 745842400
+              "duration": 684392799
             }
           },
           {
@@ -27,7 +27,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 681449099
+              "duration": 853252700
             }
           },
           {
@@ -40,7 +40,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 49472599
+              "duration": 81387400
             }
           },
           {
@@ -53,7 +53,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 4004799
+              "duration": 4514200
             }
           },
           {
@@ -66,7 +66,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 18735100
+              "duration": 23571700
             }
           },
           {
@@ -79,7 +79,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 65811899
+              "duration": 128300900
             }
           },
           {
@@ -92,7 +92,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 33301700
+              "duration": 37939900
             }
           },
           {
@@ -105,7 +105,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 63849999
+              "duration": 91342199
             }
           },
           {
@@ -118,7 +118,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 63124000
+              "duration": 82212000
             }
           },
           {
@@ -131,7 +131,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 65978400
+              "duration": 79390499
             }
           },
           {
@@ -144,7 +144,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 57621199
+              "duration": 79299100
             }
           },
           {
@@ -157,7 +157,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 3093699
+              "duration": 3877800
             }
           },
           {
@@ -170,7 +170,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 82452600
+              "duration": 109743499
             }
           },
           {
@@ -183,7 +183,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 11100499
+              "duration": 12497500
             }
           },
           {
@@ -196,20 +196,20 @@
             },
             "result": {
               "status": "passed",
-              "duration": 19063599
+              "duration": 19794500
             }
           },
           {
             "arguments": [],
             "keyword": "And ",
             "line": 19,
-            "name": "the \"name\" should contain the text \"Terry Barks\"",
+            "name": "the \"name\" should equal the text \"Terry Barks\"",
             "match": {
-              "location": "src\\step-definitions\\assertions\\verify-element-value.ts:10"
+              "location": "src\\step-definitions\\assertions\\verify-element-value.ts:29"
             },
             "result": {
               "status": "passed",
-              "duration": 13505000
+              "duration": 21956199
             }
           },
           {
@@ -222,20 +222,20 @@
             },
             "result": {
               "status": "passed",
-              "duration": 14893299
+              "duration": 21072600
             }
           },
           {
             "arguments": [],
             "keyword": "And ",
             "line": 21,
-            "name": "the \"gender\" should contain the text \"Male\"",
+            "name": "the \"gender\" should equal the text \"Male\"",
             "match": {
-              "location": "src\\step-definitions\\assertions\\verify-element-value.ts:10"
+              "location": "src\\step-definitions\\assertions\\verify-element-value.ts:29"
             },
             "result": {
               "status": "passed",
-              "duration": 12671899
+              "duration": 20617599
             }
           },
           {
@@ -248,20 +248,20 @@
             },
             "result": {
               "status": "passed",
-              "duration": 13954200
+              "duration": 20431099
             }
           },
           {
             "arguments": [],
             "keyword": "And ",
             "line": 23,
-            "name": "the \"address\" should contain the text \"123 Main St, New York\"",
+            "name": "the \"address\" should equal the text \"123 Main St, New York\"",
             "match": {
-              "location": "src\\step-definitions\\assertions\\verify-element-value.ts:10"
+              "location": "src\\step-definitions\\assertions\\verify-element-value.ts:29"
             },
             "result": {
               "status": "passed",
-              "duration": 14624900
+              "duration": 19548799
             }
           },
           {
@@ -274,7 +274,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 9627300
+              "duration": 12182000
             }
           },
           {
@@ -287,7 +287,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 8998699
+              "duration": 11436700
             }
           },
           {
@@ -295,7 +295,7 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 18007699
+              "duration": 57379200
             }
           }
         ],
@@ -314,5 +314,95 @@
     "name": "As a user I expect to be able to create contacts",
     "tags": [],
     "uri": "src\\features\\create-contact.feature"
+  },
+  {
+    "description": "",
+    "elements": [
+      {
+        "description": "",
+        "id": "as-a-user-i-expect-to-be-able-to-navigate-the-home-page;as-a-user-i-expect-to-be-able-to-see-the-contacts-header",
+        "keyword": "Scenario",
+        "line": 6,
+        "name": "As a user I expect to be able to see the contacts header",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 721034700
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 7,
+            "name": "I am on the \"home\" page",
+            "match": {
+              "location": "src\\step-definitions\\navigation.ts:8"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 804097300
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 8,
+            "name": "the \"contacts header\" should contain the text \"Contacts\"",
+            "match": {
+              "location": "src\\step-definitions\\assertions\\verify-element-value.ts:10"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 35033800
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 9,
+            "name": "the \"header logo\" should be displayed",
+            "match": {
+              "location": "src\\step-definitions\\assertions\\verify-element-visibility.ts:9"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 18195900
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 29693599
+            }
+          }
+        ],
+        "tags": [
+          {
+            "name": "@dev",
+            "line": 3
+          },
+          {
+            "name": "@smoke",
+            "line": 4
+          },
+          {
+            "name": "@regression",
+            "line": 5
+          }
+        ],
+        "type": "scenario"
+      }
+    ],
+    "id": "as-a-user-i-expect-to-be-able-to-navigate-the-home-page",
+    "line": 1,
+    "keyword": "Feature",
+    "name": "As a user I expect to be able to navigate the home page",
+    "tags": [],
+    "uri": "src\\features\\home-page.feature"
   }
 ]

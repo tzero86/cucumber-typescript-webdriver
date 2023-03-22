@@ -9,7 +9,7 @@ const hostsConfig: HostsConfig = getJsonFromFile(env('HOSTS_URLS_PATH'))
 const pagesConfig: PagesConfig = getJsonFromFile(env('PAGES_URLS_PATH'))
 const mappingFiles = fs.readdirSync(`${process.cwd()}${env('PAGE_ELEMENTS_PATH')}`)
 
-const pageElementMappings: PageElementMappings = mappingFiles.reduce((pageElementConfigAcc: {}, file: string) => {
+const pageElementMappings: PageElementMappings = mappingFiles.reduce((pageElementConfigAcc: object, file: string) => {
     const key = file.replace('.json', '')
     const elementMappings = getJsonFromFile(`${env('PAGE_ELEMENTS_PATH')}${file}`)
     return {...pageElementConfigAcc, [key]: elementMappings}
