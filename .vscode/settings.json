@@ -8,10 +8,10 @@
     "editor.detectIndentation": false,
     "prettier.tabWidth": 4,
     "workbench.colorCustomizations": {
-        "statusBar.background": "#7C21D7",
-        "statusBar.debuggingBackground": "#7C21D7",
-        "statusBar.noFolderBackground": "#7C21D7",
-        "statussBar.prominentBackground": "#7C21D7"
+        "statusBar.background": "#234334",
+        "statusBar.debuggingBackground": "#234334",
+        "statusBar.noFolderBackground": "#234334",
+        "statussBar.prominentBackground": "#234334"
     },
     "cSpell.words": [
         "chromedriver",

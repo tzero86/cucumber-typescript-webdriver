@@ -5,33 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bce1d527-c564-4480-ae27-6d22624bd655" name="Default Changelist" comment="updated gitignore">
-      <change afterPath="$PROJECT_DIR$/e2e/src/step-definitions/general.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/react-app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/react-app.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/e2e/dist/env/parseEnv.js" beforeDir="false" afterPath="$PROJECT_DIR$/e2e/dist/env/parseEnv.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/e2e/dist/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/e2e/dist/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/e2e/dist/reporter/cucumber-report.js" beforeDir="false" afterPath="$PROJECT_DIR$/e2e/dist/reporter/cucumber-report.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/e2e/dist/step-definitions/assertions/verify-element-value.js" beforeDir="false" afterPath="$PROJECT_DIR$/e2e/dist/step-definitions/assertions/verify-element-value.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/e2e/dist/step-definitions/assertions/verify-element-visibility.js" beforeDir="false" afterPath="$PROJECT_DIR$/e2e/dist/step-definitions/assertions/verify-element-visibility.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/e2e/dist/step-definitions/click.js" beforeDir="false" afterPath="$PROJECT_DIR$/e2e/dist/step-definitions/click.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/e2e/dist/step-definitions/form.js" beforeDir="false" afterPath="$PROJECT_DIR$/e2e/dist/step-definitions/form.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/e2e/dist/step-definitions/navigation.js" beforeDir="false" afterPath="$PROJECT_DIR$/e2e/dist/step-definitions/navigation.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/e2e/dist/step-definitions/setup/hook.js" beforeDir="false" afterPath="$PROJECT_DIR$/e2e/dist/step-definitions/setup/hook.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/e2e/dist/step-definitions/setup/wait-for-behavior.js" beforeDir="false" afterPath="$PROJECT_DIR$/e2e/dist/step-definitions/setup/wait-for-behavior.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/e2e/dist/step-definitions/setup/world.js" beforeDir="false" afterPath="$PROJECT_DIR$/e2e/dist/step-definitions/setup/world.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/e2e/dist/support/html-behavior.js" beforeDir="false" afterPath="$PROJECT_DIR$/e2e/dist/support/html-behavior.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/e2e/dist/support/navigation-behavior.js" beforeDir="false" afterPath="$PROJECT_DIR$/e2e/dist/support/navigation-behavior.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/e2e/dist/support/options-helper.js" beforeDir="false" afterPath="$PROJECT_DIR$/e2e/dist/support/options-helper.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/e2e/dist/support/web-element-helper.js" beforeDir="false" afterPath="$PROJECT_DIR$/e2e/dist/support/web-element-helper.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/e2e/env/common.env" beforeDir="false" afterPath="$PROJECT_DIR$/e2e/env/common.env" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/e2e/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/e2e/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vscode/settings.json" beforeDir="false" afterPath="$PROJECT_DIR$/.vscode/settings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/e2e/cucumber.js" beforeDir="false" afterPath="$PROJECT_DIR$/e2e/cucumber.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/e2e/reports/cucumber-html-report.html" beforeDir="false" afterPath="$PROJECT_DIR$/e2e/reports/cucumber-html-report.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/e2e/reports/report.json" beforeDir="false" afterPath="$PROJECT_DIR$/e2e/reports/report.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/e2e/src/features/create-contact.feature" beforeDir="false" afterPath="$PROJECT_DIR$/e2e/src/features/create-contact.feature" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/e2e/src/features/home-page.feature" beforeDir="false" afterPath="$PROJECT_DIR$/e2e/src/features/home-page.feature" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/e2e/src/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/e2e/src/index.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/e2e/src/step-definitions/assertions/verify-element-value.ts" beforeDir="false" afterPath="$PROJECT_DIR$/e2e/src/step-definitions/assertions/verify-element-value.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/e2e/src/step-definitions/form.ts" beforeDir="false" afterPath="$PROJECT_DIR$/e2e/src/step-definitions/form.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/e2e/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/e2e/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -146,6 +126,19 @@
       <recent name="$PROJECT_DIR$/src" />
     </key>
   </component>
+  <component name="RunManager">
+    <configuration name="cucumber --profile dev" type="js.build_tools.npm" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/e2e/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="cucumber" />
+      </scripts>
+      <arguments value="--profile dev" />
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
@@ -158,7 +151,7 @@
       <option name="presentableId" value="Default" />
       <updated>1638155757223</updated>
       <workItem from="1679511527887" duration="2563000" />
-      <workItem from="1679514300382" duration="785000" />
+      <workItem from="1679514300382" duration="3357000" />
     </task>
     <task id="LOCAL-00001" summary="updated gitignore">
       <created>1679515066203</created>
@@ -210,6 +203,18 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="updated gitignore" />
     <option name="LAST_COMMIT_MESSAGE" value="updated gitignore" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/e2e/src/step-definitions/assertions/verify-element-visibility.ts</url>
+          <line>18</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

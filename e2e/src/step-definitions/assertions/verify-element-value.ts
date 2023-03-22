@@ -39,6 +39,7 @@ Then(
         
         await waitFor(async() => {
             const elementText = await getElementText(driver, elementIdentifier)
+            console.log(`elementText: ${elementText} \nexpectedElementText: ${expectedElementText}`)
             return elementText === expectedElementText
         })
 
