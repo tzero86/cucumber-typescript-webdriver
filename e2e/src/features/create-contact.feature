@@ -23,3 +23,4 @@ Scenario: As a user I expect to be able to create a new contact
     And the "address" should equal the text "123 Main St, New York"
     And the "edit" should be displayed
     And the "delete" should be displayed
+
