@@ -4,290 +4,186 @@
     "elements": [
       {
         "description": "",
-        "id": "as-a-user-i-expect-to-be-able-to-create-contacts;as-a-user-i-expect-to-be-able-to-create-a-new-contact",
+        "id": "as-a-user-i-can-interact-with-radio-buttons;as-a-user-i-can-interact-and-assert-on-radio-buttons",
         "keyword": "Scenario",
-        "line": 4,
-        "name": "As a user I expect to be able to create a new contact",
+        "line": 6,
+        "name": "As a user I can interact and assert on radio buttons",
         "steps": [
           {
             "keyword": "Before",
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 636530999
+              "duration": 656519700
             }
           },
           {
             "arguments": [],
             "keyword": "Given ",
-            "line": 5,
+            "line": 7,
             "name": "I am on the \"home\" page",
             "match": {
               "location": "src\\step-definitions\\navigation.ts:8"
             },
             "result": {
               "status": "passed",
-              "duration": 662098400
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "And ",
-            "line": 6,
-            "name": "I click the \"create\" button",
-            "match": {
-              "location": "src\\step-definitions\\click.ts:9"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 45820300
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "When ",
-            "line": 7,
-            "name": "I am directed to the \"create contact\" page",
-            "match": {
-              "location": "src\\step-definitions\\navigation.ts:22"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 3259200
+              "duration": 785932199
             }
           },
           {
             "arguments": [],
             "keyword": "And ",
             "line": 8,
-            "name": "the \"create contact header\" should contain the text \"Create Contact\"",
+            "name": "I click the \"playground\" button",
             "match": {
-              "location": "src\\step-definitions\\assertions\\verify-element-value.ts:10"
+              "location": "src\\step-definitions\\click.ts:9"
             },
             "result": {
               "status": "passed",
-              "duration": 18445699
+              "duration": 843622199
             }
           },
           {
             "arguments": [],
-            "keyword": "Then ",
+            "keyword": "When ",
             "line": 9,
-            "name": "I fill in the \"name\" input with \"Terry Barks\"",
+            "name": "I am directed to the \"playground\" page",
             "match": {
-              "location": "src\\step-definitions\\form.ts:8"
+              "location": "src\\step-definitions\\navigation.ts:22"
             },
             "result": {
               "status": "passed",
-              "duration": 60085599
+              "duration": 7382400
             }
           },
           {
             "arguments": [],
             "keyword": "And ",
             "line": 10,
-            "name": "I select the \"Male\" option from the \"gender\"",
+            "name": "the \"female label\" should not contain the text \"Male\"",
             "match": {
-              "location": "src\\step-definitions\\form.ts:33"
+              "location": "src\\step-definitions\\assertions\\verify-element-value.ts:10"
             },
             "result": {
               "status": "passed",
-              "duration": 30964799
+              "duration": 26624499
             }
           },
           {
             "arguments": [],
             "keyword": "And ",
             "line": 11,
-            "name": "I fill in the \"phone\" input with \"555-555-5555\"",
+            "name": "the \"male label\" should not contain the text \"Female\"",
             "match": {
-              "location": "src\\step-definitions\\form.ts:8"
+              "location": "src\\step-definitions\\assertions\\verify-element-value.ts:10"
             },
             "result": {
               "status": "passed",
-              "duration": 55574599
+              "duration": 28214700
             }
           },
           {
             "arguments": [],
             "keyword": "And ",
             "line": 12,
-            "name": "I fill in the \"street\" input with \"123 Main St\"",
+            "name": "the \"female\" radio button should be checked",
             "match": {
-              "location": "src\\step-definitions\\form.ts:8"
+              "location": "src\\step-definitions\\assertions\\verify-element-checked.ts:8"
             },
             "result": {
               "status": "passed",
-              "duration": 58863400
+              "duration": 24327600
             }
           },
           {
             "arguments": [],
             "keyword": "And ",
             "line": 13,
-            "name": "I fill in the \"city\" input with \"New York\"",
+            "name": "the \"male\" radio button should not be checked",
             "match": {
-              "location": "src\\step-definitions\\form.ts:8"
+              "location": "src\\step-definitions\\assertions\\verify-element-checked.ts:8"
             },
             "result": {
               "status": "passed",
-              "duration": 58178499
+              "duration": 23664499
             }
           },
           {
             "arguments": [],
             "keyword": "And ",
             "line": 14,
-            "name": "I click the \"save\" button",
+            "name": "I check the \"male\" radio button",
             "match": {
-              "location": "src\\step-definitions\\click.ts:9"
+              "location": "src\\step-definitions\\check.ts:9"
             },
             "result": {
               "status": "passed",
-              "duration": 52050500
+              "duration": 89367200
             }
           },
           {
             "arguments": [],
             "keyword": "And ",
             "line": 15,
-            "name": "I am directed to the \"home\" page",
+            "name": "the \"male\" radio button should be checked",
             "match": {
-              "location": "src\\step-definitions\\navigation.ts:22"
+              "location": "src\\step-definitions\\assertions\\verify-element-checked.ts:8"
             },
             "result": {
               "status": "passed",
-              "duration": 2721400
+              "duration": 21139199
             }
           },
           {
             "arguments": [],
             "keyword": "And ",
             "line": 16,
-            "name": "I fill in the \"search\" input with \"Terry Barks\"",
+            "name": "the \"female\" radio button should not be checked",
             "match": {
-              "location": "src\\step-definitions\\form.ts:8"
+              "location": "src\\step-definitions\\assertions\\verify-element-checked.ts:8"
             },
             "result": {
               "status": "passed",
-              "duration": 80214500
+              "duration": 21305099
             }
           },
           {
             "arguments": [],
             "keyword": "And ",
             "line": 17,
-            "name": "the \"contact\" should be displayed",
+            "name": "I check the \"female\" radio button",
             "match": {
-              "location": "src\\step-definitions\\assertions\\verify-element-visibility.ts:9"
+              "location": "src\\step-definitions\\check.ts:9"
             },
             "result": {
               "status": "passed",
-              "duration": 9405499
+              "duration": 73466500
             }
           },
           {
             "arguments": [],
             "keyword": "And ",
             "line": 18,
-            "name": "the \"full name label\" should contain the text \"Name:\"",
+            "name": "the \"female\" radio button should be checked",
             "match": {
-              "location": "src\\step-definitions\\assertions\\verify-element-value.ts:10"
+              "location": "src\\step-definitions\\assertions\\verify-element-checked.ts:8"
             },
             "result": {
               "status": "passed",
-              "duration": 17145499
+              "duration": 21334400
             }
           },
           {
             "arguments": [],
             "keyword": "And ",
             "line": 19,
-            "name": "the \"name\" should equal the text \"Terry Barks\"",
+            "name": "the \"male\" radio button should not be checked",
             "match": {
-              "location": "src\\step-definitions\\assertions\\verify-element-value.ts:29"
+              "location": "src\\step-definitions\\assertions\\verify-element-checked.ts:8"
             },
             "result": {
               "status": "passed",
-              "duration": 13560699
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "And ",
-            "line": 20,
-            "name": "the \"gender label\" should contain the text \"Gender:\"",
-            "match": {
-              "location": "src\\step-definitions\\assertions\\verify-element-value.ts:10"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 15082200
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "And ",
-            "line": 21,
-            "name": "the \"gender\" should equal the text \"Male\"",
-            "match": {
-              "location": "src\\step-definitions\\assertions\\verify-element-value.ts:29"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 12263900
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "And ",
-            "line": 22,
-            "name": "the \"address label\" should contain the text \"Address:\"",
-            "match": {
-              "location": "src\\step-definitions\\assertions\\verify-element-value.ts:10"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 15360300
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "And ",
-            "line": 23,
-            "name": "the \"address\" should equal the text \"123 Main St, New York\"",
-            "match": {
-              "location": "src\\step-definitions\\assertions\\verify-element-value.ts:29"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 15880999
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "And ",
-            "line": 24,
-            "name": "the \"edit\" should be displayed",
-            "match": {
-              "location": "src\\step-definitions\\assertions\\verify-element-visibility.ts:9"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 10556700
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "And ",
-            "line": 25,
-            "name": "the \"delete\" should be displayed",
-            "match": {
-              "location": "src\\step-definitions\\assertions\\verify-element-visibility.ts:9"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 9039400
+              "duration": 22961400
             }
           },
           {
@@ -295,89 +191,7 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 12858999
-            }
-          }
-        ],
-        "tags": [
-          {
-            "name": "@dev",
-            "line": 3
-          }
-        ],
-        "type": "scenario"
-      }
-    ],
-    "id": "as-a-user-i-expect-to-be-able-to-create-contacts",
-    "line": 1,
-    "keyword": "Feature",
-    "name": "As a user I expect to be able to create contacts",
-    "tags": [],
-    "uri": "src\\features\\create-contact.feature"
-  },
-  {
-    "description": "",
-    "elements": [
-      {
-        "description": "",
-        "id": "as-a-user-i-expect-to-be-able-to-navigate-the-home-page;as-a-user-i-expect-to-be-able-to-see-the-contacts-header",
-        "keyword": "Scenario",
-        "line": 6,
-        "name": "As a user I expect to be able to see the contacts header",
-        "steps": [
-          {
-            "keyword": "Before",
-            "hidden": true,
-            "result": {
-              "status": "passed",
-              "duration": 615090800
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "Given ",
-            "line": 7,
-            "name": "I am on the \"home\" page",
-            "match": {
-              "location": "src\\step-definitions\\navigation.ts:8"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 667427900
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "And ",
-            "line": 8,
-            "name": "the \"contacts header\" should contain the text \"Contacts\"",
-            "match": {
-              "location": "src\\step-definitions\\assertions\\verify-element-value.ts:10"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 17588500
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "Then ",
-            "line": 9,
-            "name": "the \"header logo\" should be displayed",
-            "match": {
-              "location": "src\\step-definitions\\assertions\\verify-element-visibility.ts:9"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 11855000
-            }
-          },
-          {
-            "keyword": "After",
-            "hidden": true,
-            "result": {
-              "status": "passed",
-              "duration": 12215900
+              "duration": 43948199
             }
           }
         ],
@@ -398,11 +212,11 @@
         "type": "scenario"
       }
     ],
-    "id": "as-a-user-i-expect-to-be-able-to-navigate-the-home-page",
+    "id": "as-a-user-i-can-interact-with-radio-buttons",
     "line": 1,
     "keyword": "Feature",
-    "name": "As a user I expect to be able to navigate the home page",
+    "name": "As a user I can interact with radio buttons",
     "tags": [],
-    "uri": "src\\features\\home-page.feature"
+    "uri": "src\\features\\playground\\radio-buttons.feature"
   }
 ]

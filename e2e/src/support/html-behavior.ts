@@ -73,3 +73,15 @@ export const selectElementValue = async (
     const element = await getElementWithOption(driver, elementIdentifier, option)
     await element.click()
 }
+
+export const elementChecked = async (
+    driver: WebDriver,
+    elementIdentifier: ElementLocator
+): Promise<boolean | null> => {
+    const element = await getElement(driver, elementIdentifier)
+    if (!await element.isSelected()) {
+        return false
+    } else {
+        return true
+    }
+}
