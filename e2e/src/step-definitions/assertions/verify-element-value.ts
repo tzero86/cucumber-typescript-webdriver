@@ -27,20 +27,20 @@ Then (
 )
 
 Then(
-    /^the "([^"]*)" should equal the text "(.*)"$/,
-    async function(elementKey: ElementKey, expectedElementText: ExpectedElementText) {
+    /^the "([^"]*)" should( not)? equal the text "(.*)"$/,
+    async function(elementKey: ElementKey, negate: Negate, expectedElementText: ExpectedElementText) {
         const { 
             screen: {driver},
             globalConfig 
         } = this
 
-        console.log(`the ${elementKey} should equal the text ${expectedElementText}`)
+        console.log(`the ${elementKey} should ${negate?'not':''} equal the text ${expectedElementText}`)
         const elementIdentifier = await getElementLocator(driver, elementKey, globalConfig)
         
         await waitFor(async() => {
             const elementText = await getElementText(driver, elementIdentifier)
             console.log(`elementText: ${elementText} \nexpectedElementText: ${expectedElementText}`)
-            return elementText === expectedElementText
+            return elementText === expectedElementText === !negate
         })
 
     }
