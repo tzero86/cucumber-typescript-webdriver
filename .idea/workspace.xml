@@ -5,13 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bce1d527-c564-4480-ae27-6d22624bd655" name="Default Changelist" comment="updated gitignore">
-      <change beforePath="$PROJECT_DIR$/.idea/react-app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/react-app.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vscode/settings.json" beforeDir="false" afterPath="$PROJECT_DIR$/.vscode/settings.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/e2e/cucumber.js" beforeDir="false" afterPath="$PROJECT_DIR$/e2e/cucumber.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/e2e/reports/cucumber-html-report.html" beforeDir="false" afterPath="$PROJECT_DIR$/e2e/reports/cucumber-html-report.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/e2e/reports/report.json" beforeDir="false" afterPath="$PROJECT_DIR$/e2e/reports/report.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/e2e/src/step-definitions/assertions/verify-element-value.ts" beforeDir="false" afterPath="$PROJECT_DIR$/e2e/src/step-definitions/assertions/verify-element-value.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -104,6 +100,8 @@
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;last_opened_file_path&quot;: &quot;C:/Users/medin/OneDrive/Documentos/cucumber-typescript-webdriver&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
@@ -111,8 +109,8 @@
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;yarn&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;C:\\Users\\medin\\OneDrive\\Documentos\\cucumber-typescript-webdriver\\e2e\\node_modules\\typescript\\lib&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settingsdialog.IDE.editor.colors.Console Font&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;C:\\Users\\medin\\AquaProjects\\cucumber-typescript-webdriver\\e2e\\node_modules\\typescript\\lib&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
@@ -152,6 +150,16 @@
       <updated>1638155757223</updated>
       <workItem from="1679511527887" duration="2563000" />
       <workItem from="1679514300382" duration="3357000" />
+      <workItem from="1679521356066" duration="43000" />
+      <workItem from="1679521413350" duration="465000" />
+      <workItem from="1679521939790" duration="269000" />
+      <workItem from="1679522229661" duration="396000" />
+      <workItem from="1679522648744" duration="425000" />
+      <workItem from="1679523100551" duration="227000" />
+      <workItem from="1679523352926" duration="1770000" />
+      <workItem from="1679525260959" duration="1448000" />
+      <workItem from="1679528878321" duration="1760000" />
+      <workItem from="1679572689605" duration="313000" />
     </task>
     <task id="LOCAL-00001" summary="updated gitignore">
       <created>1679515066203</created>
@@ -210,7 +218,6 @@
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/e2e/src/step-definitions/assertions/verify-element-visibility.ts</url>
           <line>18</line>
-          <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="1" />
         </line-breakpoint>
       </breakpoints>
