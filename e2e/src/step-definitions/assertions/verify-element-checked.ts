@@ -1,5 +1,5 @@
 import { Then } from '@cucumber/cucumber'
-import { waitFor } from '../setup/wait-for-behavior'
+import { waitFor } from '../../support/wait-for-behavior'
 import { ScenarioWorld } from '../setup/world'
 import { getElementLocator } from '../../support/web-element-helper'
 import { ElementKey, Negate } from '../../env/global'

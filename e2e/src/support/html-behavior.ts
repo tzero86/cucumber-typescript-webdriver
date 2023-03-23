@@ -53,6 +53,14 @@ export const clickElement = async (
     await element.click()
 }
 
+export const clickElementWithText = async (
+    driver: WebDriver,
+    elementIdentifier: ElementLocator
+): Promise<void> => {
+    const element = await driver.findElement(By.xpath(elementIdentifier))
+    await element.click()
+}
+
 
 export const inputElementValue = async (
     driver: WebDriver,
@@ -84,4 +92,13 @@ export const elementChecked = async (
     } else {
         return true
     }
+}
+
+
+export const getElementValue = async (
+    driver: WebDriver,
+    elementIdentifier: ElementLocator
+): Promise<string> => {
+    const element = await getElement(driver, elementIdentifier)
+    return await element.getAttribute('value')
 }

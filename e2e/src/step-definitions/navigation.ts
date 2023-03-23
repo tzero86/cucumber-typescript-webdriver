@@ -2,7 +2,7 @@ import  { Given } from '@cucumber/cucumber'
 import { PageId } from '../env/global'
 import { currentPathMatchesPageId } from '../support/navigation-behavior'
 import { navigateToPage } from '../support/navigation-behavior'
-import { waitFor } from './setup/wait-for-behavior'
+import { waitFor } from '../support/wait-for-behavior'
 import { ScenarioWorld } from './setup/world'
 
 Given(

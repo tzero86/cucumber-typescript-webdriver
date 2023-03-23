@@ -9,7 +9,6 @@ Feature: As a user I expect to be able to navigate the home page
         Then the "header logo" should be displayed
 
 
-    @dev
     @smoke
     @regression
     Scenario: As a user I don't expect to see a contact that does not exist

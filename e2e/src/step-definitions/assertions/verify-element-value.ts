@@ -1,9 +1,9 @@
 import { Then } from "@cucumber/cucumber"
-import { ElementKey, ExpectedElementText, Negate } from "../../env/global"
+import { ElementKey, ExpectedElementText, ExpectedElementValue, Negate } from "../../env/global"
 import { getElementLocator } from "../../support/web-element-helper"
 import { ScenarioWorld } from "../setup/world"
-import { waitFor } from "../setup/wait-for-behavior"
-import { getElementText } from "../../support/html-behavior"
+import { waitFor } from "../../support/wait-for-behavior"
+import { getElementText, getElementValue } from "../../support/html-behavior"
 
 
 
@@ -46,3 +46,23 @@ Then(
     }
 )
 
+
+Then(
+    /^the "([^"]*)" should( not)? contain the value "(.*)"$/,
+    async function(this: ScenarioWorld, elementKey: ElementKey, negate: Negate, expectedElementValue: ExpectedElementValue) {
+        const { 
+            screen: {driver},
+            globalConfig
+        } = this
+
+        console.log(`the ${elementKey} should ${negate?'not':''} contain the value ${expectedElementValue}`)
+
+        const elementIdentifier = await getElementLocator(driver, elementKey, globalConfig)
+
+        await waitFor(async() => {
+            const elementAttribute = await getElementValue(driver, elementIdentifier)
+            return elementAttribute?.includes(expectedElementValue) === !negate
+        })
+
+    }
+)
