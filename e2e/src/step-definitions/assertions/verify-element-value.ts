@@ -28,7 +28,7 @@ Then (
 
 Then(
     /^the "([^"]*)" should( not)? equal the text "(.*)"$/,
-    async function(elementKey: ElementKey, negate: Negate, expectedElementText: ExpectedElementText) {
+    async function(this: ScenarioWorld, elementKey: ElementKey, negate: Negate, expectedElementText: ExpectedElementText) {
         const { 
             screen: {driver},
             globalConfig 
@@ -62,6 +62,28 @@ Then(
         await waitFor(async() => {
             const elementAttribute = await getElementValue(driver, elementIdentifier)
             return elementAttribute?.includes(expectedElementValue) === !negate
+        })
+
+    }
+)
+
+
+
+Then(
+    /^the "([^"]*)" should( not)? equal the value "(.*)"$/,
+    async function(this: ScenarioWorld, elementKey: ElementKey, negate: Negate, expectedElementValue: ExpectedElementValue) {
+        const { 
+            screen: {driver},
+            globalConfig
+        } = this
+
+        console.log(`the ${elementKey} should ${negate?'not':''} equal the value ${expectedElementValue}`)
+
+        const elementIdentifier = await getElementLocator(driver, elementKey, globalConfig)
+
+        await waitFor(async() => {
+            const elementAttribute = await getElementValue(driver, elementIdentifier)
+            return (elementAttribute === expectedElementValue) === !negate
         })
 
     }

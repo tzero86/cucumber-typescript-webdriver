@@ -3,7 +3,7 @@ import { waitFor } from '../../support/wait-for-behavior'
 import { ElementKey, Negate } from '../../env/global'
 import { getElementLocator } from '../../support/web-element-helper'
 import { ScenarioWorld } from '../setup/world'
-import { elementDisplayed } from '../../support/html-behavior'
+import { elementDisplayed, elementEnabled } from '../../support/html-behavior'
 
 
 Then(
@@ -24,3 +24,19 @@ Then(
     })
 
 
+Then(
+    /^the "([^"]*)" should( not)? be enabled$/,
+    async function (this: ScenarioWorld ,elementKey: ElementKey, negate: Negate) {
+        const { 
+            screen: {driver},
+            globalConfig 
+        } = this
+        console.log(`the ${elementKey} should ${negate?"not":""} be enabled`)
+        const elementIdentifier = await getElementLocator(driver, elementKey, globalConfig)
+        
+        await waitFor(async () => {
+            const isElementEnabled = await elementEnabled(driver, elementIdentifier)   
+            return isElementEnabled  === !negate
+        })
+    }
+)

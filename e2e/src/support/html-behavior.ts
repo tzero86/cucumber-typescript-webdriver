@@ -102,3 +102,25 @@ export const getElementValue = async (
     const element = await getElement(driver, elementIdentifier)
     return await element.getAttribute('value')
 }
+
+export const scrollElementIntoView = async (
+    driver: WebDriver,
+    elementIdentifier: ElementLocator
+): Promise<void> => {
+    const element = await getElement(driver, elementIdentifier)
+    await driver.executeScript('arguments[0].scrollIntoView(false);', element)
+    await driver.sleep(1500)
+}
+
+
+export const elementEnabled = async (
+    driver: WebDriver,
+    elementIdentifier: ElementLocator
+): Promise<boolean | null> => {
+    const element = await getElement(driver, elementIdentifier)
+    if (!await element.isEnabled()) {
+        return false
+    } else {
+        return true
+    }
+}
