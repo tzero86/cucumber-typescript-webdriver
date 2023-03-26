@@ -6,13 +6,13 @@ import { ElementKey, Negate } from '../../env/global'
 import { elementChecked } from '../../support/html-behavior'
 
 Then (
-    /^the "([^"]*)" radio button should( not)? be checked$/,
+    /^the "([^"]*)" (?:radio button|check box) should( not)? be checked$/,
     async function (this: ScenarioWorld, elementKey: ElementKey, negate: Negate) {
         const { 
             screen: { driver },
             globalConfig
         } = this
-        console.log(`the ${elementKey} check should ${negate?'not':''} be checked`)
+        console.log(`the ${elementKey} should ${negate?'not':''} be checked`)
         const elementIdentifier = await getElementLocator(driver, elementKey, globalConfig)
 
         await waitFor( async () => {
