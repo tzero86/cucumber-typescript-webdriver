@@ -70,3 +70,36 @@ Then(
 
     }
 )
+
+
+Then(
+    /^the "([^"]*)" on the "([^"]*)" iframe should( not)? equal the text "(.*)"$/,
+    async function(this: ScenarioWorld, elementKey: ElementKey, iframeKey: IframeKey, negate: Negate, expectedElementText: ExpectedElementText) {
+        const { 
+            screen: {driver},
+            globalConfig
+        } = this
+
+        console.log(`the ${elementKey} on the ${iframeKey} iframe should ${negate?'not':''} equal the text ${expectedElementText}`)
+
+        const elementIdentifier = await getElementLocator(driver, elementKey, globalConfig)
+        const iframeIdentifier = await getElementLocator(driver, iframeKey, globalConfig)
+
+        await waitFor(async() => {
+            const iframeStable = await waitForSelector(driver, iframeIdentifier)
+
+            if (iframeStable) {
+                const elementStable = await waitForSelectorInIframe(driver, iframeIdentifier, elementIdentifier)
+                if (elementStable) {
+                    const elementText = await getElementText(driver, elementIdentifier)
+                    return (elementText === expectedElementText) === !negate
+                } else {
+                    return elementStable
+                }
+            } else {
+                return iframeStable
+            }
+        })
+
+    }
+)

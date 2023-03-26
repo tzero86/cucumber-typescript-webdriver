@@ -14,7 +14,7 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 661522699
+              "duration": 721823700
             }
           },
           {
@@ -27,7 +27,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 748921800
+              "duration": 755076999
             }
           },
           {
@@ -40,7 +40,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 1002563599
+              "duration": 810248100
             }
           },
           {
@@ -53,7 +53,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 8394700
+              "duration": 7747100
             }
           },
           {
@@ -66,20 +66,20 @@
             },
             "result": {
               "status": "passed",
-              "duration": 1538586699
+              "duration": 1544887199
             }
           },
           {
             "arguments": [],
             "keyword": "And ",
             "line": 11,
-            "name": "I fill in the \"search\" input on the \"basic iframe\" iframe with \"Alvin Hamilton\"",
+            "name": "I fill in the \"search\" input on the \"basic iframe\" iframe with \"Brody Hess\"",
             "match": {
               "location": "src\\step-definitions\\iframe.ts:9"
             },
             "result": {
               "status": "passed",
-              "duration": 132778699
+              "duration": 120693099
             }
           },
           {
@@ -92,7 +92,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 49899000
+              "duration": 52022099
             }
           },
           {
@@ -105,20 +105,98 @@
             },
             "result": {
               "status": "passed",
-              "duration": 58703399
+              "duration": 59442899
             }
           },
           {
             "arguments": [],
             "keyword": "And ",
             "line": 14,
-            "name": "the \"full name label\" on the \"basic iframe\" iframe should not contain the text \"Cordyceps\"",
+            "name": "the \"name\" on the \"basic iframe\" iframe should equal the text \"Brody Hess\"",
+            "match": {
+              "location": "src\\step-definitions\\assertions\\verify-iframe.ts:75"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 57043399
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 15,
+            "name": "the \"gender label\" on the \"basic iframe\" iframe should contain the text \"Gender:\"",
             "match": {
               "location": "src\\step-definitions\\assertions\\verify-iframe.ts:42"
             },
             "result": {
               "status": "passed",
-              "duration": 55840200
+              "duration": 55661700
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 16,
+            "name": "the \"gender\" on the \"basic iframe\" iframe should equal the text \"Male\"",
+            "match": {
+              "location": "src\\step-definitions\\assertions\\verify-iframe.ts:75"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 56293100
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 17,
+            "name": "the \"address label\" on the \"basic iframe\" iframe should contain the text \"Address:\"",
+            "match": {
+              "location": "src\\step-definitions\\assertions\\verify-iframe.ts:42"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 58565199
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 18,
+            "name": "the \"address\" on the \"basic iframe\" iframe should equal the text \"553 Mi St., Murcia\"",
+            "match": {
+              "location": "src\\step-definitions\\assertions\\verify-iframe.ts:75"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 63041900
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 19,
+            "name": "the \"edit\" on the \"basic iframe\" iframe should be displayed",
+            "match": {
+              "location": "src\\step-definitions\\assertions\\verify-iframe.ts:9"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 91003200
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 20,
+            "name": "the \"delete\" on the \"basic iframe\" iframe should be displayed",
+            "match": {
+              "location": "src\\step-definitions\\assertions\\verify-iframe.ts:9"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 139519099
             }
           },
           {
@@ -126,7 +204,7 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 34186900
+              "duration": 34004199
             }
           }
         ],

@@ -8,10 +8,17 @@ Feature: As a user I can interact with iframes
         And I click the "playground" button
         When I am directed to the "playground" page
         And I scroll to the "basic iframe" iframe
-        And I fill in the "search" input on the "basic iframe" iframe with "Alvin Hamilton"
+        And I fill in the "search" input on the "basic iframe" iframe with "Brody Hess"
         And the "contact" on the "basic iframe" iframe should be displayed
         And the "full name label" on the "basic iframe" iframe should contain the text "Name:"
-        And the "full name label" on the "basic iframe" iframe should not contain the text "Cordyceps"
+        And the "name" on the "basic iframe" iframe should equal the text "Brody Hess"
+        And the "gender label" on the "basic iframe" iframe should contain the text "Gender:"
+        And the "gender" on the "basic iframe" iframe should equal the text "Male"
+        And the "address label" on the "basic iframe" iframe should contain the text "Address:"
+        And the "address" on the "basic iframe" iframe should equal the text "553 Mi St., Murcia"
+        And the "edit" on the "basic iframe" iframe should be displayed
+        And the "delete" on the "basic iframe" iframe should be displayed
+
 
 
 
