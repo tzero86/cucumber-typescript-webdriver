@@ -4,17 +4,17 @@
     "elements": [
       {
         "description": "",
-        "id": "as-a-user-i-can-interact-with-checkboxes;as-a-user-i-can-interact-and-assert-on-checkboxes",
+        "id": "as-a-user-i-can-interact-with-iframes;as-a-user-i-can-interact-and-assert-on-iframes",
         "keyword": "Scenario",
         "line": 6,
-        "name": "As a user I can interact and assert on checkboxes",
+        "name": "As a user I can interact and assert on iframes",
         "steps": [
           {
             "keyword": "Before",
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 735371900
+              "duration": 661522699
             }
           },
           {
@@ -27,7 +27,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 786444800
+              "duration": 748921800
             }
           },
           {
@@ -40,7 +40,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 923150000
+              "duration": 1002563599
             }
           },
           {
@@ -53,111 +53,72 @@
             },
             "result": {
               "status": "passed",
-              "duration": 17536199
+              "duration": 8394700
             }
           },
           {
             "arguments": [],
             "keyword": "And ",
             "line": 10,
-            "name": "I scroll to the \"blue\" check box",
+            "name": "I scroll to the \"basic iframe\" iframe",
             "match": {
               "location": "src\\step-definitions\\scroll.ts:9"
             },
             "result": {
               "status": "passed",
-              "duration": 1538104199
+              "duration": 1538586699
             }
           },
           {
             "arguments": [],
-            "keyword": "Then ",
+            "keyword": "And ",
             "line": 11,
-            "name": "the \"blue\" check box should not be checked",
+            "name": "I fill in the \"search\" input on the \"basic iframe\" iframe with \"Alvin Hamilton\"",
             "match": {
-              "location": "src\\step-definitions\\assertions\\verify-element-checked.ts:8"
+              "location": "src\\step-definitions\\iframe.ts:9"
             },
             "result": {
               "status": "passed",
-              "duration": 21775700
+              "duration": 132778699
             }
           },
           {
             "arguments": [],
             "keyword": "And ",
             "line": 12,
-            "name": "the \"red\" check box should not be checked",
+            "name": "the \"contact\" on the \"basic iframe\" iframe should be displayed",
             "match": {
-              "location": "src\\step-definitions\\assertions\\verify-element-checked.ts:8"
+              "location": "src\\step-definitions\\assertions\\verify-iframe.ts:9"
             },
             "result": {
               "status": "passed",
-              "duration": 18167100
+              "duration": 49899000
             }
           },
           {
             "arguments": [],
             "keyword": "And ",
             "line": 13,
-            "name": "the \"grey\" check box should not be checked",
+            "name": "the \"full name label\" on the \"basic iframe\" iframe should contain the text \"Name:\"",
             "match": {
-              "location": "src\\step-definitions\\assertions\\verify-element-checked.ts:8"
+              "location": "src\\step-definitions\\assertions\\verify-iframe.ts:42"
             },
             "result": {
               "status": "passed",
-              "duration": 19672999
+              "duration": 58703399
             }
           },
           {
             "arguments": [],
             "keyword": "And ",
             "line": 14,
-            "name": "the \"green\" check box should not be checked",
+            "name": "the \"full name label\" on the \"basic iframe\" iframe should not contain the text \"Cordyceps\"",
             "match": {
-              "location": "src\\step-definitions\\assertions\\verify-element-checked.ts:8"
+              "location": "src\\step-definitions\\assertions\\verify-iframe.ts:42"
             },
             "result": {
               "status": "passed",
-              "duration": 19310200
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "And ",
-            "line": 15,
-            "name": "I check the \"green\" check box",
-            "match": {
-              "location": "src\\step-definitions\\check.ts:9"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 57072699
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "And ",
-            "line": 16,
-            "name": "I sleep \"6\" seconds",
-            "match": {
-              "location": "src\\step-definitions\\general.ts:5"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 6012254399
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "And ",
-            "line": 17,
-            "name": "the \"green\" check box should be checked",
-            "match": {
-              "location": "src\\step-definitions\\assertions\\verify-element-checked.ts:8"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 20045899
+              "duration": 55840200
             }
           },
           {
@@ -165,7 +126,7 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 34254200
+              "duration": 34186900
             }
           }
         ],
@@ -186,11 +147,11 @@
         "type": "scenario"
       }
     ],
-    "id": "as-a-user-i-can-interact-with-checkboxes",
+    "id": "as-a-user-i-can-interact-with-iframes",
     "line": 1,
     "keyword": "Feature",
-    "name": "As a user I can interact with checkboxes",
+    "name": "As a user I can interact with iframes",
     "tags": [],
-    "uri": "src\\features\\playground\\checkboxes.feature"
+    "uri": "src\\features\\playground\\iframes.feature"
   }
 ]

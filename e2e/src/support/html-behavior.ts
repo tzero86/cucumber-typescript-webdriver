@@ -124,3 +124,12 @@ export const elementEnabled = async (
         return true
     }
 }
+
+
+export const switchIframe = async (
+    driver: WebDriver,
+    elementIframe: ElementLocator
+
+): Promise<void> => {
+    await driver.switchTo().frame(driver.findElement(By.css(elementIframe)))
+}
