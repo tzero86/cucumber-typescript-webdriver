@@ -2,7 +2,7 @@ import { Then } from "@cucumber/cucumber"
 import { ElementKey, ExpectedElementText, ExpectedElementValue, Negate } from "../../env/global"
 import { getElementLocator } from "../../support/web-element-helper"
 import { ScenarioWorld } from "../setup/world"
-import { waitFor } from "../../support/wait-for-behavior"
+import { waitFor, waitForSelector } from "../../support/wait-for-behavior"
 import { getElementText, getElementValue } from "../../support/html-behavior"
 
 
@@ -19,8 +19,12 @@ Then (
         const elementIdentifier = await getElementLocator(driver, elementKey, globalConfig)
         
         await waitFor(async() => {
-            const elementText = await getElementText(driver, elementIdentifier)
-            return elementText?.includes(expectedElementText) === !negate
+            const elementStable = await waitForSelector(driver, elementIdentifier)
+            if (elementStable) {
+                const elementText = await getElementText(driver, elementIdentifier)
+                return elementText?.includes(expectedElementText) === !negate
+            }
+            return elementStable
         })
         
     }
@@ -38,9 +42,14 @@ Then(
         const elementIdentifier = await getElementLocator(driver, elementKey, globalConfig)
         
         await waitFor(async() => {
-            const elementText = await getElementText(driver, elementIdentifier)
-            console.log(`elementText: ${elementText} \nexpectedElementText: ${expectedElementText}`)
-            return elementText === expectedElementText === !negate
+            const elementStable = await waitForSelector(driver, elementIdentifier)
+            if (elementStable) {
+                const elementText = await getElementText(driver, elementIdentifier)
+                console.log(`elementText: ${elementText} \nexpectedElementText: ${expectedElementText}`)
+                return elementText === expectedElementText === !negate
+            }
+            return elementStable
+            
         })
 
     }
@@ -60,8 +69,12 @@ Then(
         const elementIdentifier = await getElementLocator(driver, elementKey, globalConfig)
 
         await waitFor(async() => {
-            const elementAttribute = await getElementValue(driver, elementIdentifier)
-            return elementAttribute?.includes(expectedElementValue) === !negate
+            const elementStable = await waitForSelector(driver, elementIdentifier)
+            if (elementStable) {
+                const elementAttribute = await getElementValue(driver, elementIdentifier)
+                return elementAttribute?.includes(expectedElementValue) === !negate
+            }
+            return elementStable
         })
 
     }
@@ -82,8 +95,12 @@ Then(
         const elementIdentifier = await getElementLocator(driver, elementKey, globalConfig)
 
         await waitFor(async() => {
-            const elementAttribute = await getElementValue(driver, elementIdentifier)
-            return (elementAttribute === expectedElementValue) === !negate
+            const elementStable = await waitForSelector(driver, elementIdentifier)
+            if (elementStable) {
+                const elementAttribute = await getElementValue(driver, elementIdentifier)
+                return (elementAttribute === expectedElementValue) === !negate
+            }
+            return elementStable
         })
 
     }

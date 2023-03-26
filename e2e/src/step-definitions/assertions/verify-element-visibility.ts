@@ -1,5 +1,5 @@
 import { Then } from '@cucumber/cucumber'
-import { waitFor } from '../../support/wait-for-behavior'
+import { waitFor, waitForSelector } from '../../support/wait-for-behavior'
 import { ElementKey, Negate } from '../../env/global'
 import { getElementLocator } from '../../support/web-element-helper'
 import { ScenarioWorld } from '../setup/world'
@@ -35,8 +35,13 @@ Then(
         const elementIdentifier = await getElementLocator(driver, elementKey, globalConfig)
         
         await waitFor(async () => {
-            const isElementEnabled = await elementEnabled(driver, elementIdentifier)   
-            return isElementEnabled  === !negate
+            const elementStable = await waitForSelector(driver, elementIdentifier)
+            if (elementStable) {
+                const isElementEnabled = await elementEnabled(driver, elementIdentifier)   
+                return isElementEnabled  === !negate
+            }
+            return elementStable
+            
         })
     }
 )

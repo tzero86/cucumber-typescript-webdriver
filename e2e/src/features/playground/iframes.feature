@@ -1,6 +1,5 @@
 Feature: As a user I can interact with iframes
 
-    @dev
     @smoke
     @regression
     Scenario: As a user I can interact and assert on iframes
@@ -18,8 +17,6 @@ Feature: As a user I can interact with iframes
         And the "address" on the "basic iframe" iframe should equal the text "553 Mi St., Murcia"
         And the "edit" on the "basic iframe" iframe should be displayed
         And the "delete" on the "basic iframe" iframe should be displayed
-
-
 
 
 
