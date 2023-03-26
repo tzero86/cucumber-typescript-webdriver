@@ -4,108 +4,238 @@
     "elements": [
       {
         "description": "",
-        "id": "as-a-user-i-can-iteract-with-tabs;as-a-user-i-can-interact-and-assert-on-tabs",
+        "id": "as-a-user-i-can-interact-with-windows;as-a-user-i-can-interact-and-assert-with-new-windows",
         "keyword": "Scenario",
-        "line": 7,
-        "name": "As a user I can interact and assert on tabs",
+        "line": 6,
+        "name": "As a user I can interact and assert with new windows",
         "steps": [
           {
             "keyword": "Before",
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 694389600
+              "duration": 696756799
             }
           },
           {
             "arguments": [],
             "keyword": "Given ",
-            "line": 8,
+            "line": 7,
             "name": "I am on the \"home\" page",
             "match": {
               "location": "src\\step-definitions\\navigation.ts:8"
             },
             "result": {
               "status": "passed",
-              "duration": 740625199
+              "duration": 645158100
             }
           },
           {
             "arguments": [],
             "keyword": "And ",
-            "line": 9,
+            "line": 8,
             "name": "I click the \"playground\" button",
             "match": {
               "location": "src\\step-definitions\\click.ts:9"
             },
             "result": {
               "status": "passed",
-              "duration": 942204599
+              "duration": 749416400
             }
           },
           {
             "arguments": [],
             "keyword": "When ",
-            "line": 10,
+            "line": 9,
             "name": "I am directed to the \"playground\" page",
             "match": {
               "location": "src\\step-definitions\\navigation.ts:22"
             },
             "result": {
               "status": "passed",
-              "duration": 5631299
+              "duration": 5428099
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 10,
+            "name": "I scroll to the \"open window\" button",
+            "match": {
+              "location": "src\\step-definitions\\scroll.ts:9"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1528442899
             }
           },
           {
             "arguments": [],
             "keyword": "And ",
             "line": 11,
-            "name": "I scroll to the \"new tab\" button",
+            "name": "I click the \"open window\" button",
             "match": {
-              "location": "src\\step-definitions\\scroll.ts:9"
+              "location": "src\\step-definitions\\click.ts:9"
             },
             "result": {
               "status": "passed",
-              "duration": 1540934700
+              "duration": 95865400
             }
           },
           {
             "arguments": [],
             "keyword": "And ",
             "line": 12,
-            "name": "I click the \"new tab\" button",
+            "name": "the 2nd window should contain the title \"Contacts\"",
             "match": {
-              "location": "src\\step-definitions\\click.ts:9"
+              "location": "src\\step-definitions\\assertions\\verify-new-page.ts:9"
             },
             "result": {
               "status": "passed",
-              "duration": 80512199
+              "duration": 2113022199
             }
           },
           {
             "arguments": [],
             "keyword": "And ",
             "line": 13,
-            "name": "the 2nd tab should contain the title \"Contacts\"",
+            "name": "the 1st window should contain the title \"Playground\"",
             "match": {
               "location": "src\\step-definitions\\assertions\\verify-new-page.ts:9"
             },
             "result": {
               "status": "passed",
-              "duration": 2035815999
+              "duration": 2019061599
             }
           },
           {
             "arguments": [],
             "keyword": "And ",
             "line": 14,
-            "name": "the 1st tab should contain the title \"Playground\"",
+            "name": "I fill in the \"search\" input on the 2nd window with \"Sloane Juarez\"",
             "match": {
-              "location": "src\\step-definitions\\assertions\\verify-new-page.ts:9"
+              "location": "src\\step-definitions\\page.ts:8"
             },
             "result": {
               "status": "passed",
-              "duration": 2010645899
+              "duration": 2089375199
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 15,
+            "name": "the \"contact\" on the 2nd window should be displayed",
+            "match": {
+              "location": "src\\step-definitions\\assertions\\verify-new-page.ts:29"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 12639100
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 16,
+            "name": "the \"full name label\" on the 2nd window should contain the text \"Name:\"",
+            "match": {
+              "location": "src\\step-definitions\\assertions\\verify-new-page.ts:51"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 22489000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 17,
+            "name": "the \"name\" on the 2nd window should equal the text \"Sloane Juarez\"",
+            "match": {
+              "location": "src\\step-definitions\\assertions\\verify-new-page.ts:74"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 23311700
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 18,
+            "name": "the \"gender label\" on the 2nd window should contain the text \"Gender:\"",
+            "match": {
+              "location": "src\\step-definitions\\assertions\\verify-new-page.ts:51"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 19293400
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 19,
+            "name": "the \"gender\" on the 2nd window should equal the text \"Female\"",
+            "match": {
+              "location": "src\\step-definitions\\assertions\\verify-new-page.ts:74"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 18624499
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 20,
+            "name": "the \"address label\" on the 2nd window should contain the text \"Address:\"",
+            "match": {
+              "location": "src\\step-definitions\\assertions\\verify-new-page.ts:51"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 18502199
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 21,
+            "name": "the \"address\" on the 2nd window should equal the text \"8162 Tincidunt Rd., Ludhiana\"",
+            "match": {
+              "location": "src\\step-definitions\\assertions\\verify-new-page.ts:74"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 19626800
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 22,
+            "name": "the \"edit\" on the 2nd window should be displayed",
+            "match": {
+              "location": "src\\step-definitions\\assertions\\verify-new-page.ts:29"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 10166700
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 23,
+            "name": "the \"delete\" on the 2nd window should be displayed",
+            "match": {
+              "location": "src\\step-definitions\\assertions\\verify-new-page.ts:29"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 9429800
             }
           },
           {
@@ -113,32 +243,32 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 34657200
+              "duration": 32580899
             }
           }
         ],
         "tags": [
           {
             "name": "@dev",
-            "line": 4
+            "line": 3
           },
           {
             "name": "@smoke",
-            "line": 5
+            "line": 4
           },
           {
             "name": "@regression",
-            "line": 6
+            "line": 5
           }
         ],
         "type": "scenario"
       }
     ],
-    "id": "as-a-user-i-can-iteract-with-tabs",
+    "id": "as-a-user-i-can-interact-with-windows",
     "line": 1,
     "keyword": "Feature",
-    "name": "As a user I can iteract with tabs",
+    "name": "As a user I can interact with windows",
     "tags": [],
-    "uri": "src\\features\\playground\\tabs.feature"
+    "uri": "src\\features\\playground\\windows.feature"
   }
 ]

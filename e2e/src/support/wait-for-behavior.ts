@@ -1,5 +1,5 @@
 import { By, WebDriver, ElementLocator } from 'selenium-webdriver'
-import { switchIframe } from './html-behavior';
+import { switchIframe, switchWindow } from './html-behavior';
 
 export const waitFor = async<T>(
     predicate: () => T | Promise<T>,
@@ -59,6 +59,21 @@ export const waitForSelectorInIframe = async(
 ): Promise<boolean> => {
     try {
         await switchIframe(driver, elementIframe)
+        await driver.findElement(By.css(elementIdentifier))
+        return true
+    } catch (e) {
+        return false
+    }
+}
+
+
+export const waitForSelectorOnPage = async(
+    driver: WebDriver,
+    elementIdentifier: ElementLocator,
+    pageIndex: number
+): Promise<boolean> => {
+    try {
+        await switchWindow(driver, pageIndex)
         await driver.findElement(By.css(elementIdentifier))
         return true
     } catch (e) {
