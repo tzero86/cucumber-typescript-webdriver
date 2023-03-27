@@ -2,6 +2,7 @@ export type Negate = boolean
 export type PageId = string
 export type IframeKey = string
 export type PagePosition = string
+export type ElementPosition = string
 export type ElementKey = string
 export type ElementLocator = string
 export type ExpectedElementText = string
