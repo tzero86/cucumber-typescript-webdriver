@@ -22,13 +22,11 @@ Then(
 
             if (elementStable) {
                 const tableData = await getTableData(driver, elementIdentifier)
-                console.log(`tableData: ${tableData}`)
-                console.log(`dataTable.raw().toString(): ${dataTable.raw().toString()}`)
+                //console.log(`tableData: ${tableData}`)
+                //console.log(`dataTable.raw().toString(): ${dataTable.raw().toString()}`)
                 return (tableData === dataTable.raw().toString())  === !negate
             }
-            return elementStable
-            
+            return elementStable  
         })
-
     }
 )

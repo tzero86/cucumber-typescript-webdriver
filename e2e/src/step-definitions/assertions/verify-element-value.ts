@@ -3,7 +3,7 @@ import { ElementKey, ElementPosition, ExpectedElementText, ExpectedElementValue,
 import { getElementLocator } from "../../support/web-element-helper"
 import { ScenarioWorld } from "../setup/world"
 import { waitFor, waitForSelector } from "../../support/wait-for-behavior"
-import { getElementText, getElementTextAtIndex, getElementValue } from "../../support/html-behavior"
+import { getAttributeText, getElementText, getElementTextAtIndex, getElementValue } from "../../support/html-behavior"
 
 
 
@@ -126,6 +126,30 @@ Then(
             if (elementStable) {
                 const elementText = await getElementTextAtIndex(driver, elementIdentifier, elementIndex)
                 return elementText?.includes(expectedElementText) === !negate
+            }
+            return elementStable
+        })
+    }
+)
+
+
+Then(
+    /^the "([^"]*)" "([^"]*)" attribute should( not)? contain the text "(.*)"$/,
+    async function(this: ScenarioWorld, elementKey: ElementKey, elementAttribute: string, negate: Negate, expectedElementText: ExpectedElementText) {
+        const { 
+            screen: {driver},
+            globalConfig
+        } = this
+
+        console.log(`the ${elementKey} ${elementAttribute} attribute should ${negate?'not':''} contain the text ${expectedElementText}`)
+
+        const elementIdentifier = await getElementLocator(driver, elementKey, globalConfig)
+
+        await waitFor(async() => {
+            const elementStable = await waitForSelector(driver, elementIdentifier)
+            if (elementStable) {
+                const elementAttributeText = await getAttributeText(driver, elementIdentifier, elementAttribute)
+                return elementAttributeText?.includes(expectedElementText) === !negate
             }
             return elementStable
         })

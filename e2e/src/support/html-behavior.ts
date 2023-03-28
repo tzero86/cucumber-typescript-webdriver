@@ -229,3 +229,28 @@ export const getTableData = async (
     const tableData = await Promise.all(asyncFunction)
     return tableData.toString()
 }
+
+
+export const clickDismissOnDialog = async (
+    driver: WebDriver,
+): Promise<void> => {
+    await driver.switchTo().alert().dismiss()
+}
+
+
+export const clickAcceptOnDialog = async (
+    driver: WebDriver,
+): Promise<void> => {
+    await driver.switchTo().alert().accept()
+}
+
+
+export const getAttributeText = async (
+    driver: WebDriver,
+    elementIdentifier: ElementLocator,
+    elementAttribute: string
+): Promise<string | null> => {
+    const element = await getElement(driver, elementIdentifier)
+    const attributeText = await element.getAttribute(elementAttribute)
+    return attributeText
+}
