@@ -7,14 +7,14 @@ import { ElementKey } from '../env/global';
 
 
 When(
-    /^I (check)?(uncheck)? the "([^"]*)" (?:radio button|check box)$/,
+    /^I (check)?(uncheck)? the "([^"]*)" (?:radio button|check box|switch)$/,
     async function (this: ScenarioWorld, checked: boolean, uncheck: boolean, elementKey: ElementKey) {
         const {
             screen: { driver },
             globalConfig
         } = this
 
-        console.log(`I ${uncheck?'uncheck':'check'} the ${elementKey} radio button|check box`)
+        console.log(`I ${uncheck?'uncheck':'check'} the ${elementKey} radio button|check box|switch`)
         const elementIdentifier = await getElementLocator(driver, elementKey, globalConfig)
         
         await waitFor(async () => {

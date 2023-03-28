@@ -6,7 +6,7 @@ import { ElementKey, Negate } from '../../env/global'
 import { elementChecked } from '../../support/html-behavior'
 
 Then (
-    /^the "([^"]*)" (?:radio button|check box) should( not)? be checked$/,
+    /^the "([^"]*)" (?:radio button|check box|switch) should( not)? be checked$/,
     async function (this: ScenarioWorld, elementKey: ElementKey, negate: Negate) {
         const { 
             screen: { driver },
