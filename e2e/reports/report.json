@@ -4,17 +4,17 @@
     "elements": [
       {
         "description": "",
-        "id": "as-a-user-i-can-interact-with-buttons;as-a-user-i-can-interact-and-assert-on-buttons",
+        "id": "as-a-user-i-can-interact-with-tables;as-a-user-i-can-interact-and-assert-on-tables",
         "keyword": "Scenario",
         "line": 6,
-        "name": "As a user I can interact and assert on buttons",
+        "name": "As a user I can interact and assert on tables",
         "steps": [
           {
             "keyword": "Before",
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 736405600
+              "duration": 689726199
             }
           },
           {
@@ -27,7 +27,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 692067199
+              "duration": 674150100
             }
           },
           {
@@ -40,7 +40,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 806281800
+              "duration": 795716000
             }
           },
           {
@@ -53,111 +53,136 @@
             },
             "result": {
               "status": "passed",
-              "duration": 7156800
+              "duration": 6053600
             }
           },
           {
             "arguments": [],
             "keyword": "And ",
             "line": 10,
-            "name": "I scroll to the 1st \"my button\" button",
+            "name": "I scroll to the \"basic\" table",
             "match": {
-              "location": "src\\step-definitions\\scroll.ts:30"
+              "location": "src\\step-definitions\\scroll.ts:9"
             },
             "result": {
               "status": "passed",
-              "duration": 1533980799
+              "duration": 1525975000
             }
           },
           {
-            "arguments": [],
+            "arguments": [
+              {
+                "rows": [
+                  {
+                    "cells": [
+                      "159",
+                      "6",
+                      "24",
+                      "4"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "237",
+                      "9",
+                      "37",
+                      "4.3"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "262",
+                      "16",
+                      "24",
+                      "6"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "305",
+                      "3.7",
+                      "67",
+                      "4.3"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "356",
+                      "16",
+                      "49",
+                      "3.9"
+                    ]
+                  }
+                ]
+              }
+            ],
             "keyword": "And ",
             "line": 11,
-            "name": "I click the 1st \"my button\" button",
+            "name": "the \"basic\" table should equal the following:",
             "match": {
-              "location": "src\\step-definitions\\click.ts:33"
+              "location": "src\\step-definitions\\assertions\\verify-table-value.ts:8"
             },
             "result": {
               "status": "passed",
-              "duration": 44253499
+              "duration": 188218400
             }
           },
           {
-            "arguments": [],
-            "keyword": "Then ",
-            "line": 12,
-            "name": "I click the 1st \"my button\" button",
-            "match": {
-              "location": "src\\step-definitions\\click.ts:33"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 27572399
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "And ",
-            "line": 13,
-            "name": "the 1st \"my button\" should contain the text \"ONE\"",
-            "match": {
-              "location": "src\\step-definitions\\assertions\\verify-element-value.ts:111"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 31564099
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "And ",
-            "line": 14,
-            "name": "I click the 2nd \"my button\" button",
-            "match": {
-              "location": "src\\step-definitions\\click.ts:33"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 45635200
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "And ",
-            "line": 15,
-            "name": "the 2nd \"my button\" should contain the text \"TWO\"",
-            "match": {
-              "location": "src\\step-definitions\\assertions\\verify-element-value.ts:111"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 28307000
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "And ",
-            "line": 16,
-            "name": "I click the 3rd \"my button\" button",
-            "match": {
-              "location": "src\\step-definitions\\click.ts:33"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 40339099
-            }
-          },
-          {
-            "arguments": [],
+            "arguments": [
+              {
+                "rows": [
+                  {
+                    "cells": [
+                      "159",
+                      "6",
+                      "24",
+                      "4"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "237",
+                      "92",
+                      "37",
+                      "4.3"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "262",
+                      "11",
+                      "24",
+                      "6"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "305",
+                      "3.2",
+                      "67",
+                      "4.3"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "356",
+                      "16",
+                      "49",
+                      "3.9"
+                    ]
+                  }
+                ]
+              }
+            ],
             "keyword": "And ",
             "line": 17,
-            "name": "the 3rd \"my button\" should contain the text \"THREE\"",
+            "name": "the \"basic\" table should not equal the following:",
             "match": {
-              "location": "src\\step-definitions\\assertions\\verify-element-value.ts:111"
+              "location": "src\\step-definitions\\assertions\\verify-table-value.ts:8"
             },
             "result": {
               "status": "passed",
-              "duration": 27063200
+              "duration": 106951700
             }
           },
           {
@@ -165,7 +190,7 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 29044100
+              "duration": 31618400
             }
           }
         ],
@@ -186,11 +211,11 @@
         "type": "scenario"
       }
     ],
-    "id": "as-a-user-i-can-interact-with-buttons",
+    "id": "as-a-user-i-can-interact-with-tables",
     "line": 1,
     "keyword": "Feature",
-    "name": "As a user I can interact with buttons",
+    "name": "As a user I can interact with tables",
     "tags": [],
-    "uri": "src\\features\\playground\\buttons.feature"
+    "uri": "src\\features\\playground\\tables.feature"
   }
 ]
