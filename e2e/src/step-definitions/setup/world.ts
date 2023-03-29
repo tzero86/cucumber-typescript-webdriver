@@ -55,7 +55,6 @@ export class ScenarioWorld extends World {
                 return builder
                     .forBrowser(browser)
                     .withCapabilities(chromeBrowserOptions);
-                break;
             }
             case "firefox": {
                 const firefoxBrowserOptions = new firefox.Options();
@@ -64,7 +63,6 @@ export class ScenarioWorld extends World {
                 return builder
                     .forBrowser(browser)
                     .setFirefoxOptions(firefoxBrowserOptions);
-                break;
             }
             default: {
                 return builder.forBrowser(browser);
