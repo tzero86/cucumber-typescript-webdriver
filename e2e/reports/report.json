@@ -4,82 +4,121 @@
     "elements": [
       {
         "description": "",
-        "id": "as-a-user-i-can-interact-and-assert-on-tooltips;as-a-user-i-can-interact-and-assert-on-tooltips",
+        "id": "as-a-user-i-can-interact-with-hidden-elements;as-a-user-i-can-interact-and-assert-on-hidden-and-displayed-elements",
         "keyword": "Scenario",
-        "line": 6,
-        "name": "As a user I can interact and assert on tooltips",
+        "line": 7,
+        "name": "As a user I can interact and assert on hidden and displayed elements",
         "steps": [
           {
             "keyword": "Before",
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 702687600
+              "duration": 754890299
             }
           },
           {
             "arguments": [],
             "keyword": "Given ",
-            "line": 7,
+            "line": 8,
             "name": "I am on the \"home\" page",
             "match": {
               "location": "src\\step-definitions\\navigation.ts:8"
             },
             "result": {
               "status": "passed",
-              "duration": 670058299
+              "duration": 713979700
             }
           },
           {
             "arguments": [],
             "keyword": "And ",
-            "line": 8,
+            "line": 9,
             "name": "I click the \"playground\" button",
             "match": {
               "location": "src\\step-definitions\\click.ts:9"
             },
             "result": {
               "status": "passed",
-              "duration": 805725400
+              "duration": 549360299
             }
           },
           {
             "arguments": [],
             "keyword": "When ",
-            "line": 9,
+            "line": 10,
             "name": "I am directed to the \"playground\" page",
             "match": {
               "location": "src\\step-definitions\\navigation.ts:22"
             },
             "result": {
               "status": "passed",
-              "duration": 4685000
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "And ",
-            "line": 10,
-            "name": "I scroll to the \"tooltip\" button",
-            "match": {
-              "location": "src\\step-definitions\\scroll.ts:9"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 1538534000
+              "duration": 7841300
             }
           },
           {
             "arguments": [],
             "keyword": "And ",
             "line": 11,
-            "name": "the \"tooltip\" \"title\" attribute should contain the text \"This is a tooltip\"",
+            "name": "I scroll to the \"show hide button\"  button",
             "match": {
-              "location": "src\\step-definitions\\assertions\\verify-element-value.ts:136"
+              "location": "src\\step-definitions\\scroll.ts:9"
             },
             "result": {
               "status": "passed",
-              "duration": 23695699
+              "duration": 1528498300
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 12,
+            "name": "the \"show hide text\" should be displayed",
+            "match": {
+              "location": "src\\step-definitions\\assertions\\verify-element-visibility.ts:9"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 11783800
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 13,
+            "name": "the \"show hide text\" should contain the text \"This is visible\"",
+            "match": {
+              "location": "src\\step-definitions\\assertions\\verify-element-value.ts:10"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 29044899
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 14,
+            "name": "I click the \"show hide button\" button",
+            "match": {
+              "location": "src\\step-definitions\\click.ts:9"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 44862199
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 15,
+            "name": "the \"show hide text\" should not be displayed",
+            "match": {
+              "location": "src\\step-definitions\\assertions\\verify-element-visibility.ts:9"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 12457300
             }
           },
           {
@@ -87,32 +126,32 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 30782200
+              "duration": 32045500
             }
           }
         ],
         "tags": [
           {
             "name": "@dev",
-            "line": 3
-          },
-          {
-            "name": "@smoke",
             "line": 4
           },
           {
-            "name": "@regression",
+            "name": "@smoke",
             "line": 5
+          },
+          {
+            "name": "@regression",
+            "line": 6
           }
         ],
         "type": "scenario"
       }
     ],
-    "id": "as-a-user-i-can-interact-and-assert-on-tooltips",
+    "id": "as-a-user-i-can-interact-with-hidden-elements",
     "line": 1,
     "keyword": "Feature",
-    "name": "As a user I can interact and assert on tooltips",
+    "name": "As a user I can interact with hidden elements",
     "tags": [],
-    "uri": "src\\features\\playground\\tooltips.feature"
+    "uri": "src\\features\\playground\\hidden-text.feature"
   }
 ]
