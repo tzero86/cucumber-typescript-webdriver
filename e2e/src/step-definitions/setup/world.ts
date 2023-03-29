@@ -51,6 +51,7 @@ export class ScenarioWorld extends World {
             case "chrome": {
                 const chromeBrowserOptions = new Options();
                 chromeBrowserOptions.addArguments(env("BROWSER_ARGUMENTS"));
+                chromeBrowserOptions.excludeSwitches(['enable-logging'])
                 return builder
                     .forBrowser(browser)
                     .withCapabilities(chromeBrowserOptions);

@@ -16,7 +16,7 @@ Then(
             globalVariables,
         } = this
 
-        console.log(`🔎 I Retrieve the text of the element with key: ${elementKey} and storing it as ${globalVariableKey} in global variables.`)
+        console.log(`I Retrieve the text of the element with key: ${elementKey} and storing it as ${globalVariableKey} in global variables.`)
 
         const elementIdentifier = await getElementLocator(driver, elementKey, globalConfig)
 

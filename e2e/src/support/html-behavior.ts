@@ -1,5 +1,5 @@
 import { By, WebDriver, WebElement } from "selenium-webdriver"
-import { ElementLocator, InputValue } from "../env/global"
+import { ElementIndex, ElementLocator, InputValue, PageIndex } from "../env/global"
 
 
 export const getElement = async (
@@ -37,6 +37,21 @@ export const elementDisplayed = async (
 ): Promise<boolean | null> => {
     try {
         await driver.findElement(By.css(elementIdentifier))
+        return true
+    } catch (e) {
+        return false
+    }
+}
+
+
+export const elementDisplayedAtIndex = async (
+    driver: WebDriver,
+    elementIdentifier: ElementLocator,
+    elementIndex: ElementIndex
+): Promise<boolean | null> => { 
+    try {
+        const elements = await getElements(driver, elementIdentifier)
+        await elements[elementIndex].isDisplayed()
         return true
     } catch (e) {
         return false
@@ -181,7 +196,7 @@ export const switchIframe = async (
 
 export const switchWindow = async (
     driver: WebDriver,
-    pageIndex: number
+    pageIndex: PageIndex
 ): Promise<void> => {
     const winHandles = driver.getAllWindowHandles()
     winHandles.then((handles) => {
@@ -193,7 +208,7 @@ export const switchWindow = async (
 
 export const getTitleWithinPage = async (
     driver: WebDriver,
-    pageIndex: number
+    pageIndex: PageIndex
 ): Promise<string | null> => {
     await switchWindow(driver, pageIndex)
     return driver.getTitle()
