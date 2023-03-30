@@ -4,6 +4,7 @@ import {getElementLocator} from '../support/web-element-helper'
 import {ScenarioWorld} from './setup/world'
 import {ElementKey, InputValue} from '../env/global'
 import {inputElementValue, selectElementValue} from '../support/html-behavior'
+import { parseInput } from '../support/input-helper'
 
 Then(
     /^I fill in the "([^"]*)" input with "([^"]*)"$/i,
@@ -22,7 +23,8 @@ Then(
             const elementStable = await waitForSelector(driver, elementIdentifier)
 
             if (elementStable) {
-                await inputElementValue(driver, elementIdentifier, inputValue)
+                const parsedInput = parseInput(inputValue, globalConfig)
+                await inputElementValue(driver, elementIdentifier, parsedInput)
             }
 
             return elementStable

@@ -24,3 +24,5 @@ yarn-error.log*
 /e2e/node_modules/
 /e2e/dist/
 .vscode/
+e2e/env/production.env
+e2e/env/localhost.env
