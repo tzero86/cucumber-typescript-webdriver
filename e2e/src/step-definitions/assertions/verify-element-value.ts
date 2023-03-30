@@ -64,7 +64,7 @@ Then(
             globalConfig
         } = this
 
-        console.log(`the ${elementKey} should ${negate?'not':''} contain the value ${expectedElementValue}`)
+        console.log(`the ${elementKey} should ${negate?'not':''}contain the value ${expectedElementValue}`)
 
         const elementIdentifier = await getElementLocator(driver, elementKey, globalConfig)
 
