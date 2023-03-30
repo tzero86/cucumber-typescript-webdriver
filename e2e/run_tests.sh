@@ -1,5 +1,12 @@
+#environment tag
+env=$1
+
 #cucumber tag
-tag=$1
+tag=$2
+
+#export environment variables
+export COMMON_CONFIG_FILE=./env/common.env
+export NODE_ENV=$env
 
 # run cucumber tests
 yarn run cucumber --profile $tag || yarn run postcucumber
