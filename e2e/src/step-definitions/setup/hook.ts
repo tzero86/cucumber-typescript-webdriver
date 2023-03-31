@@ -2,6 +2,7 @@ import { Before, After, setDefaultTimeout } from "@cucumber/cucumber";
 import * as fs from "fs";
 import { ScenarioWorld } from "./world";
 import { env, envNumber } from "../../env/parseEnv";
+import { logger } from "../../logger";
 require("chromedriver");
 require("geckodriver");
 

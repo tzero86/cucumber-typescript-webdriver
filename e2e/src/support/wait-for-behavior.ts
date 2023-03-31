@@ -1,5 +1,6 @@
 import { By, WebDriver, ElementLocator } from "selenium-webdriver";
 import { switchIframe, switchWindow } from "./html-behavior";
+import { logger } from "../logger";
 
 export const waitFor = async <T>(
     predicate: () => T | Promise<T>,

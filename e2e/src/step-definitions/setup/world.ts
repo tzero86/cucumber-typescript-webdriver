@@ -5,6 +5,7 @@ import { Options } from "selenium-webdriver/chrome";
 import { env, envNumber } from "../../env/parseEnv";
 import { GlobalConfig, GlobalVariables } from "../../env/global";
 import { stringIsOfOptions } from "../../support/options-helper";
+import { logger } from "../../logger";
 
 export type Screen = {
     driver: WebDriver;

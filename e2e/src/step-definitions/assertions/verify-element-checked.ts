@@ -4,6 +4,7 @@ import { ScenarioWorld } from "../setup/world";
 import { getElementLocator } from "../../support/web-element-helper";
 import { ElementKey, Negate } from "../../env/global";
 import { elementChecked } from "../../support/html-behavior";
+import { logger } from "../../logger";
 
 Then(
     /^the "([^"]*)" (?:radio button|check box|switch) should( not)? be checked$/,
