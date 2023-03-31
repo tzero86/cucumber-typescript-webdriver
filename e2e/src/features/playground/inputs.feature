@@ -6,6 +6,7 @@ Feature: As a user I can interact with inputs
         Given I am on the "home" page
         And I click the "playground" button
         When I am directed to the "playground" page
+        And I scroll to the "movies" input
         And I fill in the "movies" input with "<search>"
         And I click the element with text "<movie option>"
         And the "movies" should contain the value "<movie>"

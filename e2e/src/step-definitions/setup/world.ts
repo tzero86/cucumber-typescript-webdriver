@@ -2,7 +2,7 @@ import { Builder, WebDriver } from "selenium-webdriver";
 import { World, IWorldOptions, setWorldConstructor } from "@cucumber/cucumber";
 import firefox from "selenium-webdriver/firefox";
 import { Options } from "selenium-webdriver/chrome";
-import { env } from "../../env/parseEnv";
+import { env, envNumber } from "../../env/parseEnv";
 import { GlobalConfig, GlobalVariables } from "../../env/global";
 import { stringIsOfOptions } from "../../support/options-helper";
 
@@ -26,13 +26,24 @@ export class ScenarioWorld extends World {
     async init(): Promise<Screen> {
         const browser = await this.newBrowser();
         const browserBuilder = await this.browserBuilder(browser);
+        const browserDimensions = await this.browserDimensions()
         const driver = await browserBuilder.build();
-        await driver.manage().window().maximize();
+        await driver.manage().window().setRect(browserDimensions);
+        
 
         this.screen = { driver };
 
         return this.screen;
     }
+
+
+    private browserDimensions = async (): Promise<{ width: number, height: number }> => {
+        return {
+            width: envNumber("BROWSER_WIDTH"),
+            height: envNumber("BROWSER_HEIGHT")
+        }
+    }
+
 
     private newBrowser = async (): Promise<string> => {
         const automationBrowser = env("UI_AUTOMATION_BROWSER");
