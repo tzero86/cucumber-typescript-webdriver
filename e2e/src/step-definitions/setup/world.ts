@@ -6,44 +6,42 @@ import { env, envNumber } from "../../env/parseEnv";
 import { GlobalConfig, GlobalVariables } from "../../env/global";
 import { stringIsOfOptions } from "../../support/options-helper";
 
-
-
 export type Screen = {
     driver: WebDriver;
 };
 
 export class ScenarioWorld extends World {
     constructor(options: IWorldOptions) {
-        super(options)
-        this.globalConfig = options.parameters as GlobalConfig
-        this.globalVariables = {}
+        super(options);
+        this.globalConfig = options.parameters as GlobalConfig;
+        this.globalVariables = {};
     }
 
     globalConfig: GlobalConfig;
-    globalVariables: GlobalVariables
-    screen!: Screen
+    globalVariables: GlobalVariables;
+    screen!: Screen;
 
     async init(): Promise<Screen> {
         const browser = await this.newBrowser();
         const browserBuilder = await this.browserBuilder(browser);
-        const browserDimensions = await this.browserDimensions()
+        const browserDimensions = await this.browserDimensions();
         const driver = await browserBuilder.build();
         await driver.manage().window().setRect(browserDimensions);
-        
 
         this.screen = { driver };
 
         return this.screen;
     }
 
-
-    private browserDimensions = async (): Promise<{ width: number, height: number }> => {
+    private browserDimensions = async (): Promise<{
+        width: number;
+        height: number;
+    }> => {
         return {
             width: envNumber("BROWSER_WIDTH"),
-            height: envNumber("BROWSER_HEIGHT")
-        }
-    }
-
+            height: envNumber("BROWSER_HEIGHT"),
+        };
+    };
 
     private newBrowser = async (): Promise<string> => {
         const automationBrowser = env("UI_AUTOMATION_BROWSER");
@@ -56,13 +54,13 @@ export class ScenarioWorld extends World {
     };
 
     private browserBuilder = async (browser: string): Promise<Builder> => {
-        console.log(`🖥️  Executing on: ${browser} browser.`);
+        logger.log(`🖥️  Executing on: ${browser} browser.`);
         const builder = new Builder();
         switch (browser) {
             case "chrome": {
                 const chromeBrowserOptions = new Options();
                 chromeBrowserOptions.addArguments(env("BROWSER_ARGUMENTS"));
-                chromeBrowserOptions.excludeSwitches(['enable-logging'])
+                chromeBrowserOptions.excludeSwitches(["enable-logging"]);
                 return builder
                     .forBrowser(browser)
                     .withCapabilities(chromeBrowserOptions);
@@ -82,4 +80,4 @@ export class ScenarioWorld extends World {
     };
 }
 
-setWorldConstructor(ScenarioWorld)
+setWorldConstructor(ScenarioWorld);

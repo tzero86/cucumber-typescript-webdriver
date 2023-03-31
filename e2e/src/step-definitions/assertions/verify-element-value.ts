@@ -4,6 +4,7 @@ import { getElementLocator } from "../../support/web-element-helper"
 import { ScenarioWorld } from "../setup/world"
 import { waitFor, waitForSelector } from "../../support/wait-for-behavior"
 import { getAttributeText, getElementText, getElementTextAtIndex, getElementValue } from "../../support/html-behavior"
+import { logger } from "../../logger"
 
 
 
@@ -15,13 +16,14 @@ Then (
             globalConfig 
         } = this
 
-        console.log(`the ${elementKey} header should ${negate?'not':''} contain the text ${expectedElementText}`)
+        logger.log(`the ${elementKey} header should ${negate?'not':''} contain the text ${expectedElementText}`)
         const elementIdentifier = await getElementLocator(driver, elementKey, globalConfig)
         
         await waitFor(async() => {
             const elementStable = await waitForSelector(driver, elementIdentifier)
             if (elementStable) {
                 const elementText = await getElementText(driver, elementIdentifier)
+                logger.debug(`elementText: ${elementText} \nexpectedElementText: ${expectedElementText}`)
                 return elementText?.includes(expectedElementText) === !negate
             }
             return elementStable
@@ -38,14 +40,14 @@ Then(
             globalConfig 
         } = this
 
-        console.log(`the ${elementKey} should ${negate?'not':''} equal the text ${expectedElementText}`)
+        logger.log(`the ${elementKey} should ${negate?'not':''} equal the text ${expectedElementText}`)
         const elementIdentifier = await getElementLocator(driver, elementKey, globalConfig)
         
         await waitFor(async() => {
             const elementStable = await waitForSelector(driver, elementIdentifier)
             if (elementStable) {
                 const elementText = await getElementText(driver, elementIdentifier)
-                console.log(`elementText: ${elementText} \nexpectedElementText: ${expectedElementText}`)
+                logger.log(`elementText: ${elementText} \nexpectedElementText: ${expectedElementText}`)
                 return elementText === expectedElementText === !negate
             }
             return elementStable
@@ -64,7 +66,7 @@ Then(
             globalConfig
         } = this
 
-        console.log(`the ${elementKey} should ${negate?'not':''}contain the value ${expectedElementValue}`)
+        logger.log(`the ${elementKey} should ${negate?'not':''}contain the value ${expectedElementValue}`)
 
         const elementIdentifier = await getElementLocator(driver, elementKey, globalConfig)
 
@@ -90,7 +92,7 @@ Then(
             globalConfig
         } = this
 
-        console.log(`the ${elementKey} should ${negate?'not':''} equal the value ${expectedElementValue}`)
+        logger.log(`the ${elementKey} should ${negate?'not':''} equal the value ${expectedElementValue}`)
 
         const elementIdentifier = await getElementLocator(driver, elementKey, globalConfig)
 
@@ -116,7 +118,7 @@ Then(
             globalConfig
         } = this
 
-        console.log(`the ${elementPosition} ${elementKey} should ${negate?'not':''} contain the text ${expectedElementText}`)
+        logger.log(`the ${elementPosition} ${elementKey} should ${negate?'not':''} contain the text ${expectedElementText}`)
 
         const elementIdentifier = await getElementLocator(driver, elementKey, globalConfig)
         const elementIndex = Number(elementPosition.match(/\d/g)?.join('')) - 1
@@ -141,7 +143,7 @@ Then(
             globalConfig
         } = this
 
-        console.log(`the ${elementKey} ${elementAttribute} attribute should ${negate?'not':''} contain the text ${expectedElementText}`)
+        logger.log(`the ${elementKey} ${elementAttribute} attribute should ${negate?'not':''} contain the text ${expectedElementText}`)
 
         const elementIdentifier = await getElementLocator(driver, elementKey, globalConfig)
 

@@ -1,31 +1,46 @@
-import { When } from '@cucumber/cucumber';
-import { ScenarioWorld } from './setup/world';
-import { clickElement } from '../support/html-behavior';
-import { waitFor, waitForSelector } from '../support/wait-for-behavior';
-import { getElementLocator } from '../support/web-element-helper';
-import { ElementKey } from '../env/global';
-
+import { When } from "@cucumber/cucumber";
+import { ScenarioWorld } from "./setup/world";
+import { clickElement } from "../support/html-behavior";
+import { waitFor, waitForSelector } from "../support/wait-for-behavior";
+import { getElementLocator } from "../support/web-element-helper";
+import { ElementKey } from "../env/global";
+import { logger } from "../logger";
 
 When(
     /^I (check)?(uncheck)? the "([^"]*)" (?:radio button|check box|switch)$/,
-    async function (this: ScenarioWorld, checked: boolean, uncheck: boolean, elementKey: ElementKey) {
+    async function (
+        this: ScenarioWorld,
+        checked: boolean,
+        uncheck: boolean,
+        elementKey: ElementKey
+    ) {
         const {
             screen: { driver },
-            globalConfig
-        } = this
+            globalConfig,
+        } = this;
 
-        console.log(`I ${uncheck?'uncheck':'check'} the ${elementKey} radio button|check box|switch`)
-        const elementIdentifier = await getElementLocator(driver, elementKey, globalConfig)
-        
+        logger.log(
+            `I ${
+                uncheck ? "uncheck" : "check"
+            } the ${elementKey} radio button|check box|switch`
+        );
+        const elementIdentifier = await getElementLocator(
+            driver,
+            elementKey,
+            globalConfig
+        );
+
         await waitFor(async () => {
-            const elementStable = await waitForSelector(driver, elementIdentifier)
+            const elementStable = await waitForSelector(
+                driver,
+                elementIdentifier
+            );
 
             if (elementStable) {
-                await clickElement(driver, elementIdentifier)
+                await clickElement(driver, elementIdentifier);
             }
 
-            return elementStable
-        })
-
+            return elementStable;
+        });
     }
-)
+);

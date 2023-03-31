@@ -4,6 +4,7 @@ import { ElementKey, ElementPosition, Negate } from '../../env/global'
 import { getElementLocator } from '../../support/web-element-helper'
 import { ScenarioWorld } from '../setup/world'
 import { elementDisplayed, elementDisplayedAtIndex, elementEnabled, getElements } from '../../support/html-behavior'
+import { logger } from '../../logger'
 
 
 Then(
@@ -13,7 +14,7 @@ Then(
             screen: {driver},
             globalConfig 
         } = this
-        console.log(`the ${elementKey} should ${negate?"not":""} be displayed`)
+        logger.log(`the ${elementKey} should ${negate?"not":""} be displayed`)
         const elementIdentifier = await getElementLocator(driver, elementKey, globalConfig)
         
         await waitFor(async () => {
@@ -32,7 +33,7 @@ Then(
             globalConfig 
         } = this
         
-        console.log(`the ${elementPosition} ${elementKey} should ${negate?"not":""} be displayed`)
+        logger.log(`the ${elementPosition} ${elementKey} should ${negate?"not":""} be displayed`)
         const elementIndex = Number(elementPosition.match(/\d/g)?.join('')) - 1
         const elementIdentifier = await getElementLocator(driver, elementKey, globalConfig)
 
@@ -51,7 +52,7 @@ Then(
             screen: {driver},
             globalConfig 
         } = this
-        console.log(`the ${elementKey} should ${negate?"not":""} be enabled`)
+        logger.log(`the ${elementKey} should ${negate?"not":""} be enabled`)
         const elementIdentifier = await getElementLocator(driver, elementKey, globalConfig)
         
         await waitFor(async () => {
@@ -76,7 +77,7 @@ Then(
             globalConfig 
         } = this
 
-        console.log(`I should ${negate?"not":""} see the ${elementCount} ${elementKey} displayed`)
+        logger.log(`I should ${negate?"not":""} see the ${elementCount} ${elementKey} displayed`)
         const elementIdentifier = await getElementLocator(driver, elementKey, globalConfig)
         
         await waitFor(async () => {

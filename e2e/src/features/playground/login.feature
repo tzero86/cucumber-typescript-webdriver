@@ -1,6 +1,6 @@
 Feature: As a user I can interact with login forms
 
-    @dev
+
     @smoke
     @regression
     Scenario Outline: As a user I can populate login details leveraging environment variables

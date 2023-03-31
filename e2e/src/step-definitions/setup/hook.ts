@@ -5,10 +5,10 @@ import { env, envNumber } from "../../env/parseEnv";
 require("chromedriver");
 require("geckodriver");
 
-setDefaultTimeout(envNumber("SCRIPT_TIMEOUT"))
+setDefaultTimeout(envNumber("SCRIPT_TIMEOUT"));
 
 Before(async function (scenario) {
-    console.log(`🥒 Running Cucumber Scenario: ${scenario.pickle.name}`);
+    logger.log(`🥒 Running Cucumber Scenario: ${scenario.pickle.name}`);
     const ready = await this.init();
     return ready;
 });
@@ -19,12 +19,12 @@ After(async function (this: ScenarioWorld, scenario) {
     } = this;
 
     const scenarioStatus = scenario.result?.status;
-    console.log(`Scenario Status: ${scenarioStatus}`);
+    logger.log(`Scenario Status: ${scenarioStatus}`);
 
     if (scenarioStatus === "FAILED") {
         driver.takeScreenshot().then((image) => {
-            this.attach(image, "image/png")
-            fs.mkdirSync(env("SCREENSHOT_PATH"))
+            this.attach(image, "image/png");
+            fs.mkdirSync(env("SCREENSHOT_PATH"));
             fs.writeFileSync(
                 `${env("SCREENSHOT_PATH")}${scenario.pickle.name}.png`,
                 image,
