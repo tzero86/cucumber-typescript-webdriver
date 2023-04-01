@@ -15,6 +15,8 @@ export type HostsConfig = Record<string, string>
 export type EmailsConfig = Record<string, string>
 export type GlobalVariables = { [key: string]: string}
 export type GlobalVariableKey = string
+export type WaitForTarget = PageId | ElementKey
+export type WaitForTargetType = string
 export type InputValue = string
 
 export type GlobalConfig = {

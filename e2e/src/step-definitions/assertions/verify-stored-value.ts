@@ -2,7 +2,7 @@ import { Then } from "@cucumber/cucumber";
 import { ElementKey, GlobalVariableKey, Negate } from "../../env/global";
 import { getElementLocator } from "../../support/web-element-helper";
 import { ScenarioWorld } from "../setup/world";
-import { waitFor, waitForSelector } from "../../support/wait-for-behavior";
+import { waitFor, waitForResult, waitForSelector } from "../../support/wait-for-behavior";
 import { getElementText } from "../../support/html-behavior";
 import { logger } from "../../logger";
 
@@ -44,9 +44,17 @@ Then(
                     driver,
                     elementIdentifier
                 );
-                return (elementText === variableText) === !negate;
+                if (elementText === variableText === !negate) {
+                    return waitForResult.PASS
+                } else {
+                    return waitForResult.FAIL
+                }
+            } else {
+                return waitForResult.ELEMENT_NOT_AVAILABLE
             }
-            return elementStable;
+        }, globalConfig, { 
+            target: elementKey,
+            failureMessage: `🧨 Expected ${elementKey} to ${negate ? "not" : ""}equal the text ${globalVariables[globalVariableKey]} stored in global variables.` 
         });
     }
 );
@@ -88,10 +96,18 @@ Then(
                 const elementText = await getElementText(
                     driver,
                     elementIdentifier
-                );
-                return elementText?.includes(variableText) === !negate;
+                )
+                if (elementText?.includes(variableText) === !negate){
+                    return waitForResult.PASS
+                } else {
+                    return waitForResult.FAIL
+                }
+            } else {
+                return waitForResult.ELEMENT_NOT_AVAILABLE
             }
-            return elementStable;
+        }, globalConfig, { 
+            target: elementKey,
+            failureMessage: `🧨 Expected ${elementKey} to ${negate ? "not" : ""}contain the text ${globalVariables[globalVariableKey]} stored in global variables.` 
         });
     }
 );

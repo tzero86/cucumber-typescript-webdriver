@@ -2,7 +2,7 @@ import { Then } from "@cucumber/cucumber"
 import { ElementKey, ElementPosition, ExpectedElementText, ExpectedElementValue, Negate } from "../../env/global"
 import { getElementLocator } from "../../support/web-element-helper"
 import { ScenarioWorld } from "../setup/world"
-import { waitFor, waitForSelector } from "../../support/wait-for-behavior"
+import { waitFor, waitForResult, waitForSelector } from "../../support/wait-for-behavior"
 import { getAttributeText, getElementText, getElementTextAtIndex, getElementValue } from "../../support/html-behavior"
 import { logger } from "../../logger"
 
@@ -24,11 +24,18 @@ Then (
             if (elementStable) {
                 const elementText = await getElementText(driver, elementIdentifier)
                 logger.debug(`elementText: ${elementText} \nexpectedElementText: ${expectedElementText}`)
-                return elementText?.includes(expectedElementText) === !negate
+                if (elementText?.includes(expectedElementText) === !negate) {
+                    return waitForResult.PASS
+                } else {
+                    return waitForResult.FAIL
+                }
+            } else {
+                return waitForResult.ELEMENT_NOT_AVAILABLE
             }
-            return elementStable
+        }, globalConfig, { 
+            target: elementKey,
+            failureMessage: `🧨 Expected ${elementKey} to ${negate ? "not" : ""}contain the text ${expectedElementText}` 
         })
-        
     }
 )
 
@@ -48,11 +55,18 @@ Then(
             if (elementStable) {
                 const elementText = await getElementText(driver, elementIdentifier)
                 logger.log(`elementText: ${elementText} \nexpectedElementText: ${expectedElementText}`)
-                return elementText === expectedElementText === !negate
-            }
-            return elementStable
-            
-        })
+                if (elementText === expectedElementText === !negate) {
+                    return waitForResult.PASS
+                } else {
+                    return waitForResult.FAIL
+                }
+            } else {
+                return waitForResult.ELEMENT_NOT_AVAILABLE
+            }            
+        }, globalConfig, { 
+            target: elementKey,
+            failureMessage: `🧨 Expected ${elementKey} to ${negate ? "not" : ""}equal the text ${expectedElementText}`
+         })
 
     }
 )
@@ -74,10 +88,18 @@ Then(
             const elementStable = await waitForSelector(driver, elementIdentifier)
             if (elementStable) {
                 const elementAttribute = await getElementValue(driver, elementIdentifier)
-                return elementAttribute?.includes(expectedElementValue) === !negate
+                if (elementAttribute?.includes(expectedElementValue) === !negate) {
+                    return waitForResult.PASS
+                } else {
+                    return waitForResult.FAIL
+                }
+            } else {
+                return waitForResult.ELEMENT_NOT_AVAILABLE
             }
-            return elementStable
-        })
+        }, globalConfig, { 
+            target: elementKey,
+            failureMessage: `🧨 Expected ${elementKey} to ${negate ? "not" : ""}contain the value ${expectedElementValue}`
+         })
 
     }
 )
@@ -100,10 +122,18 @@ Then(
             const elementStable = await waitForSelector(driver, elementIdentifier)
             if (elementStable) {
                 const elementAttribute = await getElementValue(driver, elementIdentifier)
-                return (elementAttribute === expectedElementValue) === !negate
+                if ((elementAttribute === expectedElementValue) === !negate) {
+                    return waitForResult.PASS
+                } else {
+                    return waitForResult.FAIL
+                }
+            } else {
+                return waitForResult.ELEMENT_NOT_AVAILABLE
             }
-            return elementStable
-        })
+        }, globalConfig, { 
+            target: elementKey,
+            failureMessage: `🧨 Expected ${elementKey} to ${negate ? "not" : ""}equal the value ${expectedElementValue}`
+         })
 
     }
 )
@@ -127,9 +157,17 @@ Then(
             const elementStable = await waitForSelector(driver, elementIdentifier)
             if (elementStable) {
                 const elementText = await getElementTextAtIndex(driver, elementIdentifier, elementIndex)
-                return elementText?.includes(expectedElementText) === !negate
+                if  (elementText?.includes(expectedElementText) === !negate) {
+                    return waitForResult.PASS
+                } else {
+                    return waitForResult.FAIL
+                }
+            } else {
+                return waitForResult.ELEMENT_NOT_AVAILABLE
             }
-            return elementStable
+        }, globalConfig, { 
+            target: elementKey, 
+            failureMessage: `🧨 Expected ${elementPosition} ${elementKey} to ${negate ? "not" : ""}contain the text ${expectedElementText}`
         })
     }
 )
@@ -151,9 +189,17 @@ Then(
             const elementStable = await waitForSelector(driver, elementIdentifier)
             if (elementStable) {
                 const elementAttributeText = await getAttributeText(driver, elementIdentifier, elementAttribute)
-                return elementAttributeText?.includes(expectedElementText) === !negate
+                if (elementAttributeText?.includes(expectedElementText) === !negate) {
+                    return waitForResult.PASS
+                } else {
+                    return waitForResult.FAIL
+                }
+            } else {
+                return waitForResult.ELEMENT_NOT_AVAILABLE
             }
-            return elementStable
+        }, globalConfig, { 
+            target: elementKey, 
+            failureMessage: `🧨 Expected ${elementKey} ${elementAttribute} attribute to ${negate ? "not" : ""}contain the text ${expectedElementText}`
         })
     }
 )

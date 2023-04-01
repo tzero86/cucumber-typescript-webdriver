@@ -19,7 +19,7 @@ Given(
         logger.log(`I am on the ${pageId} page`);
         await navigateToPage(driver, pageId, globalConfig);
         await waitFor(() =>
-            currentPathMatchesPageId(driver, pageId, globalConfig)
+            currentPathMatchesPageId(driver, pageId, globalConfig), globalConfig, { target: pageId, type: "page" }
         );
     }
 );
@@ -33,7 +33,7 @@ Given(
         } = this;
         logger.log(`I am directed to the ${pageId} page`);
         await waitFor(() =>
-            currentPathMatchesPageId(driver, pageId, globalConfig)
+            currentPathMatchesPageId(driver, pageId, globalConfig), globalConfig, { target: pageId, type: "page" }
         );
     }
 );
@@ -48,10 +48,7 @@ Given(
         logger.log(`I refresh the ${pageId} page`);
         await reloadPage(driver);
         await waitFor(
-            () => currentPathMatchesPageId(driver, pageId, globalConfig),
-            {
-                timeout: 30000,
-            }
+            () => currentPathMatchesPageId(driver, pageId, globalConfig), globalConfig, { target: pageId, type: "page", timeout: 30000 }
         );
     }
 );

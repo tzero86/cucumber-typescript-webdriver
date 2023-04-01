@@ -7,6 +7,7 @@ import {
 } from "../support/html-behavior";
 import {
     waitFor,
+    waitForResult,
     waitForSelector,
     waitForSelectors,
     waitForSelectorWithText,
@@ -37,11 +38,12 @@ When(
             );
 
             if (elementStable) {
-                await clickElement(driver, elementIdentifier);
+                await clickElement(driver, elementIdentifier)
+                return waitForResult.PASS
             }
 
-            return elementStable;
-        });
+            return waitForResult.ELEMENT_NOT_AVAILABLE
+        }, globalConfig, { target: elementKey });
     }
 );
 
@@ -78,9 +80,10 @@ When(
                     elementIdentifier,
                     elementIndex
                 );
-                return elementStable;
+                return waitForResult.PASS
             }
-        });
+            return waitForResult.ELEMENT_NOT_AVAILABLE
+        }, globalConfig, { target: elementKey });
     }
 );
 
@@ -106,10 +109,10 @@ When(
             );
 
             if (elementStable) {
-                await clickElementWithText(driver, elementIdentifier);
+                await clickElementWithText(driver, elementIdentifier)
+                return waitForResult.PASS
             }
-
-            return elementStable;
-        });
+            return waitForResult.ELEMENT_NOT_AVAILABLE
+        }, globalConfig, { target: elementKey });
     }
 );

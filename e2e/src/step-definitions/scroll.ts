@@ -1,6 +1,7 @@
 import { Then } from "@cucumber/cucumber";
 import {
     waitFor,
+    waitForResult,
     waitForSelector,
     waitForSelectors,
 } from "../support/wait-for-behavior";
@@ -33,9 +34,10 @@ Then(
             );
             if (elementStable) {
                 await scrollElementIntoView(driver, elementIdentifier);
-                return elementStable;
+                return waitForResult.PASS
             }
-        });
+            return waitForResult.ELEMENT_NOT_AVAILABLE
+        }, globalConfig, { target: elementKey });
     }
 );
 
@@ -72,8 +74,9 @@ Then(
                     elementIdentifier,
                     elementIndex
                 );
-                return elementStable;
+                return waitForResult.PASS
             }
-        });
+            return waitForResult.ELEMENT_NOT_AVAILABLE
+        }, globalConfig, { target: elementKey });
     }
 );

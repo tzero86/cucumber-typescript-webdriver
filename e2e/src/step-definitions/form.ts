@@ -1,5 +1,5 @@
 import { Then } from "@cucumber/cucumber";
-import { waitFor, waitForSelector } from "../support/wait-for-behavior";
+import { waitFor, waitForResult, waitForSelector } from "../support/wait-for-behavior";
 import { getElementLocator } from "../support/web-element-helper";
 import { ScenarioWorld } from "./setup/world";
 import { ElementKey, InputValue } from "../env/global";
@@ -38,11 +38,12 @@ Then(
 
             if (elementStable) {
                 const parsedInput = parseInput(inputValue, globalConfig);
-                await inputElementValue(driver, elementIdentifier, parsedInput);
+                await inputElementValue(driver, elementIdentifier, parsedInput)
+                return waitForResult.PASS
             }
 
-            return elementStable;
-        });
+            return waitForResult.ELEMENT_NOT_AVAILABLE
+        }, globalConfig, { target: elementKey });
     }
 );
 
@@ -74,10 +75,11 @@ Then(
             );
 
             if (elementStable) {
-                await selectElementValue(driver, elementIdentifier, option);
+                await selectElementValue(driver, elementIdentifier, option)
+                return waitForResult.PASS
             }
 
-            return elementStable;
-        });
+            return waitForResult.ELEMENT_NOT_AVAILABLE
+        }, globalConfig, { target: elementKey });
     }
 );

@@ -1,17 +1,8 @@
 import { Then } from "@cucumber/cucumber";
-import {
-    ElementKey,
-    ExpectedElementText,
-    IframeKey,
-    Negate,
-} from "../../env/global";
+import { ElementKey, ExpectedElementText, IframeKey, Negate } from "../../env/global";
 import { getElementLocator } from "../../support/web-element-helper";
 import { ScenarioWorld } from "../setup/world";
-import {
-    waitFor,
-    waitForSelector,
-    waitForSelectorInIframe,
-} from "../../support/wait-for-behavior";
+import { waitFor, waitForResult, waitForSelector, waitForSelectorInIframe } from "../../support/wait-for-behavior";
 import { elementDisplayed, getElementText } from "../../support/html-behavior";
 import { logger } from "../../logger";
 
@@ -62,16 +53,24 @@ Then(
                         driver,
                         elementIdentifier
                     );
-                    return isElementVisible === !negate;
+                    if (isElementVisible === !negate) {
+                        return { result: waitForResult.PASS }
+                    } else {
+                        return { result: waitForResult.FAIL, replace: elementKey }
+                    }
                 } else {
-                    return elementStable;
+                    return { result: waitForResult.ELEMENT_NOT_AVAILABLE, replace: elementKey}
                 }
             } else {
-                return iframeStable;
+                return { result: waitForResult.ELEMENT_NOT_AVAILABLE, replace: iframeKey}
             }
+        }, globalConfig, { 
+            target: elementKey,
+            failureMessage: `🧨 Expected ${elementKey} in ${iframeKey} to ${negate ? "not" : ""} be displayed` 
         });
     }
 );
+
 
 Then(
     /^the "([^"]*)" on the "([^"]*)" iframe should( not)? contain the text "(.*)"$/,
@@ -121,18 +120,25 @@ Then(
                         driver,
                         elementIdentifier
                     );
-                    return (
-                        elementText?.includes(expectedElementText) === !negate
-                    );
+                    if (elementText?.includes(expectedElementText) === !negate) {
+                        return { result: waitForResult.PASS }
+                    } else {
+                        return { result: waitForResult.FAIL, replace: elementKey }
+                    }
                 } else {
-                    return elementStable;
+                    return { result: waitForResult.ELEMENT_NOT_AVAILABLE, replace: elementKey}
                 }
             } else {
-                return iframeStable;
+                return { result: waitForResult.ELEMENT_NOT_AVAILABLE, replace: iframeKey}
             }
+        }, globalConfig, { 
+            target: elementKey,
+            failureMessage: `🧨 Expected ${elementKey} in ${iframeKey} to ${negate ? "not" : ""} contain the text ${expectedElementText}` 
         });
     }
 );
+
+
 
 Then(
     /^the "([^"]*)" on the "([^"]*)" iframe should( not)? equal the text "(.*)"$/,
@@ -182,13 +188,20 @@ Then(
                         driver,
                         elementIdentifier
                     );
-                    return (elementText === expectedElementText) === !negate;
+                    if (elementText === expectedElementText === !negate) {
+                        return { result: waitForResult.PASS }
+                    } else {
+                        return { result: waitForResult.FAIL, replace: elementKey }
+                    }
                 } else {
-                    return elementStable;
+                    return { result: waitForResult.ELEMENT_NOT_AVAILABLE, replace: elementKey}
                 }
             } else {
-                return iframeStable;
+                return { result: waitForResult.ELEMENT_NOT_AVAILABLE, replace: iframeKey}
             }
+        }, globalConfig, { 
+            target: elementKey,
+            failureMessage: `🧨 Expected ${elementKey} in ${iframeKey} to ${negate ? "not" : ""} equal the text ${expectedElementText}` 
         });
     }
 );

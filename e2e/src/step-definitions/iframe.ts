@@ -2,6 +2,7 @@ import { Then } from "@cucumber/cucumber";
 import { ScenarioWorld } from "./setup/world";
 import {
     waitFor,
+    waitForResult,
     waitForSelector,
     waitForSelectorInIframe,
 } from "../support/wait-for-behavior";
@@ -54,13 +55,13 @@ Then(
                         driver,
                         elementIdentifier,
                         inputValue
-                    );
+                    )
+                    return {result: waitForResult.PASS}
                 } else {
-                    return elementStable;
+                    return {result: waitForResult.ELEMENT_NOT_AVAILABLE, replace: elementKey}
                 }
             }
-
-            return iframeStable;
-        });
+            return {result: waitForResult.ELEMENT_NOT_AVAILABLE, replace: iframeKey}
+        }, globalConfig, { target: elementKey });
     }
 );

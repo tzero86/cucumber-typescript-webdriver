@@ -4,9 +4,10 @@ import { stringIsOfOptions } from "../support/options-helper"
 const DEBUG = 'debug'
 const LOG = 'log'
 const OFF = 'off'
+const ERROR = 'error'
 
 
-const LOG_LEVELS = [DEBUG, LOG, OFF] as const
+const LOG_LEVELS = [DEBUG, LOG, ERROR, OFF] as const
 
 export type LogLevel = typeof LOG_LEVELS[number]
 
@@ -16,6 +17,7 @@ type LogFunction = (...msg: any[]) => void
 type Logger = {
     debug: LogFunction
     log: LogFunction
+    error: LogFunction
 }
 
 

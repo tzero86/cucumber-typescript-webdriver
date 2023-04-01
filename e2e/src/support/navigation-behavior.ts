@@ -1,5 +1,6 @@
 import { WebDriver } from 'selenium-webdriver';
 import { GlobalConfig, PageId } from '../env/global';
+import { waitForResult } from './wait-for-behavior';
 
 export const navigateToPage = async (
     driver: WebDriver,
@@ -22,10 +23,14 @@ export const currentPathMatchesPageId = async (
     driver: WebDriver,
     pageId: PageId,
     globalConfig: GlobalConfig
-): Promise<boolean> => {
+): Promise<waitForResult> => {
     const currentURL = await driver.getCurrentUrl()
     const { pathname: currentPath } = new URL(currentURL)
-    return pathMatchesPageId(currentPath, pageId, globalConfig)
+
+    if (pathMatchesPageId(currentPath, pageId, globalConfig)){
+        return waitForResult.PASS
+    }
+    return waitForResult.ELEMENT_NOT_AVAILABLE 
 }
 
 
@@ -35,7 +40,12 @@ const pathMatchesPageId = (
     { pagesConfig }: GlobalConfig
 
 ): boolean => {
-    const pageRegexString = pagesConfig[pageId].regex
+    let pageRegexString 
+    try {
+        pageRegexString = pagesConfig[pageId].regex
+    } catch (e) {
+        throw Error(`🧨 Failed to get regex mapping for page ${pageId}`)
+    }
     const pageRegex = new RegExp(pageRegexString)
     return pageRegex.test(path)
 }
