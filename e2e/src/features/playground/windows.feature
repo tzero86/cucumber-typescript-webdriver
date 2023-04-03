@@ -1,5 +1,6 @@
 Feature: As a user I can interact with windows
 
+
     @smoke
     @regression
     Scenario: As a user I can interact and assert with new windows
