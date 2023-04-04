@@ -14,5 +14,8 @@
     "delete": "[data-id='delete-button']",
     "cancel": "[data-id='cancel-button']",
     "no items message": "[data-id='no-items-message']",
-    "save": "[data-id='save-button']"
+    "save": "[data-id='save-button']",
+    "phone": "[data-id='phone']",
+    "street": "[data-id='street']",
+    "city": "[data-id='city']"
 }
