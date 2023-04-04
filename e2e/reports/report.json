@@ -4,95 +4,290 @@
     "elements": [
       {
         "description": "",
-        "id": "as-a-user-i-can-interact-with-login-forms;as-a-user-i-am-able-to-input-a-random-email",
+        "id": "as-a-user-i-expect-to-be-able-to-edit-a-new-contact;as-a-user-i-can-edit-a-new-contact",
         "keyword": "Scenario",
-        "line": 50,
-        "name": "As a user I am able to input a random email",
+        "line": 6,
+        "name": "As a user I can edit a new contact",
         "steps": [
           {
             "keyword": "Before",
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 839042600
+              "duration": 792972799
             }
           },
           {
             "arguments": [],
             "keyword": "Given ",
-            "line": 51,
+            "line": 7,
             "name": "I am on the \"home\" page",
             "match": {
               "location": "src\\step-definitions\\navigation.ts:12"
             },
             "result": {
               "status": "passed",
-              "duration": 685140699
+              "duration": 712644600
             }
           },
           {
             "arguments": [],
             "keyword": "And ",
-            "line": 52,
-            "name": "I click the \"playground\" button",
+            "line": 8,
+            "name": "I click the \"create\" button",
             "match": {
               "location": "src\\step-definitions\\click.ts:19"
             },
             "result": {
               "status": "passed",
-              "duration": 669906600
+              "duration": 81501499
             }
           },
           {
             "arguments": [],
             "keyword": "When ",
-            "line": 53,
-            "name": "I am directed to the \"playground\" page",
+            "line": 9,
+            "name": "I am directed to the \"create contact\" page",
             "match": {
               "location": "src\\step-definitions\\navigation.ts:27"
             },
             "result": {
               "status": "passed",
-              "duration": 6473900
+              "duration": 6790300
             }
           },
           {
             "arguments": [],
             "keyword": "And ",
-            "line": 54,
-            "name": "I fill in the \"email\" input with random \"email\"",
+            "line": 10,
+            "name": "the \"create contact header\" should contain the text \"Create Contact\"",
             "match": {
-              "location": "src\\step-definitions\\form.ts:90"
+              "location": "src\\step-definitions\\assertions\\verify-element-value.ts:11"
             },
             "result": {
               "status": "passed",
-              "duration": 96238200
+              "duration": 39500299
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 11,
+            "name": "I fill in the \"name\" input with \"Terry Barks\"",
+            "match": {
+              "location": "src\\step-definitions\\form.ts:15"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 104241899
             }
           },
           {
             "arguments": [],
             "keyword": "And ",
-            "line": 55,
-            "name": "I fill in the \"password\" input with random \"password\"",
+            "line": 12,
+            "name": "I select the \"Male\" option from the \"gender\"",
             "match": {
-              "location": "src\\step-definitions\\form.ts:90"
+              "location": "src\\step-definitions\\form.ts:52"
             },
             "result": {
               "status": "passed",
-              "duration": 98445600
+              "duration": 45028899
             }
           },
           {
             "arguments": [],
             "keyword": "And ",
-            "line": 56,
-            "name": "I sleep \"10\" seconds",
+            "line": 13,
+            "name": "I fill in the \"phone\" input with \"555-555-5555\"",
             "match": {
-              "location": "src\\step-definitions\\general.ts:5"
+              "location": "src\\step-definitions\\form.ts:15"
             },
             "result": {
               "status": "passed",
-              "duration": 10011960899
+              "duration": 81198099
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 14,
+            "name": "I fill in the \"street\" input with \"123 Main St\"",
+            "match": {
+              "location": "src\\step-definitions\\form.ts:15"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 81984800
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 15,
+            "name": "I fill in the \"city\" input with \"New York\"",
+            "match": {
+              "location": "src\\step-definitions\\form.ts:15"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 73976600
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 16,
+            "name": "I click the \"save\" button",
+            "match": {
+              "location": "src\\step-definitions\\click.ts:19"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 87854799
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 17,
+            "name": "I am directed to the \"home\" page",
+            "match": {
+              "location": "src\\step-definitions\\navigation.ts:27"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 3954499
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 18,
+            "name": "I fill in the \"search\" input with \"Terry Barks\"",
+            "match": {
+              "location": "src\\step-definitions\\form.ts:15"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 107932299
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 19,
+            "name": "the \"contact\" should be displayed",
+            "match": {
+              "location": "src\\step-definitions\\assertions\\verify-element-visibility.ts:10"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 15770000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 20,
+            "name": "I click the \"edit\" button",
+            "match": {
+              "location": "src\\step-definitions\\click.ts:19"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 52071299
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 21,
+            "name": "I am directed to the \"edit contact\" page",
+            "match": {
+              "location": "src\\step-definitions\\navigation.ts:27"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 6811400
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 22,
+            "name": "I select the \"Female\" option from the \"gender\"",
+            "match": {
+              "location": "src\\step-definitions\\form.ts:52"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 37464299
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 23,
+            "name": "I click the \"save\" button",
+            "match": {
+              "location": "src\\step-definitions\\click.ts:19"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 60315899
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 24,
+            "name": "I am directed to the \"home\" page",
+            "match": {
+              "location": "src\\step-definitions\\navigation.ts:27"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 5251599
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 25,
+            "name": "I fill in the \"search\" input with \"Terry Barks\"",
+            "match": {
+              "location": "src\\step-definitions\\form.ts:15"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 92968700
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 26,
+            "name": "the \"contact\" should be displayed",
+            "match": {
+              "location": "src\\step-definitions\\assertions\\verify-element-visibility.ts:10"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 10135299
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 27,
+            "name": "the \"gender\" should contain the text \"Female\"",
+            "match": {
+              "location": "src\\step-definitions\\assertions\\verify-element-value.ts:11"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 29106799
             }
           },
           {
@@ -100,32 +295,32 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 34595600
+              "duration": 36053500
             }
           }
         ],
         "tags": [
           {
             "name": "@dev",
-            "line": 47
+            "line": 3
           },
           {
             "name": "@smoke",
-            "line": 48
+            "line": 4
           },
           {
             "name": "@regression",
-            "line": 49
+            "line": 5
           }
         ],
         "type": "scenario"
       }
     ],
-    "id": "as-a-user-i-can-interact-with-login-forms",
+    "id": "as-a-user-i-expect-to-be-able-to-edit-a-new-contact",
     "line": 1,
     "keyword": "Feature",
-    "name": "As a user I can interact with login forms",
+    "name": "As a user I expect to be able to edit a new contact",
     "tags": [],
-    "uri": "src\\features\\playground\\login.feature"
+    "uri": "src\\features\\edit-contact.feature"
   }
 ]

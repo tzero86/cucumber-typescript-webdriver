@@ -46,7 +46,7 @@ const common = `./src/features/**/*.feature \
   --require ./src/step-definitions/**/*.ts \
   -f json:./reports/report.json \
   --world-parameters ${JSON.stringify(worldParameters)} \
-  --format progress-bar \
+  --format summary \
   --parallel ${env('PARALLEL')} \
   --retry ${env('RETRY')} \
   `
