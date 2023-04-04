@@ -13,9 +13,10 @@
     "edit" : "[data-id='edit-button']",
     "delete": "[data-id='delete-button']",
     "cancel": "[data-id='cancel-button']",
-    "no items message": "[data-id='no-items-message']",
     "save": "[data-id='save-button']",
     "phone": "[data-id='phone']",
     "street": "[data-id='street']",
-    "city": "[data-id='city']"
+    "city": "[data-id='city']",
+    "no items message": "[data-id='no-items-message']",
+    "error message": "[data-id='error-message']"
 }

@@ -4,108 +4,173 @@
     "elements": [
       {
         "description": "",
-        "id": "as-a-user-i-want-to-be-able-to-search-for-a-new-contact;as-a-user-i-can-search-on-a-newly-created-and-edited-contact-and-see-our-searched-contact-details",
+        "id": "as-a-user-i-expect-to-be-able-to-validate-a-new-contact;as-a-user-i-can-hit-a-validation-error-on-each-field-and-then-create-a-new-contact",
         "keyword": "Scenario",
-        "line": 16,
-        "name": "As a user I can search on a newly created and edited contact and see our searched contact details",
+        "line": 6,
+        "name": "As a user I can hit a validation error on each field and then create a new contact",
         "steps": [
           {
             "keyword": "Before",
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 873513900
+              "duration": 850654800
             }
           },
           {
             "arguments": [],
             "keyword": "Given ",
-            "line": 17,
+            "line": 7,
             "name": "I am on the \"home\" page",
             "match": {
               "location": "src\\step-definitions\\navigation.ts:12"
             },
             "result": {
               "status": "passed",
-              "duration": 740838099
+              "duration": 755681199
             }
           },
           {
             "arguments": [],
             "keyword": "And ",
-            "line": 18,
+            "line": 8,
             "name": "I click the \"create\" button",
             "match": {
               "location": "src\\step-definitions\\click.ts:19"
             },
             "result": {
               "status": "passed",
-              "duration": 76271699
+              "duration": 66923799
             }
           },
           {
             "arguments": [],
             "keyword": "When ",
-            "line": 19,
+            "line": 9,
             "name": "I am directed to the \"create contact\" page",
             "match": {
               "location": "src\\step-definitions\\navigation.ts:27"
             },
             "result": {
               "status": "passed",
-              "duration": 6356300
+              "duration": 7521899
             }
           },
           {
             "arguments": [],
             "keyword": "And ",
-            "line": 20,
-            "name": "the \"create contact header\" should contain the text \"Create Contact\"",
+            "line": 10,
+            "name": "I click the \"save\" button",
+            "match": {
+              "location": "src\\step-definitions\\click.ts:19"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 66221599
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 11,
+            "name": "the \"error message\" should contain the text \"Error: The \"name\" field can't be empty.\"",
             "match": {
               "location": "src\\step-definitions\\assertions\\verify-element-value.ts:11"
             },
             "result": {
               "status": "passed",
-              "duration": 42304299
+              "duration": 39767699
             }
           },
           {
             "arguments": [],
             "keyword": "Then ",
-            "line": 21,
+            "line": 13,
             "name": "I fill in the \"name\" input with \"Terry Barks\"",
             "match": {
               "location": "src\\step-definitions\\form.ts:15"
             },
             "result": {
               "status": "passed",
-              "duration": 100017000
+              "duration": 98095699
             }
           },
           {
             "arguments": [],
             "keyword": "And ",
-            "line": 22,
+            "line": 14,
             "name": "I select the \"Male\" option from the \"gender\"",
             "match": {
               "location": "src\\step-definitions\\form.ts:52"
             },
             "result": {
               "status": "passed",
-              "duration": 46334100
+              "duration": 43764499
             }
           },
           {
             "arguments": [],
             "keyword": "And ",
-            "line": 23,
+            "line": 15,
+            "name": "I click the \"save\" button",
+            "match": {
+              "location": "src\\step-definitions\\click.ts:19"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 34567499
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 16,
+            "name": "the \"error message\" should contain the text \"Error: The \"phone\" field can't be empty.\"",
+            "match": {
+              "location": "src\\step-definitions\\assertions\\verify-element-value.ts:11"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 28822999
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 19,
             "name": "I fill in the \"phone\" input with \"555-555-5555\"",
             "match": {
               "location": "src\\step-definitions\\form.ts:15"
             },
             "result": {
               "status": "passed",
-              "duration": 86542399
+              "duration": 87813300
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 20,
+            "name": "I click the \"save\" button",
+            "match": {
+              "location": "src\\step-definitions\\click.ts:19"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 35470699
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 21,
+            "name": "the \"error message\" should contain the text \"Error: The \"street\" field can't be empty.\"",
+            "match": {
+              "location": "src\\step-definitions\\assertions\\verify-element-value.ts:11"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 26530099
             }
           },
           {
@@ -118,241 +183,98 @@
             },
             "result": {
               "status": "passed",
-              "duration": 80988899
+              "duration": 84976599
             }
           },
           {
             "arguments": [],
             "keyword": "And ",
             "line": 25,
-            "name": "I fill in the \"city\" input with \"New York\"",
+            "name": "I click the \"save\" button",
             "match": {
-              "location": "src\\step-definitions\\form.ts:15"
+              "location": "src\\step-definitions\\click.ts:19"
             },
             "result": {
               "status": "passed",
-              "duration": 85597300
+              "duration": 39155000
             }
           },
           {
             "arguments": [],
             "keyword": "And ",
             "line": 26,
-            "name": "I click the \"save\" button",
+            "name": "the \"error message\" should contain the text \"Error: The \"city\" field can't be empty.\"",
             "match": {
-              "location": "src\\step-definitions\\click.ts:19"
+              "location": "src\\step-definitions\\assertions\\verify-element-value.ts:11"
             },
             "result": {
               "status": "passed",
-              "duration": 83693800
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "And ",
-            "line": 27,
-            "name": "I am directed to the \"home\" page",
-            "match": {
-              "location": "src\\step-definitions\\navigation.ts:27"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 6330299
+              "duration": 24692199
             }
           },
           {
             "arguments": [],
             "keyword": "And ",
             "line": 28,
-            "name": "I fill in the \"search\" input with \"Terry Barks\"",
+            "name": "I fill in the \"city\" input with \"New York\"",
             "match": {
               "location": "src\\step-definitions\\form.ts:15"
             },
             "result": {
               "status": "passed",
-              "duration": 112726300
+              "duration": 85577300
             }
           },
           {
             "arguments": [],
             "keyword": "And ",
             "line": 29,
-            "name": "the \"contact\" should be displayed",
-            "match": {
-              "location": "src\\step-definitions\\assertions\\verify-element-visibility.ts:10"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 15399900
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "And ",
-            "line": 30,
-            "name": "I click the \"edit\" button",
-            "match": {
-              "location": "src\\step-definitions\\click.ts:19"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 60134399
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "And ",
-            "line": 31,
-            "name": "I am directed to the \"edit contact\" page",
-            "match": {
-              "location": "src\\step-definitions\\navigation.ts:27"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 5474799
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "And ",
-            "line": 32,
-            "name": "I fill in the \"name\" input with \"Homer Simpson\"",
-            "match": {
-              "location": "src\\step-definitions\\form.ts:15"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 105077899
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "And ",
-            "line": 33,
-            "name": "I select the \"Female\" option from the \"gender\"",
-            "match": {
-              "location": "src\\step-definitions\\form.ts:52"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 38268899
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "And ",
-            "line": 34,
-            "name": "I fill in the \"phone\" input with \"666-555-6666\"",
-            "match": {
-              "location": "src\\step-definitions\\form.ts:15"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 92368900
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "And ",
-            "line": 35,
-            "name": "I fill in the \"street\" input with \"Avenida Siempre Viva 742\"",
-            "match": {
-              "location": "src\\step-definitions\\form.ts:15"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 98163100
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "And ",
-            "line": 36,
-            "name": "I fill in the \"city\" input with \"Springfield\"",
-            "match": {
-              "location": "src\\step-definitions\\form.ts:15"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 87456700
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "And ",
-            "line": 37,
             "name": "I click the \"save\" button",
             "match": {
               "location": "src\\step-definitions\\click.ts:19"
             },
             "result": {
               "status": "passed",
-              "duration": 59431299
+              "duration": 64993100
             }
           },
           {
             "arguments": [],
             "keyword": "And ",
-            "line": 38,
+            "line": 31,
             "name": "I am directed to the \"home\" page",
             "match": {
               "location": "src\\step-definitions\\navigation.ts:27"
             },
             "result": {
               "status": "passed",
-              "duration": 3769500
+              "duration": 3620500
             }
           },
           {
             "arguments": [],
             "keyword": "And ",
-            "line": 39,
+            "line": 32,
             "name": "I fill in the \"search\" input with \"Terry Barks\"",
             "match": {
               "location": "src\\step-definitions\\form.ts:15"
             },
             "result": {
               "status": "passed",
-              "duration": 90332400
+              "duration": 112043800
             }
           },
           {
             "arguments": [],
             "keyword": "And ",
-            "line": 40,
-            "name": "the \"contact\" should not be displayed",
-            "match": {
-              "location": "src\\step-definitions\\assertions\\verify-element-visibility.ts:10"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 13285499
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "And ",
-            "line": 41,
-            "name": "I fill in the \"search\" input with \"Homer Simpson\"",
-            "match": {
-              "location": "src\\step-definitions\\form.ts:15"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 91971200
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "And ",
-            "line": 42,
+            "line": 33,
             "name": "the \"contact\" should be displayed",
             "match": {
               "location": "src\\step-definitions\\assertions\\verify-element-visibility.ts:10"
             },
             "result": {
               "status": "passed",
-              "duration": 7950699
+              "duration": 17534899
             }
           },
           {
@@ -360,32 +282,32 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 45937599
+              "duration": 35068199
             }
           }
         ],
         "tags": [
           {
             "name": "@dev",
-            "line": 13
+            "line": 3
           },
           {
             "name": "@smoke",
-            "line": 14
+            "line": 4
           },
           {
             "name": "@regression",
-            "line": 15
+            "line": 5
           }
         ],
         "type": "scenario"
       }
     ],
-    "id": "as-a-user-i-want-to-be-able-to-search-for-a-new-contact",
+    "id": "as-a-user-i-expect-to-be-able-to-validate-a-new-contact",
     "line": 1,
     "keyword": "Feature",
-    "name": "As a user I want to be able to search for a new contact",
+    "name": "As a user I expect to be able to validate a new contact",
     "tags": [],
-    "uri": "src\\features\\serach-contact.feature"
+    "uri": "src\\features\\validate-contact.feature"
   }
 ]
