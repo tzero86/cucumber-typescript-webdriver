@@ -27,9 +27,11 @@ export class BasicIframe extends React.Component {
             <>
                 <ThemeProvider theme={theme}>
                     <Iframe url="/"
+                            title="Basic Iframe"
                             width="350px"
                             height="450px"
                             id="basic-iframe"
+                            aria-label="basic-iframe"
                             className="myClassname"
                             display="initial"
                             position="relative"/>

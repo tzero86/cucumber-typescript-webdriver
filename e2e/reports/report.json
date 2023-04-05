@@ -4,43 +4,69 @@
     "elements": [
       {
         "description": "",
-        "id": "generate-accessibility-report-across-our-website;generate-accessibility-report-for-the-homepage",
+        "id": "generate-accessibility-report-across-our-website;generate-an-accessibility-report-for-the-playground-page",
         "keyword": "Scenario",
-        "line": 6,
-        "name": "Generate accessibility report for the homepage",
+        "line": 32,
+        "name": "Generate an accessibility report for the playground page",
         "steps": [
           {
             "keyword": "Before",
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 821638700
+              "duration": 878297299
             }
           },
           {
             "arguments": [],
             "keyword": "Given ",
-            "line": 7,
+            "line": 33,
             "name": "I am on the \"home\" page",
             "match": {
               "location": "src\\step-definitions\\navigation.ts:12"
             },
             "result": {
               "status": "passed",
-              "duration": 700401100
+              "duration": 736079799
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 34,
+            "name": "I click the \"playground\" button",
+            "match": {
+              "location": "src\\step-definitions\\click.ts:19"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 684501299
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 35,
+            "name": "I am directed to the \"playground\" page",
+            "match": {
+              "location": "src\\step-definitions\\navigation.ts:27"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 16614199
             }
           },
           {
             "arguments": [],
             "keyword": "Then ",
-            "line": 8,
+            "line": 36,
             "name": "I generate an accessibility analysis report",
             "match": {
               "location": "src\\step-definitions\\accessibility.ts:10"
             },
             "result": {
               "status": "passed",
-              "duration": 929312200
+              "duration": 1973186299
             }
           },
           {
@@ -48,22 +74,22 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 29538900
+              "duration": 38127700
             }
           }
         ],
         "tags": [
           {
             "name": "@dev",
-            "line": 3
+            "line": 29
           },
           {
-            "name": "@smoke",
-            "line": 4
+            "name": "@accessibility",
+            "line": 30
           },
           {
             "name": "@regression",
-            "line": 5
+            "line": 31
           }
         ],
         "type": "scenario"

@@ -110,6 +110,7 @@ class App extends React.Component {
                   className="testing-talks-logo"
                   data-id="header-logo"
                   href="/"
+                  aria-label="Testing Talks Hub"
                 >
                 </a>
               </div>
@@ -181,215 +182,217 @@ class App extends React.Component {
         <Helmet>
             <title>Playground</title>
         </Helmet>
-      <div className="Playground">
-      <h1 className="playground-header">Playground</h1>
+        <main>
+            <div className="Playground">
+            <h1 className="playground-header">Playground</h1>
 
-    <div className="container bootstrap snipets">
-       <div className="row flow-offset-1">
-         <div className="col-xs-6 col-md-4">
-             <div className="caption">
-               <h6><span className="caption-text">Radio Button</span></h6>
-             </div>
-           <div className="product tumbnail thumbnail-3">
-                <BasicRadioButton />
-           </div>
-         </div>
-         <div className="col-xs-6 col-md-4">
-             <div className="caption">
-               <h6><span className="caption-text">Autocomplete Combo Box</span></h6>
-             </div>
-           <div className="product tumbnail thumbnail-3">
-                <BasicAutoComplete />
-           </div>
-         </div>
-         <div className="col-xs-6 col-md-4">
-             <div className="caption">
-               <h6><span className="caption-text">Check Box</span></h6>
-             </div>
-             <div className="product tumbnail thumbnail-3">
-                  <BasicCheckBox />
-           </div>
-         </div>
-         <div className="col-xs-6 col-md-4">
-             <div className="caption">
-                 <h6><span className="caption-text">Card</span></h6>
-             </div>
-           <div className="product tumbnail thumbnail-3">
-               <BasicCard />
-           </div>
-         </div>
-         <div className="col-xs-6 col-md-4">
-             <div className="caption">
-                 <h6><span className="caption-text">Switch</span></h6>
-             </div>
-           <div className="product tumbnail thumbnail-3">
-                <BasicSwitch />
-           </div>
-         </div>
-         <div className="col-xs-6 col-md-4">
-             <div className="caption">
-                 <h6><span className="caption-text">Buttons</span></h6>
-             </div>
-           <div className="product tumbnail thumbnail-3">
-                <BasicButtons />
-           </div>
-         </div>
-           <div className="col-xs-6 col-md-4">
-               <div className="caption">
-                   <h6><span className="caption-text">Avatars</span></h6>
-               </div>
-               <div className="product tumbnail thumbnail-3">
-                   <BasicAvatars />
-               </div>
-           </div>
-           <div className="col-xs-6 col-md-4">
-               <div className="caption">
-                   <h6><span className="caption-text">Open Tab</span></h6>
-               </div>
-               <div className="product tumbnail thumbnail-3">
-                   <BasicTab />
-               </div>
-           </div>
-           <div className="col-xs-6 col-md-4">
-               <div className="caption">
-                   <h6><span className="caption-text">Drop Down Menu</span></h6>
-               </div>
-               <div className="product tumbnail thumbnail-3">
-                   <BasicMenu />
-               </div>
-           </div>
-           <div className="col-xs-6 col-md-4">
-               <div className="caption">
-                   <h6><span className="caption-text">Text Area</span></h6>
-               </div>
-               <div className="product tumbnail thumbnail-3">
-                   <BasicTextArea />
-               </div>
-           </div>
-           <div className="col-xs-6 col-md-4">
-               <div className="caption">
-                   <h6><span className="caption-text">Table</span></h6>
-               </div>
-               <div className="product tumbnail thumbnail-3">
-                   <BasicTable />
-               </div>
-           </div>
-           <div className="col-xs-6 col-md-4">
-               <div className="caption">
-                   <h6><span className="caption-text">Tooltip</span></h6>
-               </div>
-               <div className="product tumbnail thumbnail-3">
-                   <BasicTooltip />
-               </div>
-           </div>
-           <div className="col-xs-6 col-md-4">
-               <div className="caption">
-                   <h6><span className="caption-text">Alert</span></h6>
-               </div>
-               <div className="product tumbnail thumbnail-3">
-                   <BasicAlert />
-               </div>
-           </div>
-           <div className="col-xs-6 col-md-4">
-               <div className="caption">
-                   <h6><span className="caption-text">Open Window</span></h6>
-               </div>
-               <div className="product tumbnail thumbnail-3">
-                   <BasicOpenWindow />
-               </div>
-           </div>
-           <div className="col-xs-6 col-md-4">
-               <div className="caption">
-                   <h6><span className="caption-text">Browser Alert</span></h6>
-               </div>
-               <div className="product tumbnail thumbnail-3">
-                   <BasicBrowserAlert />
-               </div>
-           </div>
-           <div className="col-xs-6 col-md-4">
-               <div className="caption">
-                   <h6><span className="caption-text">Show / Hide</span></h6>
-               </div>
-               <div className="product tumbnail thumbnail-3">
-                   <BasicShowHide />
-               </div>
-           </div>
-           <div className="col-xs-6 col-md-4">
-               <div className="caption">
-                   <h6><span className="caption-text">Select</span></h6>
-               </div>
-               <div className="product tumbnail thumbnail-3">
-                   <BasicSelect />
-               </div>
-           </div>
-           <div className="col-xs-6 col-md-4">
-               <div className="caption">
-                   <h6><span className="caption-text">Badge</span></h6>
-               </div>
-               <div className="product tumbnail thumbnail-3">
-                   <BasicValidation />
-               </div>
-           </div>
-           <div className="col-xs-6 col-md-4">
-               <div className="caption">
-                   <h6><span className="caption-text">IFrame</span></h6>
-               </div>
-               <div className="product tumbnail thumbnail-3">
-                   <BasicIframe />
-               </div>
-           </div>
-           <div className="col-xs-6 col-md-4">
-               <div className="caption">
-                   <h6><span className="caption-text">Stored Values</span></h6>
-               </div>
-               <div className="product tumbnail thumbnail-3">
-                   <BasicStoredValues />
-               </div>
-           </div>
-           <div className="col-xs-6 col-md-4">
-               <div className="caption">
-                   <h6><span className="caption-text">Index</span></h6>
-               </div>
-               <div className="product tumbnail thumbnail-3">
-                   <BasicIndex />
-               </div>
-           </div>
-           <div className="col-xs-6 col-md-4">
-               <div className="caption">
-                   <h6><span className="caption-text">Basic Values</span></h6>
-               </div>
-               <div className="product tumbnail thumbnail-3">
-                   <BasicValues />
-               </div>
-           </div>
-           <div className="col-xs-6 col-md-4">
-               <div className="caption">
-                   <h6><span className="caption-text">Input Values</span></h6>
-               </div>
-               <div className="product tumbnail thumbnail-3">
-                   <BasicInputValues />
-               </div>
-           </div>
-           <div className="col-xs-6 col-md-4">
-               <div className="caption">
-                   <h6><span className="caption-text">Login</span></h6>
-               </div>
-               <div className="product tumbnail thumbnail-3">
-                   <BasicLogin />
-               </div>
-           </div>
-           <div className="col-xs-6 col-md-4">
-               <div className="caption">
-                   <h6><span className="caption-text">Basic REST</span></h6>
-               </div>
-               <div className="product tumbnail thumbnail-3 rest-name">
-                   <BasicREST />
-               </div>
-           </div>
-       </div>
-     </div>
+            <div className="container bootstrap snipets">
+            <div className="row flow-offset-1">
+                <div className="col-xs-6 col-md-4">
+                    <div className="caption">
+                    <h2><span className="caption-text">Radio Button</span></h2>
+                    </div>
+                <div className="product tumbnail thumbnail-3">
+                        <BasicRadioButton />
+                </div>
+                </div>
+                <div className="col-xs-6 col-md-4">
+                    <div className="caption">
+                    <h2><span className="caption-text">Autocomplete Combo Box</span></h2>
+                    </div>
+                <div className="product tumbnail thumbnail-3">
+                        <BasicAutoComplete />
+                </div>
+                </div>
+                <div className="col-xs-6 col-md-4">
+                    <div className="caption">
+                    <h2><span className="caption-text">Check Box</span></h2>
+                    </div>
+                    <div className="product tumbnail thumbnail-3">
+                        <BasicCheckBox />
+                </div>
+                </div>
+                <div className="col-xs-6 col-md-4">
+                    <div className="caption">
+                        <h2><span className="caption-text">Card</span></h2>
+                    </div>
+                <div className="product tumbnail thumbnail-3">
+                    <BasicCard />
+                </div>
+                </div>
+                <div className="col-xs-6 col-md-4">
+                    <div className="caption">
+                        <h2><span className="caption-text">Switch</span></h2>
+                    </div>
+                <div className="product tumbnail thumbnail-3">
+                        <BasicSwitch />
+                </div>
+                </div>
+                <div className="col-xs-6 col-md-4">
+                    <div className="caption">
+                        <h2><span className="caption-text">Buttons</span></h2>
+                    </div>
+                <div className="product tumbnail thumbnail-3">
+                        <BasicButtons />
+                </div>
+                </div>
+                <div className="col-xs-6 col-md-4">
+                    <div className="caption">
+                        <h2><span className="caption-text">Avatars</span></h2>
+                    </div>
+                    <div className="product tumbnail thumbnail-3">
+                        <BasicAvatars />
+                    </div>
+                </div>
+                <div className="col-xs-6 col-md-4">
+                    <div className="caption">
+                        <h2><span className="caption-text">Open Tab</span></h2>
+                    </div>
+                    <div className="product tumbnail thumbnail-3">
+                        <BasicTab />
+                    </div>
+                </div>
+                <div className="col-xs-6 col-md-4">
+                    <div className="caption">
+                        <h2><span className="caption-text">Drop Down Menu</span></h2>
+                    </div>
+                    <div className="product tumbnail thumbnail-3">
+                        <BasicMenu />
+                    </div>
+                </div>
+                <div className="col-xs-6 col-md-4">
+                    <div className="caption">
+                        <h2><span className="caption-text">Text Area</span></h2>
+                    </div>
+                    <div className="product tumbnail thumbnail-3">
+                        <BasicTextArea />
+                    </div>
+                </div>
+                <div className="col-xs-6 col-md-4">
+                    <div className="caption">
+                        <h2><span className="caption-text">Table</span></h2>
+                    </div>
+                    <div className="product tumbnail thumbnail-3">
+                        <BasicTable />
+                    </div>
+                </div>
+                <div className="col-xs-6 col-md-4">
+                    <div className="caption">
+                        <h2><span className="caption-text">Tooltip</span></h2>
+                    </div>
+                    <div className="product tumbnail thumbnail-3">
+                        <BasicTooltip />
+                    </div>
+                </div>
+                <div className="col-xs-6 col-md-4">
+                    <div className="caption">
+                        <h2><span className="caption-text">Alert</span></h2>
+                    </div>
+                    <div className="product tumbnail thumbnail-3">
+                        <BasicAlert />
+                    </div>
+                </div>
+                <div className="col-xs-6 col-md-4">
+                    <div className="caption">
+                        <h2><span className="caption-text">Open Window</span></h2>
+                    </div>
+                    <div className="product tumbnail thumbnail-3">
+                        <BasicOpenWindow />
+                    </div>
+                </div>
+                <div className="col-xs-6 col-md-4">
+                    <div className="caption">
+                        <h2><span className="caption-text">Browser Alert</span></h2>
+                    </div>
+                    <div className="product tumbnail thumbnail-3">
+                        <BasicBrowserAlert />
+                    </div>
+                </div>
+                <div className="col-xs-6 col-md-4">
+                    <div className="caption">
+                        <h2><span className="caption-text">Show / Hide</span></h2>
+                    </div>
+                    <div className="product tumbnail thumbnail-3">
+                        <BasicShowHide />
+                    </div>
+                </div>
+                <div className="col-xs-6 col-md-4">
+                    <div className="caption">
+                        <h2><span className="caption-text">Select</span></h2>
+                    </div>
+                    <div className="product tumbnail thumbnail-3">
+                        <BasicSelect />
+                    </div>
+                </div>
+                <div className="col-xs-6 col-md-4">
+                    <div className="caption">
+                        <h2><span className="caption-text">Badge</span></h2>
+                    </div>
+                    <div className="product tumbnail thumbnail-3">
+                        <BasicValidation />
+                    </div>
+                </div>
+                <div className="col-xs-6 col-md-4">
+                    <div className="caption">
+                        <h2><span className="caption-text">IFrame</span></h2>
+                    </div>
+                    <div className="product tumbnail thumbnail-3">
+                        <BasicIframe />
+                    </div>
+                </div>
+                <div className="col-xs-6 col-md-4">
+                    <div className="caption">
+                        <h2><span className="caption-text">Stored Values</span></h2>
+                    </div>
+                    <div className="product tumbnail thumbnail-3">
+                        <BasicStoredValues />
+                    </div>
+                </div>
+                <div className="col-xs-6 col-md-4">
+                    <div className="caption">
+                        <h2><span className="caption-text">Index</span></h2>
+                    </div>
+                    <div className="product tumbnail thumbnail-3">
+                        <BasicIndex />
+                    </div>
+                </div>
+                <div className="col-xs-6 col-md-4">
+                    <div className="caption">
+                        <h2><span className="caption-text">Basic Values</span></h2>
+                    </div>
+                    <div className="product tumbnail thumbnail-3">
+                        <BasicValues />
+                    </div>
+                </div>
+                <div className="col-xs-6 col-md-4">
+                    <div className="caption">
+                        <h2><span className="caption-text">Input Values</span></h2>
+                    </div>
+                    <div className="product tumbnail thumbnail-3">
+                        <BasicInputValues />
+                    </div>
+                </div>
+                <div className="col-xs-6 col-md-4">
+                    <div className="caption">
+                        <h2><span className="caption-text">Login</span></h2>
+                    </div>
+                    <div className="product tumbnail thumbnail-3">
+                        <BasicLogin />
+                    </div>
+                </div>
+                <div className="col-xs-6 col-md-4">
+                    <div className="caption">
+                        <h2><span className="caption-text">Basic REST</span></h2>
+                    </div>
+                    <div className="product tumbnail thumbnail-3 rest-name">
+                        <BasicREST />
+                    </div>
+                </div>
+            </div>
+            </div>
 
-      </div>
+            </div>
+      </main>
       </>
     );
   };

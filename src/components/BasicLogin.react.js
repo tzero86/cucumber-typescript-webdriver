@@ -46,6 +46,7 @@ export class BasicLogin extends React.Component {
               name="email"
               type="email"
               data-id="email"
+              aria-label="email"
               label="Email"
               floatingLabel
               required
@@ -68,6 +69,7 @@ export class BasicLogin extends React.Component {
               type="password"
               label="Password"
               data-id="password"
+              aria-label="password"
               floatingLabel
               required
               minLength={3}
