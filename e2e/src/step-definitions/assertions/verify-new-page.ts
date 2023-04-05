@@ -1,17 +1,17 @@
-import { Then } from "@cucumber/cucumber";
-import { ExpectedElementText, Negate, PagePosition } from "../../env/global";
-import { ScenarioWorld } from "../setup/world";
+import { Then } from "@cucumber/cucumber"
+import { ExpectedElementText, Negate, PagePosition } from "../../env/global"
+import { ScenarioWorld } from "../setup/world"
 import {
     waitFor,
     waitForResult,
     waitForSelectorOnPage,
-} from "../../support/wait-for-behavior";
+} from "../../support/wait-for-behavior"
 import {
     getElementText,
     getTitleWithinPage,
-} from "../../support/html-behavior";
-import { getElementLocator } from "../../support/web-element-helper";
-import { logger } from "../../logger";
+} from "../../support/html-behavior"
+import { getElementLocator } from "../../support/web-element-helper"
+import { logger } from "../../logger"
 
 Then(
     /^the ([0-9]+th|[0-9]+st|[0-9]+nd|[0-9]+rd) (?:window|tab) should( not)? contain the title "(.*)"$/,
@@ -24,18 +24,18 @@ Then(
         const {
             screen: { driver },
             globalConfig,
-        } = this;
+        } = this
 
         logger.log(
             `the ${pagePosition} tab should ${
                 negate ? "not" : ""
             } contain the title ${expectedTitle}`
-        );
+        )
 
-        const pageIndex = Number(pagePosition.match(/\d/g)?.join("")) - 1;
+        const pageIndex = Number(pagePosition.match(/\d/g)?.join("")) - 1
 
         await waitFor(async () => {
-            const pageTitle = await getTitleWithinPage(driver, pageIndex);
+            const pageTitle = await getTitleWithinPage(driver, pageIndex)
             if (pageTitle?.includes(expectedTitle) === !negate) {
                 return waitForResult.PASS
             } else {
@@ -44,9 +44,9 @@ Then(
         }, globalConfig, { 
             target: expectedTitle,
             failureMessage: `🧨 Expected ${expectedTitle} to ${negate ? "not" : ""}contain the title ${expectedTitle}` 
-        });
+        })
     }
-);
+)
 
 
 Then(
@@ -60,20 +60,20 @@ Then(
         const {
             screen: { driver },
             globalConfig,
-        } = this;
+        } = this
 
         logger.log(
             `the ${elementKey} on the ${pagePosition} tab should ${
                 negate ? "not" : ""
             } displayed`
-        );
+        )
 
-        const pageIndex = Number(pagePosition.match(/\d/g)?.join("")) - 1;
+        const pageIndex = Number(pagePosition.match(/\d/g)?.join("")) - 1
         const elementIdentifier = await getElementLocator(
             driver,
             elementKey,
             globalConfig
-        );
+        )
 
         await waitFor(async () => {
             const isElementVisible = await waitForSelectorOnPage(driver, elementIdentifier,pageIndex)
@@ -85,9 +85,9 @@ Then(
         }, globalConfig, { 
             target: elementKey, 
             failureMessage: `🧨 Expected ${elementKey} to ${negate ? "not" : ""}be displayed`
-        });
+        })
     }
-);
+)
 
 Then(
     /^the "([^"]*)" on the ([0-9]+th|[0-9]+st|[0-9]+nd|[0-9]+rd) (?:window|tab) should( not)? contain the text "(.*)"$/,
@@ -101,26 +101,26 @@ Then(
         const {
             screen: { driver },
             globalConfig,
-        } = this;
+        } = this
 
         logger.log(
             `the ${elementKey} on the ${pagePosition} tab should ${
                 negate ? "not" : ""
             } contain the text ${expectedElementText}`
-        );
-        const pageIndex = Number(pagePosition.match(/\d/g)?.join("")) - 1;
+        )
+        const pageIndex = Number(pagePosition.match(/\d/g)?.join("")) - 1
         const elementIdentifier = await getElementLocator(
             driver,
             elementKey,
             globalConfig
-        );
+        )
 
         await waitFor(async () => {
             const elementStable = await waitForSelectorOnPage(
                 driver,
                 elementIdentifier,
                 pageIndex
-            );
+            )
             if (elementStable) {
                 const elementText = await getElementText(driver,elementIdentifier)
                 if (elementText?.includes(expectedElementText) === !negate) {
@@ -134,9 +134,9 @@ Then(
         }, globalConfig, { 
             target: elementKey, 
             failureMessage: `🧨 Expected ${elementKey} to ${negate ? "not" : ""}contain the text ${expectedElementText}`
-        });
+        })
     }
-);
+)
 
 Then(
     /^the "([^"]*)" on the ([0-9]+th|[0-9]+st|[0-9]+nd|[0-9]+rd) (?:window|tab) should( not)? equal the text "(.*)"$/,
@@ -150,26 +150,26 @@ Then(
         const {
             screen: { driver },
             globalConfig,
-        } = this;
+        } = this
 
         logger.log(
             `the ${elementKey} on the ${pagePosition} tab should ${
                 negate ? "not" : ""
             } equal the text ${expectedElementText}`
-        );
-        const pageIndex = Number(pagePosition.match(/\d/g)?.join("")) - 1;
+        )
+        const pageIndex = Number(pagePosition.match(/\d/g)?.join("")) - 1
         const elementIdentifier = await getElementLocator(
             driver,
             elementKey,
             globalConfig
-        );
+        )
 
         await waitFor(async () => {
             const elementStable = await waitForSelectorOnPage(
                 driver,
                 elementIdentifier,
                 pageIndex
-            );
+            )
             if (elementStable) {
                 const elementText = await getElementText(driver,elementIdentifier)
                 if ((elementText === expectedElementText) === !negate) {
@@ -183,6 +183,6 @@ Then(
         }, globalConfig, { 
             target: elementKey,
             failureMessage: `🧨 Expected ${elementKey} to ${negate ? "not" : ""}equal the text ${expectedElementText}` 
-        });
+        })
     }
-);
+)

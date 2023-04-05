@@ -1,20 +1,20 @@
-import { When } from "@cucumber/cucumber";
-import { ScenarioWorld } from "./setup/world";
+import { When } from "@cucumber/cucumber"
+import { ScenarioWorld } from "./setup/world"
 import {
     clickElement,
     clickElementAtIndex,
     clickElementWithText,
-} from "../support/html-behavior";
+} from "../support/html-behavior"
 import {
     waitFor,
     waitForResult,
     waitForSelector,
     waitForSelectors,
     waitForSelectorWithText,
-} from "../support/wait-for-behavior";
-import { getElementLocator } from "../support/web-element-helper";
-import { ElementKey, ElementPosition } from "../env/global";
-import { logger } from "../logger";
+} from "../support/wait-for-behavior"
+import { getElementLocator } from "../support/web-element-helper"
+import { ElementKey, ElementPosition } from "../env/global"
+import { logger } from "../logger"
 
 When(
     /^I click the "([^"]*)" (?:button|link)$/,
@@ -22,20 +22,20 @@ When(
         const {
             screen: { driver },
             globalConfig,
-        } = this;
+        } = this
 
-        logger.log(`I click the ${elementKey} button`);
+        logger.log(`I click the ${elementKey} button`)
         const elementIdentifier = await getElementLocator(
             driver,
             elementKey,
             globalConfig
-        );
+        )
 
         await waitFor(async () => {
             const elementStable = await waitForSelector(
                 driver,
                 elementIdentifier
-            );
+            )
 
             if (elementStable) {
                 await clickElement(driver, elementIdentifier)
@@ -43,9 +43,9 @@ When(
             }
 
             return waitForResult.ELEMENT_NOT_AVAILABLE
-        }, globalConfig, { target: elementKey });
+        }, globalConfig, { target: elementKey })
     }
-);
+)
 
 When(
     /^I click the ([0-9]+th|[0-9]+st|[0-9]+nd|[0-9]+rd) "([^"]*)" (?:button|link)$/,
@@ -57,35 +57,35 @@ When(
         const {
             screen: { driver },
             globalConfig,
-        } = this;
+        } = this
 
-        logger.log(`I click the ${elementPosition} ${elementKey} button|link`);
+        logger.log(`I click the ${elementPosition} ${elementKey} button|link`)
         const elementIdentifier = await getElementLocator(
             driver,
             elementKey,
             globalConfig
-        );
+        )
 
-        const elementIndex = Number(elementPosition.match(/\d/g)?.join("")) - 1;
+        const elementIndex = Number(elementPosition.match(/\d/g)?.join("")) - 1
 
         await waitFor(async () => {
             const elementStable = await waitForSelectors(
                 driver,
                 elementIdentifier
-            );
+            )
 
             if (elementStable) {
                 await clickElementAtIndex(
                     driver,
                     elementIdentifier,
                     elementIndex
-                );
+                )
                 return waitForResult.PASS
             }
             return waitForResult.ELEMENT_NOT_AVAILABLE
-        }, globalConfig, { target: elementKey });
+        }, globalConfig, { target: elementKey })
     }
-);
+)
 
 When(
     /^I click the element with text "([^"]*)"$/,
@@ -93,26 +93,26 @@ When(
         const {
             screen: { driver },
             globalConfig,
-        } = this;
+        } = this
 
-        logger.log(`I click the element with text ${elementKey}`);
+        logger.log(`I click the element with text ${elementKey}`)
         const elementIdentifier = await getElementLocator(
             driver,
             elementKey,
             globalConfig
-        );
+        )
 
         await waitFor(async () => {
             const elementStable = await waitForSelectorWithText(
                 driver,
                 elementIdentifier
-            );
+            )
 
             if (elementStable) {
                 await clickElementWithText(driver, elementIdentifier)
                 return waitForResult.PASS
             }
             return waitForResult.ELEMENT_NOT_AVAILABLE
-        }, globalConfig, { target: elementKey });
+        }, globalConfig, { target: elementKey })
     }
-);
+)

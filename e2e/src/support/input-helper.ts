@@ -1,4 +1,4 @@
-import { GlobalConfig } from "../env/global";
+import { GlobalConfig } from "../env/global"
 
 export const parseInput = (input: string, config: GlobalConfig): string => {
     const lookupTrigger = process.env.VAR_LOOKUP_TRIGGER ?? '$.'

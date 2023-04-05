@@ -1,10 +1,10 @@
-import { ScenarioWorld } from "./setup/world";
-import { When } from "@cucumber/cucumber";
+import { ScenarioWorld } from "./setup/world"
+import { When } from "@cucumber/cucumber"
 import {
     clickAcceptOnDialog,
     clickDismissOnDialog,
-} from "../support/html-behavior";
-import { logger } from "../logger";
+} from "../support/html-behavior"
+import { logger } from "../logger"
 
 When(
     /^I click (accept)?(dismiss)? on the alert dialog$/,
@@ -15,18 +15,18 @@ When(
     ) {
         const {
             screen: { driver },
-        } = this;
+        } = this
 
         logger.log(
             `I click ${
                 dismissDialog ? "dismiss" : "accept"
             } on the alert dialog`
-        );
+        )
 
         if (dismissDialog) {
-            await clickDismissOnDialog(driver);
+            await clickDismissOnDialog(driver)
         } else {
-            await clickAcceptOnDialog(driver);
+            await clickAcceptOnDialog(driver)
         }
     }
-);
+)

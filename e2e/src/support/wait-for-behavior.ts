@@ -1,8 +1,8 @@
-import { By, WebDriver, ElementLocator } from "selenium-webdriver";
-import { switchIframe, switchWindow } from "./html-behavior";
-import { logger } from "../logger";
-import { GlobalConfig, WaitForTarget, WaitForTargetType } from "../env/global";
-import { envNumber } from "../env/parseEnv";
+import { By, WebDriver, ElementLocator } from "selenium-webdriver"
+import { switchIframe, switchWindow } from "./html-behavior"
+import { logger } from "../logger"
+import { GlobalConfig, WaitForTarget, WaitForTargetType } from "../env/global"
+import { envNumber } from "../env/parseEnv"
 
 
 export const enum waitForResult {
@@ -69,7 +69,7 @@ export const waitFor = async(
         ? `\n 🧨 Timed out after ${timeout}ms waiting for the ${notAvailableContext || target} ${type}`
         : options?.failureMessage || 'Test Assertion Failed'
     throw new Error(waitForErrorMessage)
-};
+}
 
 
 export const waitForSelector = async (
@@ -77,39 +77,39 @@ export const waitForSelector = async (
     elementIdentifier: ElementLocator
 ): Promise<boolean> => {
     try {
-        await driver.switchTo().defaultContent();
-        await driver.findElement(By.css(elementIdentifier));
-        return true;
+        await driver.switchTo().defaultContent()
+        await driver.findElement(By.css(elementIdentifier))
+        return true
     } catch (e) {
-        return false;
+        return false
     }
-};
+}
 
 export const waitForSelectors = async (
     driver: WebDriver,
     elementIdentifier: ElementLocator
 ): Promise<boolean> => {
     try {
-        await driver.switchTo().defaultContent();
-        await driver.findElements(By.css(elementIdentifier));
-        return true;
+        await driver.switchTo().defaultContent()
+        await driver.findElements(By.css(elementIdentifier))
+        return true
     } catch (e) {
-        return false;
+        return false
     }
-};
+}
 
 export const waitForSelectorWithText = async (
     driver: WebDriver,
     elementIdentifier: ElementLocator
 ): Promise<boolean> => {
     try {
-        await driver.switchTo().defaultContent();
-        await driver.findElement(By.xpath(elementIdentifier));
-        return true;
+        await driver.switchTo().defaultContent()
+        await driver.findElement(By.xpath(elementIdentifier))
+        return true
     } catch (e) {
-        return false;
+        return false
     }
-};
+}
 
 export const waitForSelectorInIframe = async (
     driver: WebDriver,
@@ -117,13 +117,13 @@ export const waitForSelectorInIframe = async (
     elementIdentifier: ElementLocator
 ): Promise<boolean> => {
     try {
-        await switchIframe(driver, elementIframe);
-        await driver.findElement(By.css(elementIdentifier));
-        return true;
+        await switchIframe(driver, elementIframe)
+        await driver.findElement(By.css(elementIdentifier))
+        return true
     } catch (e) {
-        return false;
+        return false
     }
-};
+}
 
 export const waitForSelectorOnPage = async (
     driver: WebDriver,
@@ -131,10 +131,10 @@ export const waitForSelectorOnPage = async (
     pageIndex: number
 ): Promise<boolean> => {
     try {
-        await switchWindow(driver, pageIndex);
-        await driver.findElement(By.css(elementIdentifier));
-        return true;
+        await switchWindow(driver, pageIndex)
+        await driver.findElement(By.css(elementIdentifier))
+        return true
     } catch (e) {
-        return false;
+        return false
     }
-};
+}

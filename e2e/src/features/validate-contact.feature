@@ -1,6 +1,6 @@
 Feature: As a user I expect to be able to validate a new contact
 
-    @dev
+
     @smoke
     @regression
     Scenario: As a user I can hit a validation error on each field and then create a new contact

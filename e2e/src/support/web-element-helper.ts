@@ -1,6 +1,6 @@
-import { WebDriver} from 'selenium-webdriver';
-import { getCurrentPageId } from './navigation-behavior';
-import { ElementKey, ElementLocator, GlobalConfig } from '../env/global';
+import { WebDriver} from 'selenium-webdriver'
+import { getCurrentPageId } from './navigation-behavior'
+import { ElementKey, ElementLocator, GlobalConfig } from '../env/global'
 
 
 export const getElementLocator = async(

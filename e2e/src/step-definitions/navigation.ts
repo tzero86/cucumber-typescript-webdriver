@@ -1,13 +1,13 @@
-import { Given } from "@cucumber/cucumber";
-import { PageId } from "../env/global";
+import { Given } from "@cucumber/cucumber"
+import { PageId } from "../env/global"
 import {
     currentPathMatchesPageId,
     reloadPage,
-} from "../support/navigation-behavior";
-import { navigateToPage } from "../support/navigation-behavior";
-import { waitFor } from "../support/wait-for-behavior";
-import { ScenarioWorld } from "./setup/world";
-import { logger } from "../logger";
+} from "../support/navigation-behavior"
+import { navigateToPage } from "../support/navigation-behavior"
+import { waitFor } from "../support/wait-for-behavior"
+import { ScenarioWorld } from "./setup/world"
+import { logger } from "../logger"
 
 Given(
     /^I am on the "([^"]*)" page$/,
@@ -15,14 +15,14 @@ Given(
         const {
             screen: { driver },
             globalConfig,
-        } = this;
-        logger.log(`I am on the ${pageId} page`);
-        await navigateToPage(driver, pageId, globalConfig);
+        } = this
+        logger.log(`I am on the ${pageId} page`)
+        await navigateToPage(driver, pageId, globalConfig)
         await waitFor(() =>
             currentPathMatchesPageId(driver, pageId, globalConfig), globalConfig, { target: pageId, type: "page" }
-        );
+        )
     }
-);
+)
 
 Given(
     /^I am directed to the "([^"]*)" page$/,
@@ -30,13 +30,13 @@ Given(
         const {
             screen: { driver },
             globalConfig,
-        } = this;
-        logger.log(`I am directed to the ${pageId} page`);
+        } = this
+        logger.log(`I am directed to the ${pageId} page`)
         await waitFor(() =>
             currentPathMatchesPageId(driver, pageId, globalConfig), globalConfig, { target: pageId, type: "page" }
-        );
+        )
     }
-);
+)
 
 Given(
     /^I refresh the "([^"]*)" page$/,
@@ -44,11 +44,11 @@ Given(
         const {
             screen: { driver },
             globalConfig,
-        } = this;
-        logger.log(`I refresh the ${pageId} page`);
-        await reloadPage(driver);
+        } = this
+        logger.log(`I refresh the ${pageId} page`)
+        await reloadPage(driver)
         await waitFor(
             () => currentPathMatchesPageId(driver, pageId, globalConfig), globalConfig, { target: pageId, type: "page", timeout: 30000 }
-        );
+        )
     }
-);
+)

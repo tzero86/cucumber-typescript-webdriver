@@ -10,7 +10,6 @@ Feature: As a user I want to be able to search for a new contact
 
 
 
-    @smoke
     @regression
     Scenario: As a user I can search on a newly created and edited contact and see our searched contact details
         Given I am on the "home" page

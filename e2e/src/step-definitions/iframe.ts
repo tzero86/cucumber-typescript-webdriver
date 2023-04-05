@@ -1,15 +1,15 @@
-import { Then } from "@cucumber/cucumber";
-import { ScenarioWorld } from "./setup/world";
+import { Then } from "@cucumber/cucumber"
+import { ScenarioWorld } from "./setup/world"
 import {
     waitFor,
     waitForResult,
     waitForSelector,
     waitForSelectorInIframe,
-} from "../support/wait-for-behavior";
-import { getElementLocator } from "../support/web-element-helper";
-import { ElementKey, IframeKey, InputValue } from "../env/global";
-import { inputElementValue } from "../support/html-behavior";
-import { logger } from "../logger";
+} from "../support/wait-for-behavior"
+import { getElementLocator } from "../support/web-element-helper"
+import { ElementKey, IframeKey, InputValue } from "../env/global"
+import { inputElementValue } from "../support/html-behavior"
+import { logger } from "../logger"
 
 Then(
     /^I fill in the "([^"]*)" input on the "([^"]*)" iframe with "([^"]*)"$/,
@@ -22,34 +22,34 @@ Then(
         const {
             screen: { driver },
             globalConfig,
-        } = this;
+        } = this
 
         logger.log(
             `I fill in the ${elementKey} input on the ${iframeKey} iframe with ${inputValue}`
-        );
+        )
         const elementIdentifier = await getElementLocator(
             driver,
             elementKey,
             globalConfig
-        );
+        )
         const iframeIdentifier = await getElementLocator(
             driver,
             iframeKey,
             globalConfig
-        );
+        )
 
         await waitFor(async () => {
             const iframeStable = await waitForSelector(
                 driver,
                 iframeIdentifier
-            );
+            )
 
             if (iframeStable) {
                 const elementStable = await waitForSelectorInIframe(
                     driver,
                     iframeIdentifier,
                     elementIdentifier
-                );
+                )
                 if (elementStable) {
                     await inputElementValue(
                         driver,
@@ -62,6 +62,6 @@ Then(
                 }
             }
             return {result: waitForResult.ELEMENT_NOT_AVAILABLE, replace: iframeKey}
-        }, globalConfig, { target: elementKey });
+        }, globalConfig, { target: elementKey })
     }
-);
+)

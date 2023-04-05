@@ -28,7 +28,6 @@ Feature: As a user I expect to be able to create contacts
 
 
 
-    @smoke
     @regression
     Scenario: As a user I do not expect a saved contact to persirst after a page refresh
         Given I am on the "home" page
@@ -49,7 +48,6 @@ Feature: As a user I expect to be able to create contacts
         And the "contact" should not be displayed
 
 
-    @smoke
     @regression
     Scenario: As a user I can cancel creating a new contact
         Given I am on the "home" page
@@ -67,7 +65,6 @@ Feature: As a user I expect to be able to create contacts
         And the "contact" should not be displayed
 
 
-    @smoke
     @regression
     Scenario: As a user I can delete a newly created user
         Given I am on the "home" page

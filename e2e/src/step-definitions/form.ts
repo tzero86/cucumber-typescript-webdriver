@@ -1,16 +1,16 @@
-import { Then } from "@cucumber/cucumber";
-import { waitFor, waitForResult, waitForSelector } from "../support/wait-for-behavior";
-import { getElementLocator } from "../support/web-element-helper";
-import { ScenarioWorld } from "./setup/world";
-import { ElementKey, InputValue } from "../env/global";
+import { Then } from "@cucumber/cucumber"
+import { waitFor, waitForResult, waitForSelector } from "../support/wait-for-behavior"
+import { getElementLocator } from "../support/web-element-helper"
+import { ScenarioWorld } from "./setup/world"
+import { ElementKey, InputValue } from "../env/global"
 import {
     inputElementValue,
     selectElementValue,
-} from "../support/html-behavior";
-import { parseInput } from "../support/input-helper";
-import { logger } from "../logger";
-import { stringIsOfOptions } from "../support/options-helper";
-import { RandomInputType, getRandomData, randomInputTypes } from "../support/random-data-helper";
+} from "../support/html-behavior"
+import { parseInput } from "../support/input-helper"
+import { logger } from "../logger"
+import { stringIsOfOptions } from "../support/options-helper"
+import { RandomInputType, getRandomData, randomInputTypes } from "../support/random-data-helper"
 
 Then(
     /^I fill in the "([^"]*)" input with "([^"]*)"$/i,
@@ -22,32 +22,32 @@ Then(
         const {
             screen: { driver },
             globalConfig,
-        } = this;
+        } = this
 
-        logger.log(`I fill in the ${elementKey} input with ${inputValue}`);
+        logger.log(`I fill in the ${elementKey} input with ${inputValue}`)
 
         const elementIdentifier = await getElementLocator(
             driver,
             elementKey,
             globalConfig
-        );
+        )
 
         await waitFor(async () => {
             const elementStable = await waitForSelector(
                 driver,
                 elementIdentifier
-            );
+            )
 
             if (elementStable) {
-                const parsedInput = parseInput(inputValue, globalConfig);
+                const parsedInput = parseInput(inputValue, globalConfig)
                 await inputElementValue(driver, elementIdentifier, parsedInput)
                 return waitForResult.PASS
             }
 
             return waitForResult.ELEMENT_NOT_AVAILABLE
-        }, globalConfig, { target: elementKey });
+        }, globalConfig, { target: elementKey })
     }
-);
+)
 
 Then(
     /^I select the "([^"]*)" option from the "([^"]*)"$/,
@@ -59,22 +59,22 @@ Then(
         const {
             screen: { driver },
             globalConfig,
-        } = this;
+        } = this
 
         logger.log(
             `I select the ${option} option from the ${elementKey} dropdown`
-        );
+        )
         const elementIdentifier = await getElementLocator(
             driver,
             elementKey,
             globalConfig
-        );
+        )
 
         await waitFor(async () => {
             const elementStable = await waitForSelector(
                 driver,
                 elementIdentifier
-            );
+            )
 
             if (elementStable) {
                 await selectElementValue(driver, elementIdentifier, option)
@@ -82,9 +82,9 @@ Then(
             }
 
             return waitForResult.ELEMENT_NOT_AVAILABLE
-        }, globalConfig, { target: elementKey });
+        }, globalConfig, { target: elementKey })
     }
-);
+)
 
 
 Then(

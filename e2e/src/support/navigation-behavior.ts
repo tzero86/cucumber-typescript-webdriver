@@ -1,6 +1,6 @@
-import { WebDriver } from 'selenium-webdriver';
-import { GlobalConfig, PageId } from '../env/global';
-import { waitForResult } from './wait-for-behavior';
+import { WebDriver } from 'selenium-webdriver'
+import { GlobalConfig, PageId } from '../env/global'
+import { waitForResult } from './wait-for-behavior'
 
 export const navigateToPage = async (
     driver: WebDriver,
