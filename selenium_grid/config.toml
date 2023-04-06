@@ -10,3 +10,9 @@ stereotype= "{\"browserName\":\"chrome\"}"
 max-sessions= 5
 display-name= "firefox"
 stereotype= "{\"browserName\":\"firefox\"}"
+
+
+[[node.driver-configuration]]
+max-sessions= 5
+display-name= "edge"
+stereotype= "{\"browserName\":\"MicrosoftEdge\"}"

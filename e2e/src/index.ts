@@ -55,7 +55,8 @@ const common = `./src/features/**/*.feature \
 const dev = generateCucumberRuntimeTag(common, environment, getEnvList(), 'dev')
 const smoke = generateCucumberRuntimeTag(common, environment, getEnvList(), 'smoke')
 const regression = generateCucumberRuntimeTag(common, environment, getEnvList(), 'regression')
+const accessibility = generateCucumberRuntimeTag(common, environment, getEnvList(), 'accessibility')
 
 console.log(`🧪🧪🧪 Testing Starting 🧪🧪🧪`)
 
-export { dev, smoke, regression}
+export { dev, smoke, regression, accessibility}

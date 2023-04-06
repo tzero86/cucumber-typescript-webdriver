@@ -6,6 +6,9 @@ import { env, envNumber } from "../../env/parseEnv"
 import { GlobalConfig, GlobalVariables } from "../../env/global"
 import { stringIsOfOptions } from "../../support/options-helper"
 import { logger } from "../../logger"
+import edge from "selenium-webdriver/edge"
+
+
 
 export type Screen = {
     driver: WebDriver
@@ -46,7 +49,7 @@ export class ScenarioWorld extends World {
 
     private newBrowser = async (): Promise<string> => {
         const automationBrowser = env("UI_AUTOMATION_BROWSER")
-        const automationBrowsers = ["chrome", "firefox", "safari"]
+        const automationBrowsers = ["chrome", "firefox", "safari", "edge"]
         const validAutomationBrowser = stringIsOfOptions(
             automationBrowser,
             automationBrowsers
@@ -79,10 +82,16 @@ export class ScenarioWorld extends World {
             case "firefox": {
                 const firefoxBrowserOptions = new firefox.Options()
                 firefoxBrowserOptions.addArguments(env("BROWSER_ARGUMENTS"))
-                //firefoxBrowserOptions.set("acceptInsecureCerts", true)
+                firefoxBrowserOptions.set("acceptInsecureCerts", true)
                 return builder
                     .forBrowser(browser)
                     .setFirefoxOptions(firefoxBrowserOptions)
+            }
+            case "edge": {
+                const edgeBrowserOptions = new edge.Options()
+                edgeBrowserOptions.addArguments(env("BROWSER_ARGUMENTS"))
+                return builder.forBrowser(browser)
+                    .withCapabilities(edgeBrowserOptions)
             }
             default: {
                 return builder.forBrowser(browser)
