@@ -56,7 +56,17 @@ export class ScenarioWorld extends World {
 
     private browserBuilder = async (browser: string): Promise<Builder> => {
         logger.log(`🖥️  Executing on: ${browser} browser.`)
-        const builder = new Builder()
+
+        let builder
+
+        if (env('SELENIUM_GRID_ENABLED') === 'true') {
+            builder = new Builder().usingServer(env('SELENIUM_GRID_URL'))
+            logger.log(`🌐  Executing on: ${browser} browser using Selenium Grid.`)
+        } else {
+            builder = new Builder()
+        }
+
+        //const builder = new Builder()
         switch (browser) {
             case "chrome": {
                 const chromeBrowserOptions = new Options()
@@ -69,7 +79,7 @@ export class ScenarioWorld extends World {
             case "firefox": {
                 const firefoxBrowserOptions = new firefox.Options()
                 firefoxBrowserOptions.addArguments(env("BROWSER_ARGUMENTS"))
-                firefoxBrowserOptions.set("acceptInsecureCerts", true)
+                //firefoxBrowserOptions.set("acceptInsecureCerts", true)
                 return builder
                     .forBrowser(browser)
                     .setFirefoxOptions(firefoxBrowserOptions)

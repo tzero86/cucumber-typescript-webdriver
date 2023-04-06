@@ -8,8 +8,7 @@ import { logger } from "../logger"
 
 When(
     /^I click (accept)?(dismiss)? on the alert dialog$/,
-    async function (
-        this: ScenarioWorld,
+    async function (this: ScenarioWorld, 
         acceptDialog: boolean,
         dismissDialog: boolean
     ) {

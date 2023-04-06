@@ -50,6 +50,7 @@ Feature: As a user I can interact with login forms
         Given I am on the "home" page
         And I click the "playground" button
         When I am directed to the "playground" page
+        And I scroll to the "login form" form
         And I fill in the "email" input with random "email"
         And I fill in the "password" input with random "password"
         

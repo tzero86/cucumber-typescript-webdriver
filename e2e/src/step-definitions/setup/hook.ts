@@ -25,7 +25,9 @@ After(async function (this: ScenarioWorld, scenario) {
     if (scenarioStatus === "FAILED") {
         driver.takeScreenshot().then((image) => {
             this.attach(image, "image/png")
-            fs.mkdirSync(env("SCREENSHOT_PATH"))
+            if (!fs.existsSync(env("SCREENSHOT_PATH"))) {
+                fs.mkdirSync(env("SCREENSHOT_PATH"))
+            }
             fs.writeFileSync(
                 `${env("SCREENSHOT_PATH")}${scenario.pickle.name}.png`,
                 image,
