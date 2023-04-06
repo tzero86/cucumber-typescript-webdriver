@@ -1,5 +1,9 @@
 [node]
-detect-drivers= false
+detect-drivers= true
+
+
+[sessionqueue]
+session-request-timeout = 800
 
 [[node.driver-configuration]]
 max-sessions= 5

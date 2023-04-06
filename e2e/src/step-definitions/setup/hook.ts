@@ -14,6 +14,7 @@ Before(async function (scenario) {
     return ready
 })
 
+
 After(async function (this: ScenarioWorld, scenario) {
     const {
         screen: { driver },
