@@ -10,7 +10,7 @@ env=$1
 tag=$2
 
 #export environment variables
-export COMMON_CONFIG_FILE=./env/common.env
+export COMMON_CONFIG_FILE='./env/common.env'
 export NODE_ENV=$env
 
 
