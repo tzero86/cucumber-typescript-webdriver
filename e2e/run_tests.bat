@@ -1,5 +1,6 @@
 @echo off
 setlocal enabledelayedexpansion
+set -ueo pipefail
 
 rem environment tag
 set env=%1
@@ -12,8 +13,10 @@ set COMMON_CONFIG_FILE=.\env\common.env
 set NODE_ENV=%env%
 
 rem run cucumber tests & on failure exit script
-yarn run cucumber --profile %tag%
+
+rimraf dist && babel --extensions .ts --out-dir dist src
+cucumber-js --profile %tag%
 if errorlevel 1 (
-    yarn run postcucumber
+    ts-node ./src/reporter/cucumber-report.ts
     exit /b 1
 )
