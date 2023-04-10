@@ -34,7 +34,6 @@
     "typescript": "^5.0.2"
   },
   "dependencies": {
-    "rimraf": "^4.4.1",
     "@axe-core/webdriverjs": "^4.6.1",
     "@babel/cli": "^7.21.0",
     "@babel/preset-env": "^7.20.2",
@@ -50,6 +49,7 @@
     "dotenv": "^16.0.3",
     "eslint": "^8.37.0",
     "geckodriver": "^3.2.0",
+    "rimraf": "^4.4.1",
     "selenium-webdriver": "^4.8.2",
     "ts-node": "^10.9.1",
     "typescript": "^5.0.2"
