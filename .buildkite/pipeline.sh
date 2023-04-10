@@ -9,7 +9,7 @@ function build() {
 
 steps:
     - name: ":desktop_computer: Automation"
-      command: "scripts/buildkite-automation.sh"
+      command: "./scripts/buildkite-automation.sh"
 EOF
 }
 
