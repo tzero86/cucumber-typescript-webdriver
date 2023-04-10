@@ -40,6 +40,8 @@ unzip chromedriver_linux64.zip
 chmod +x chromedriver
 mv chromedriver /usr/local/bin
 rm chromedriver_linux64.zip
+npm install -g @axe-core/webdriverjs @babel/cli @babel/preset-env @babel/preset-typescript @cucumber/cucumber @faker-js/faker @typescript-eslint/eslint-plugin @typescript-eslint/parser axe-html-reporter chromedriver cross-env cucumber-html-reporter dotenv eslint geckodriver rimraf selenium-webdriver ts-node typescript
+
 
 echo "run e2e tests"
 ./run_tests.sh localhost regression
