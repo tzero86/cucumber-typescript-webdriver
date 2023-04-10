@@ -3,8 +3,7 @@ import * as fs from "fs"
 import { ScenarioWorld } from "./world"
 import { env, envNumber } from "../../env/parseEnv"
 import { logger } from "../../logger"
-require("chromedriver")
-require("geckodriver")
+
 
 setDefaultTimeout(envNumber("SCRIPT_TIMEOUT"))
 
