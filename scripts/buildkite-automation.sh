@@ -4,7 +4,7 @@ echo "yarn install react SUT app"
 yarn install
 
 echo "start selnium grid"
-yarn run grid
+yarn run grid >/dev/null 2>&1 &
 
 echo "starting react SUT app"
 yarn start >/dev/null 2>&1 &
