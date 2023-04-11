@@ -16,4 +16,4 @@ echo "yarn install e2e"
 yarn install
 
 echo "run e2e tests"
-./run_tests.sh localhost regression
+./run_tests.sh localhost accessibility

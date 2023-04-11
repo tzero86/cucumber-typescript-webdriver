@@ -12,6 +12,11 @@ stereotype= "{\"browserName\":\"chrome\"}"
 
 [[node.driver-configuration]]
 max-sessions= 5
+display-name= "chromium"
+stereotype= "{\"browserName\":\"chromium\"}"
+
+[[node.driver-configuration]]
+max-sessions= 5
 display-name= "firefox"
 stereotype= "{\"browserName\":\"firefox\"}"
 

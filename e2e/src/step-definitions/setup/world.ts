@@ -50,7 +50,7 @@ export class ScenarioWorld extends World {
 
     private newBrowser = async (): Promise<string> => {
         const automationBrowser = env("UI_AUTOMATION_BROWSER")
-        const automationBrowsers = ["chrome", "firefox", "safari", "edge"]
+        const automationBrowsers = ["chrome", "chromium", "firefox", "safari", "edge"]
         const validAutomationBrowser = stringIsOfOptions(
             automationBrowser,
             automationBrowsers
