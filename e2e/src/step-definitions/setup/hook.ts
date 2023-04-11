@@ -17,6 +17,7 @@ Before(async function (scenario) {
 After(async function (this: ScenarioWorld ,scenario) {
     const {
          screen: { driver },
+         globalConfig
     } = this
 
     const scenarioStatus = scenario.result?.status
