@@ -50,7 +50,7 @@ export class ScenarioWorld extends World {
 
     private newBrowser = async (): Promise<string> => {
         const automationBrowser = env("UI_AUTOMATION_BROWSER")
-        const automationBrowsers = ["chrome", "chromium", "firefox", "safari", "edge"]
+        const automationBrowsers = ["chrome", "firefox", "safari", "edge"]
         const validAutomationBrowser = stringIsOfOptions(
             automationBrowser,
             automationBrowsers
@@ -73,14 +73,6 @@ export class ScenarioWorld extends World {
         //const builder = new Builder()
         switch (browser) {
             case "chrome": {
-                const chromeBrowserOptions = new Options()
-                chromeBrowserOptions.addArguments(env("BROWSER_ARGUMENTS"))
-                chromeBrowserOptions.excludeSwitches(["enable-logging"])
-                return builder
-                    .forBrowser(browser)
-                    .withCapabilities(chromeBrowserOptions)
-            }
-            case "chromium": {
                 const chromeBrowserOptions = new Options()
                 chromeBrowserOptions.addArguments(env("BROWSER_ARGUMENTS"))
                 chromeBrowserOptions.excludeSwitches(["enable-logging"])
