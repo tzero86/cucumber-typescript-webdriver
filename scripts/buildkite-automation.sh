@@ -3,6 +3,9 @@
 echo "yarn install react SUT app"
 yarn install
 
+echo "start selnium grid"
+yarn run grid
+
 echo "starting react SUT app"
 yarn start >/dev/null 2>&1 &
 
@@ -11,9 +14,6 @@ cd e2e
 
 echo "yarn install e2e"
 yarn install
-
-echo "start selnium grid"
-yarn run grid
 
 echo "run e2e tests"
 ./run_tests.sh localhost regression
