@@ -14,9 +14,9 @@ Before(async function (scenario) {
 })
 
 
-After(async function (this: ScenarioWorld, scenario) {
+After(async function (this: ScenarioWorld ,scenario) {
     const {
-        screen: { driver },
+         screen: { driver },
     } = this
 
     const scenarioStatus = scenario.result?.status
