@@ -28,7 +28,8 @@
     "start": "react-scripts --openssl-legacy-provider start",
     "build": "react-scripts --openssl-legacy-provider build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "grid": "java -jar selenium_grid/selenium-server-4.8.3.jar standalone --config selenium_grid/config.toml"
   },
   "eslintConfig": {
     "extends": [
