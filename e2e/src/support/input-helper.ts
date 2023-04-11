@@ -1,7 +1,7 @@
 import { GlobalConfig } from "../env/global"
 
 export const parseInput = (input: string, config: GlobalConfig): string => {
-    const lookupTrigger = process.env.VAR_LOOKUP_TRIGGER ?? '$.'
+    const lookupTrigger = process.env.VAR_LOOKUP_TRIGGER ?? '$$.'
     return isLookupVariable(input, lookupTrigger) ? getLookupVariable(input, lookupTrigger, config) : input
     
 }

@@ -8,8 +8,8 @@ Feature: As a user I can interact with login forms
         And I click the "playground" button
         When I am directed to the "playground" page
         And I scroll to the "login form" element
-        And I fill in the "email" input with "$.TEST_EMAIL"
-        Then I fill in the "password" input with "$.TEST_PASSWORD"
+        And I fill in the "email" input with "$$.TEST_EMAIL"
+        Then I fill in the "password" input with "$$.TEST_PASSWORD"
         And the "email" should contain the value "admin@testingtalkshub.com.au"
         And the "password" should contain the value "<password>"
 
