@@ -15,5 +15,5 @@ cd e2e
 echo "yarn install e2e"
 yarn install
 
-echo "run e2e tests"
-./run_tests.sh localhost regression
+echo "running $AUTOMATION_SUITE on $AUTOMATION_ENVIRONMENT"
+./run_tests.sh "$AUTOMATION_ENVIRONMENT" "$AUTOMATION_SUITE"

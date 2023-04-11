@@ -1,7 +1,7 @@
 Feature: As a user I can interact with login forms
 
 
-    @smoke
+    @dev
     Scenario Outline: As a user I can populate login details leveraging environment variables
         Given I am on the "home" page
         And I click the "playground" button
