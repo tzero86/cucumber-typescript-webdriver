@@ -80,6 +80,14 @@ export class ScenarioWorld extends World {
                     .forBrowser(browser)
                     .withCapabilities(chromeBrowserOptions)
             }
+            case "chromium": {
+                const chromeBrowserOptions = new Options()
+                chromeBrowserOptions.addArguments(env("BROWSER_ARGUMENTS"))
+                chromeBrowserOptions.excludeSwitches(["enable-logging"])
+                return builder
+                    .forBrowser(browser)
+                    .withCapabilities(chromeBrowserOptions)
+            }
             case "firefox": {
                 const firefoxBrowserOptions = new firefox.Options()
                 firefoxBrowserOptions.addArguments(env("BROWSER_ARGUMENTS"))

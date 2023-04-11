@@ -13,7 +13,7 @@ stereotype= "{\"browserName\":\"chrome\"}"
 [[node.driver-configuration]]
 max-sessions= 5
 display-name= "chromium"
-stereotype= "{\"browserName\":\"chromium\"}"
+stereotype= "{\"browserName\":\"chrome\"}"
 
 [[node.driver-configuration]]
 max-sessions= 5
