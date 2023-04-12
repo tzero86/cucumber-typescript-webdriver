@@ -21,7 +21,7 @@ Feature: As a user I can interact with login forms
         @production
         Examples:
             | password     |
-            | Sup3rS3cur3! |
+            | Pr0dPassw0rd |
 
 
 
