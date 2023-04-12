@@ -26,7 +26,7 @@ Feature: Generate accessibility report across our website
         And I am directed to the "edit contact" page
         Then I generate an accessibility analysis report
 
-    @dev
+    
     @accessibility
     @regression
     Scenario: Generate an accessibility report for the playground page
