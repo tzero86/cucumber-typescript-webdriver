@@ -1,3 +1,8 @@
+#!/bin/bash
+
+set -ueo pipefail
+
+
 #environment tag
 env=$1
 
@@ -5,8 +10,15 @@ env=$1
 tag=$2
 
 #export environment variables
-export COMMON_CONFIG_FILE=./env/common.env
+export COMMON_CONFIG_FILE='./env/common.env'
 export NODE_ENV=$env
 
-# run cucumber tests
-yarn run cucumber --profile $tag || yarn run postcucumber
+
+
+#run cucumber tests & on failure exit script
+
+if ! yarn run cucumber --profile "$tag"; then
+    yarn run postcucumber;
+    exit 1;
+
+fi

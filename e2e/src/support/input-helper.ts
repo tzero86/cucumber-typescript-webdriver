@@ -1,7 +1,8 @@
 import { GlobalConfig } from "../env/global"
+import { logger } from "../logger"
 
 export const parseInput = (input: string, config: GlobalConfig): string => {
-    const lookupTrigger = process.env.VAR_LOOKUP_TRIGGER ?? '$.'
+    const lookupTrigger = process.env.VAR_LOOKUP_TRIGGER ?? '$$.'
     return isLookupVariable(input, lookupTrigger) ? getLookupVariable(input, lookupTrigger, config) : input
     
 }
@@ -12,6 +13,8 @@ const isLookupVariable = (input: string, lookupTrigger: string): boolean => {
 
 const getLookupVariable = (input: string, lookupTrigger: string, config: GlobalConfig): string => {
     const key = input.substring(lookupTrigger.length)
+    logger.log(`🔎 Looking up ${key} from config or env`)
+    logger.log(`🔎 ${config.emailsConfig[key] ?? process.env[key]}`)
     const lookupValue = config.emailsConfig[key] ?? process.env[key]
 
     if (!lookupValue) {

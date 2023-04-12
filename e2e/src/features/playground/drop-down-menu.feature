@@ -1,6 +1,6 @@
 Feature: As a user I can interact with drop down menus so that I can select and assert an option from a list of options.
 
-    @dev
+
     @smoke
     @regression
     Scenario: As a user I can interact and assert on drop down menus

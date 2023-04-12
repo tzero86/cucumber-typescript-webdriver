@@ -7,7 +7,8 @@ import { GlobalConfig, GlobalVariables } from "../../env/global"
 import { stringIsOfOptions } from "../../support/options-helper"
 import { logger } from "../../logger"
 import edge from "selenium-webdriver/edge"
-
+require("chromedriver")
+require("geckodriver")
 
 
 export type Screen = {

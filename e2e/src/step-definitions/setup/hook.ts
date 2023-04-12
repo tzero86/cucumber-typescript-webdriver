@@ -3,8 +3,7 @@ import * as fs from "fs"
 import { ScenarioWorld } from "./world"
 import { env, envNumber } from "../../env/parseEnv"
 import { logger } from "../../logger"
-require("chromedriver")
-require("geckodriver")
+
 
 setDefaultTimeout(envNumber("SCRIPT_TIMEOUT"))
 
@@ -14,9 +13,11 @@ Before(async function (scenario) {
     return ready
 })
 
-After(async function (this: ScenarioWorld, scenario) {
+
+After(async function (this: ScenarioWorld ,scenario) {
     const {
-        screen: { driver },
+         screen: { driver },
+         globalConfig
     } = this
 
     const scenarioStatus = scenario.result?.status

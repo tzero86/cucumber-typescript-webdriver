@@ -1,10 +1,15 @@
 [node]
 detect-drivers= false
 
+
+[sessionqueue]
+session-request-timeout = 10000
+
 [[node.driver-configuration]]
 max-sessions= 5
 display-name= "chrome"
 stereotype= "{\"browserName\":\"chrome\"}"
+
 
 [[node.driver-configuration]]
 max-sessions= 5
